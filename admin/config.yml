@@ -1,0 +1,144 @@
+# ============================================================
+#  CONTENT MANAGER CONFIG  (Sveltia CMS)
+#  This file controls the forms you see in the admin page.
+#  You normally do NOT need to touch this — see DEPLOY.md.
+# ============================================================
+
+backend:
+  name: github
+  # 👇 EDIT THIS once: "your-github-username/your-repo-name"
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  branch: main
+  # 👇 EDIT THIS once: your login (OAuth) address — see DEPLOY.md, Step 4.
+  base_url: https://YOUR-LOGIN-WORKER-URL
+
+# Lets you test the admin on your own computer before going live.
+# (Harmless to leave on — it only activates on localhost.)
+local_backend: true
+
+# Where uploaded images are stored / linked from.
+media_folder: "assets/images"
+public_folder: "assets/images"
+
+# A friendlier tweak: keep JSON tidy.
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ----------------------------------------------------------
+  # 1) SITE SETTINGS — your name, bio, skills, contact info
+  # ----------------------------------------------------------
+  - name: site
+    label: "Site Settings"
+    icon: settings
+    files:
+      - name: config
+        label: "About You & Site Info"
+        file: "content/site-config.json"
+        description: "Your name, tagline, bio, skills, and contact details."
+        fields:
+          - { name: name, label: "Full Name", widget: string }
+          - { name: firstName, label: "First Name", widget: string }
+          - { name: initials, label: "Initials (shown in the logo)", widget: string, hint: "e.g. JS" }
+          - { name: title, label: "Your Title", widget: string, hint: "e.g. Instructional Designer" }
+          - { name: heroHeading, label: "Homepage Headline", widget: string, hint: "e.g. Hi, I'm Jane!" }
+          - name: tagline
+            label: "Homepage Tagline"
+            widget: text
+            hint: "Short intro under your name. You can make words bold with <strong>like this</strong>."
+          - { name: headshot, label: "Hero Photo (homepage)", widget: image, required: false }
+          - { name: aboutPhoto, label: "About Page Photo", widget: image, required: false }
+          - name: aboutBio
+            label: "About Me — Paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+            hint: "Each item is one paragraph. Use <strong>word</strong> to make text bold."
+          - name: skills
+            label: "Skills"
+            widget: list
+            field: { name: skill, label: "Skill", widget: string }
+          - { name: email, label: "Contact Email", widget: string }
+          - { name: linkedin, label: "LinkedIn URL", widget: string }
+          - name: socialLinks
+            label: "Social Links"
+            widget: object
+            fields:
+              - { name: linkedin, label: "LinkedIn URL", widget: string }
+
+  # ----------------------------------------------------------
+  # 2) PROJECTS — your portfolio items
+  # ----------------------------------------------------------
+  - name: projects
+    label: "Projects"
+    icon: work
+    files:
+      - name: projects
+        label: "All Projects"
+        file: "content/projects.json"
+        description: "Add, edit, reorder, or remove portfolio projects here."
+        fields:
+          - name: projects
+            label: "Projects"
+            label_singular: "Project"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - name: id
+                label: "Web Address Slug"
+                widget: string
+                hint: "Lowercase, words-joined-by-dashes, no spaces. Used in the page link, e.g. safety-training"
+              - { name: title, label: "Title", widget: string }
+              - { name: subtitle, label: "Subtitle / Hook", widget: string }
+              - name: description
+                label: "Short Description (cards)"
+                widget: text
+                hint: "1–2 sentences. <strong>bold</strong> allowed."
+              - { name: type, label: "Project Type", widget: string, hint: "e.g. eLearning, Job Aid" }
+              - name: tools
+                label: "Tools Used"
+                widget: list
+                field: { name: tool, label: "Tool", widget: string }
+              - { name: thumbnail, label: "Thumbnail Image", widget: image, required: false }
+              - name: images
+                label: "Gallery Images"
+                widget: list
+                required: false
+                field: { name: image, label: "Image", widget: image }
+              - { name: pdf, label: "PDF Document (optional)", widget: file, required: false }
+              - { name: demoUrl, label: "Live Demo URL (optional)", widget: string, required: false }
+              - { name: featured, label: "Feature on homepage?", widget: boolean, default: false }
+              - { name: overview, label: "Overview", widget: text, required: false }
+              - { name: problem, label: "The Problem", widget: text, required: false }
+              - { name: solution, label: "The Solution", widget: text, required: false }
+              - { name: results, label: "The Results", widget: text, required: false }
+              - name: process
+                label: "Process Steps"
+                widget: list
+                required: false
+                field: { name: step, label: "Step", widget: string }
+
+  # ----------------------------------------------------------
+  # 3) TESTIMONIALS — quotes from clients/colleagues
+  # ----------------------------------------------------------
+  - name: testimonials
+    label: "Testimonials"
+    icon: format_quote
+    files:
+      - name: testimonials
+        label: "All Testimonials"
+        file: "content/testimonials.json"
+        description: "Quotes shown on your homepage."
+        fields:
+          - name: testimonials
+            label: "Testimonials"
+            label_singular: "Testimonial"
+            widget: list
+            summary: "{{fields.author}}"
+            fields:
+              - name: quote
+                label: "Quote"
+                widget: text
+                hint: "The testimonial text. <strong>bold</strong> allowed."
+              - { name: author, label: "Author Name", widget: string }
+              - { name: title, label: "Author Title / Role", widget: string }

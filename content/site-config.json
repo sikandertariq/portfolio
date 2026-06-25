@@ -1,0 +1,34 @@
+{
+  "name": "Your Name",
+  "firstName": "Your",
+  "initials": "YN",
+  "title": "Instructional Designer",
+  "tagline": "I transform <strong>ideas into action</strong> by creating impactful learning experiences from <strong>blueprint to build</strong>.",
+  "heroHeading": "Hi, I'm [Your Name]!",
+  "headshot": "assets/images/headshot-placeholder.jpg",
+  "aboutPhoto": "assets/images/about-placeholder.jpg",
+  "aboutBio": [
+    "As a lifelong learner and adventurer, I'm naturally curious and have a deep <strong>desire to learn</strong> about other people, places, perspectives, and skills. I <strong>chase knowledge</strong> by learning new ID tools and taking career-related courses.",
+    "My background in education has given me a unique perspective on how people learn best. I combine <strong>problem-solving, adaptability</strong>, and <strong>innovation</strong> to create learning experiences that truly make a difference.",
+    "In my work, I'm <strong>passionate about creating</strong> engaging and effective learning solutions that meet learners where they are and take them where they need to go."
+  ],
+  "skills": [
+    "Articulate Storyline",
+    "Articulate Rise",
+    "Adobe Captivate",
+    "Canva",
+    "Camtasia",
+    "Adobe Creative Suite",
+    "LMS Administration",
+    "Storyboarding",
+    "Needs Analysis",
+    "ADDIE Model",
+    "SAM Model",
+    "Action Mapping"
+  ],
+  "email": "your.email@example.com",
+  "linkedin": "https://linkedin.com/in/your-profile",
+  "socialLinks": {
+    "linkedin": "https://linkedin.com/in/your-profile"
+  }
+}

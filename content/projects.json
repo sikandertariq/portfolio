@@ -1,0 +1,88 @@
+{
+  "projects": [
+  {
+    "id": "scenario-based-elearning",
+    "title": "Safety First Training",
+    "subtitle": "Can you identify workplace hazards before they become incidents?",
+    "description": "This <strong>scenario-based eLearning</strong> project prepares new employees to identify and respond to common workplace safety hazards through realistic, branching scenarios with meaningful consequences.",
+    "type": "eLearning",
+    "tools": ["Articulate Storyline", "Canva", "Audacity"],
+    "thumbnail": "assets/images/project1-thumb.jpg",
+    "images": [
+      "assets/images/project1-slide1.jpg",
+      "assets/images/project1-slide2.jpg",
+      "assets/images/project1-slide3.jpg"
+    ],
+    "pdf": null,
+    "demoUrl": null,
+    "featured": true,
+    "overview": "This scenario-based eLearning course was designed for a manufacturing company to train new employees on workplace safety protocols. Learners navigate through realistic workplace scenarios where they must identify hazards and make critical safety decisions.",
+    "problem": "New employees were struggling to apply safety protocols in real-world situations, leading to a 15% increase in minor incidents during the first 90 days.",
+    "solution": "I designed an interactive, scenario-based eLearning module that places learners in realistic workplace situations. Using branching scenarios, learners experience the consequences of their safety decisions in a risk-free environment.",
+    "results": "After implementation, workplace incidents among new employees decreased by 40% in the first quarter.",
+    "process": [
+      "Conducted needs analysis with safety managers and observed workplace conditions",
+      "Created action map identifying critical safety behaviors",
+      "Developed storyboard with branching scenario paths",
+      "Built interactive prototype in Articulate Storyline",
+      "Conducted usability testing with sample audience",
+      "Revised based on feedback and deployed via LMS"
+    ]
+  },
+  {
+    "id": "onboarding-course",
+    "title": "Welcome Aboard: New Hire Orientation",
+    "subtitle": "Everything new team members need to hit the ground running",
+    "description": "This <strong>comprehensive onboarding course</strong> combines self-paced eLearning modules with interactive activities to help new hires understand company culture, policies, and their role responsibilities.",
+    "type": "eLearning Course",
+    "tools": ["Articulate Rise", "Canva", "Camtasia"],
+    "thumbnail": "assets/images/project2-thumb.jpg",
+    "images": [
+      "assets/images/project2-slide1.jpg",
+      "assets/images/project2-slide2.jpg"
+    ],
+    "pdf": null,
+    "demoUrl": null,
+    "featured": false,
+    "overview": "A comprehensive onboarding experience designed for a mid-size tech company, combining self-paced learning modules with interactive knowledge checks and real-world application activities.",
+    "problem": "The existing onboarding process relied on lengthy PDFs and live presentations, resulting in low engagement and inconsistent knowledge transfer across departments.",
+    "solution": "I redesigned the onboarding experience as a blended learning program, combining Articulate Rise modules for self-paced learning with Camtasia video walkthroughs for software training.",
+    "results": "New hire satisfaction scores increased by 35%, and time-to-productivity decreased by 2 weeks on average.",
+    "process": [
+      "Interviewed stakeholders and new hires to identify pain points",
+      "Mapped learning objectives to measurable outcomes",
+      "Designed microlearning modules in Articulate Rise",
+      "Created video tutorials using Camtasia",
+      "Developed interactive job aids and quick-reference guides",
+      "Piloted with a cohort of 15 new hires and iterated"
+    ]
+  },
+  {
+    "id": "job-aid-infographic",
+    "title": "Quick Reference: Customer Service Excellence",
+    "subtitle": "A visual guide to handling customer interactions with confidence",
+    "description": "This <strong>performance-based job aid</strong> provides customer service representatives with a visual, step-by-step guide to handling common customer scenarios, from greeting to resolution.",
+    "type": "Job Aid / Infographic",
+    "tools": ["Canva", "Adobe Illustrator"],
+    "thumbnail": "assets/images/project3-thumb.jpg",
+    "images": [
+      "assets/images/project3-full.jpg"
+    ],
+    "pdf": "assets/pdfs/sample-job-aid.pdf",
+    "demoUrl": null,
+    "featured": false,
+    "overview": "A visually engaging job aid designed for retail customer service representatives, providing quick-reference guidance for common customer interaction scenarios.",
+    "problem": "Customer service reps frequently consulted lengthy policy manuals during interactions, leading to longer resolution times and decreased customer satisfaction.",
+    "solution": "I created a visual, scannable job aid that distills key procedures into an intuitive flowchart format with clear decision points and scripted responses.",
+    "results": "Average call resolution time decreased by 20%, and customer satisfaction scores improved by 12%.",
+    "process": [
+      "Observed customer service interactions and identified common scenarios",
+      "Interviewed top-performing reps for best practices",
+      "Designed visual flowchart with decision points",
+      "Created polished graphics in Canva and Adobe Illustrator",
+      "Tested with a pilot group and refined based on feedback",
+      "Distributed digitally and as printed desk reference"
+    ]
+  }
+  ]
+}
