@@ -7,7 +7,7 @@
 backend:
   name: github
   # 👇 EDIT THIS once: "your-github-username/your-repo-name"
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  repo: sikandertariq/portfolio
   branch: main
   # 👇 EDIT THIS once: your login (OAuth) address — see DEPLOY.md, Step 4.
   base_url: https://YOUR-LOGIN-WORKER-URL
