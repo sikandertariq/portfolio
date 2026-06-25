@@ -10,7 +10,7 @@ backend:
   repo: sikandertariq/portfolio
   branch: main
   # 👇 EDIT THIS once: your login (OAuth) address — see DEPLOY.md, Step 4.
-  base_url: https://YOUR-LOGIN-WORKER-URL
+  base_url: https://sveltia-cms-auth.sikandertariq.workers.dev
 
 # Lets you test the admin on your own computer before going live.
 # (Harmless to leave on — it only activates on localhost.)
