@@ -1,10 +1,10 @@
 {
-  "name": "Your Name",
-  "firstName": "Your",
-  "initials": "YN",
+  "name": "Zainab Noor",
+  "firstName": "Zainab",
+  "initials": "ZN",
   "title": "Instructional Designer",
+  "heroHeading": "Hi, I'm Zainab!",
   "tagline": "I transform <strong>ideas into action</strong> by creating impactful learning experiences from <strong>blueprint to build</strong>.",
-  "heroHeading": "Hi, I'm [Your Name]!",
   "headshot": "assets/images/headshot-placeholder.jpg",
   "aboutPhoto": "assets/images/about-placeholder.jpg",
   "aboutBio": [
