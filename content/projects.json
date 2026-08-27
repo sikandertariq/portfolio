@@ -1,88 +1,98 @@
 {
   "projects": [
-  {
-    "id": "scenario-based-elearning",
-    "title": "Safety First Training",
-    "subtitle": "Can you identify workplace hazards before they become incidents?",
-    "description": "This <strong>scenario-based eLearning</strong> project prepares new employees to identify and respond to common workplace safety hazards through realistic, branching scenarios with meaningful consequences.",
-    "type": "eLearning",
-    "tools": ["Articulate Storyline", "Canva", "Audacity"],
-    "thumbnail": "assets/images/project1-thumb.jpg",
-    "images": [
-      "assets/images/project1-slide1.jpg",
-      "assets/images/project1-slide2.jpg",
-      "assets/images/project1-slide3.jpg"
-    ],
-    "pdf": null,
-    "demoUrl": null,
-    "featured": true,
-    "overview": "This scenario-based eLearning course was designed for a manufacturing company to train new employees on workplace safety protocols. Learners navigate through realistic workplace scenarios where they must identify hazards and make critical safety decisions.",
-    "problem": "New employees were struggling to apply safety protocols in real-world situations, leading to a 15% increase in minor incidents during the first 90 days.",
-    "solution": "I designed an interactive, scenario-based eLearning module that places learners in realistic workplace situations. Using branching scenarios, learners experience the consequences of their safety decisions in a risk-free environment.",
-    "results": "After implementation, workplace incidents among new employees decreased by 40% in the first quarter.",
-    "process": [
-      "Conducted needs analysis with safety managers and observed workplace conditions",
-      "Created action map identifying critical safety behaviors",
-      "Developed storyboard with branching scenario paths",
-      "Built interactive prototype in Articulate Storyline",
-      "Conducted usability testing with sample audience",
-      "Revised based on feedback and deployed via LMS"
-    ]
-  },
-  {
-    "id": "onboarding-course",
-    "title": "Welcome Aboard: New Hire Orientation",
-    "subtitle": "Everything new team members need to hit the ground running",
-    "description": "This <strong>comprehensive onboarding course</strong> combines self-paced eLearning modules with interactive activities to help new hires understand company culture, policies, and their role responsibilities.",
-    "type": "eLearning Course",
-    "tools": ["Articulate Rise", "Canva", "Camtasia"],
-    "thumbnail": "assets/images/project2-thumb.jpg",
-    "images": [
-      "assets/images/project2-slide1.jpg",
-      "assets/images/project2-slide2.jpg"
-    ],
-    "pdf": null,
-    "demoUrl": null,
-    "featured": false,
-    "overview": "A comprehensive onboarding experience designed for a mid-size tech company, combining self-paced learning modules with interactive knowledge checks and real-world application activities.",
-    "problem": "The existing onboarding process relied on lengthy PDFs and live presentations, resulting in low engagement and inconsistent knowledge transfer across departments.",
-    "solution": "I redesigned the onboarding experience as a blended learning program, combining Articulate Rise modules for self-paced learning with Camtasia video walkthroughs for software training.",
-    "results": "New hire satisfaction scores increased by 35%, and time-to-productivity decreased by 2 weeks on average.",
-    "process": [
-      "Interviewed stakeholders and new hires to identify pain points",
-      "Mapped learning objectives to measurable outcomes",
-      "Designed microlearning modules in Articulate Rise",
-      "Created video tutorials using Camtasia",
-      "Developed interactive job aids and quick-reference guides",
-      "Piloted with a cohort of 15 new hires and iterated"
-    ]
-  },
-  {
-    "id": "job-aid-infographic",
-    "title": "Quick Reference: Customer Service Excellence",
-    "subtitle": "A visual guide to handling customer interactions with confidence",
-    "description": "This <strong>performance-based job aid</strong> provides customer service representatives with a visual, step-by-step guide to handling common customer scenarios, from greeting to resolution.",
-    "type": "Job Aid / Infographic",
-    "tools": ["Canva", "Adobe Illustrator"],
-    "thumbnail": "assets/images/project3-thumb.jpg",
-    "images": [
-      "assets/images/project3-full.jpg"
-    ],
-    "pdf": "assets/pdfs/sample-job-aid.pdf",
-    "demoUrl": null,
-    "featured": false,
-    "overview": "A visually engaging job aid designed for retail customer service representatives, providing quick-reference guidance for common customer interaction scenarios.",
-    "problem": "Customer service reps frequently consulted lengthy policy manuals during interactions, leading to longer resolution times and decreased customer satisfaction.",
-    "solution": "I created a visual, scannable job aid that distills key procedures into an intuitive flowchart format with clear decision points and scripted responses.",
-    "results": "Average call resolution time decreased by 20%, and customer satisfaction scores improved by 12%.",
-    "process": [
-      "Observed customer service interactions and identified common scenarios",
-      "Interviewed top-performing reps for best practices",
-      "Designed visual flowchart with decision points",
-      "Created polished graphics in Canva and Adobe Illustrator",
-      "Tested with a pilot group and refined based on feedback",
-      "Distributed digitally and as printed desk reference"
-    ]
-  }
+    {
+      "id": "interactivity-based-elearning",
+      "title": "An Interactive Food Chain Lesson",
+      "subtitle": "THE MEADOW HAS GONE QUIET",
+      "description": "The Meadow Has Gone Quiet — A Scenario-Based Safety eLearning Experience",
+      "type": "eLearning / Gamified Interactive Lesson",
+      "tools": [
+        "Genially",
+        "Canva"
+      ],
+      "thumbnail": "/assets/images/020_Slide.jpg",
+      "images": [
+        "/assets/images/001_Slide.jpg",
+        "/assets/images/040_Popup.jpg",
+        "/assets/images/022_Slide.jpg"
+      ],
+      "pdf": "",
+      "demoUrl": "",
+      "featured": true,
+      "overview": "",
+      "problem": "This project came out of an assignment with a deceptively simple brief: design an interactive lesson for young learners that teaches a foundational science concept through gamification rather than exposition. Food chains and energy flow are usually taught as a static diagram — sun, arrow, grass, arrow, rabbit — memorized and forgotten. My challenge was to turn that diagram into something a learner builds themselves, getting it wrong a few times along the way, because the wrong answers are where the real learning happens.\n\nFor a K-12 audience, that meant balancing playfulness against instructional rigor: it needed to feel like a game, but every interaction had to reinforce the underlying science, not just reward tapping the right icon.",
+      "solution": "The final product is a single-scenario, tap-to-sequence interactive lesson built in Genially: learners restore \"the meadow's energy\" by correctly ordering the trophic levels, receive scaffolded, concept-specific feedback on incorrect attempts, and finish with a fully visualized food chain plus a formal knowledge check. The design leans on game mechanics — progress tracking, a soft narrative goal, visual rewards — without ever letting the mechanic outrun the content; every tap is tied to a specific piece of the underlying science.",
+      "results": "This project was completed as part of a certification assignment rather than for a live client, so I don't have usage or assessment data to report here. What it demonstrates is my approach to designing for a young audience: using narrative framing and visible feedback loops to make an abstract system tangible, and treating incorrect answers as teaching moments rather than dead ends. It's a design pattern I'd extend to any lesson — regardless of age group — where the goal is for learners to internalize a process, not just recall a fact.",
+      "process": [
+        "Rather than opening with vocabulary, I opened with a story problem: \"The meadow has gone quiet. Something stopped the flow of energy. Can you restart it?\" This reframes an abstract system (energy transfer through trophic levels) as a concrete, emotionally engaging puzzle — a technique I leaned on deliberately to lower the cognitive barrier to entry for younger learners.",
+        "Learners rebuild the food chain piece by piece — Energy Source → Producer → Primary Consumer → Secondary Consumer → Decomposer — with a visible progress tracker (\"Energy Restored: 0/5\" building to \"5/5\"). Each successful placement animates the energy visibly flowing through the meadow, giving learners an immediate, visual payoff tied directly to the concept, not just a generic \"correct!\" chime.",
+        "Wrong answers don't just say \"incorrect\" — they redirect with a targeted hint tied to the underlying logic: \"Wrong! The fox needs something to hunt. Who comes before the fox, and what does it feed on? Also, don't forget to think about its ultimate source of energy.\" This was a deliberate choice: every wrong-answer state teaches the reasoning path back to the right answer instead of just flagging the error.",
+        "Rather than ending at the top predator (the intuitive stopping point for a young learner), I extended the chain to decomposers, framed as \"the clean-up crew,\" to reinforce that energy flow is cyclical, not linear — nutrients return to the soil so producers can grow again.",
+        "The lesson closes with an embedded activity segment (true/false checks on energy flow) and a printable \"Food Chains: Knowledge Check\" worksheet with a word bank (Producer, Consumer, Decomposer, Energy Source), giving instructors a way to verify transfer of learning beyond the interactive portion.",
+        "I built supporting visual assets in Canva to maintain a consistent illustrated, storybook-like aesthetic throughout — reinforcing the meadow narrative rather than breaking it with mismatched stock imagery."
+      ]
+    },
+    {
+      "id": "onboarding-course",
+      "title": "Welcome Aboard: New Hire Orientation",
+      "subtitle": "Everything new team members need to hit the ground running",
+      "description": "This <strong>comprehensive onboarding course</strong> combines self-paced eLearning modules with interactive activities to help new hires understand company culture, policies, and their role responsibilities.",
+      "type": "eLearning Course",
+      "tools": [
+        "Articulate Rise",
+        "Canva",
+        "Camtasia"
+      ],
+      "thumbnail": "assets/images/project2-thumb.jpg",
+      "images": [
+        "assets/images/project2-slide1.jpg",
+        "assets/images/project2-slide2.jpg"
+      ],
+      "pdf": null,
+      "demoUrl": "",
+      "featured": false,
+      "overview": "A comprehensive onboarding experience designed for a mid-size tech company, combining self-paced learning modules with interactive knowledge checks and real-world application activities.",
+      "problem": "The existing onboarding process relied on lengthy PDFs and live presentations, resulting in low engagement and inconsistent knowledge transfer across departments.",
+      "solution": "I redesigned the onboarding experience as a blended learning program, combining Articulate Rise modules for self-paced learning with Camtasia video walkthroughs for software training.",
+      "results": "New hire satisfaction scores increased by 35%, and time-to-productivity decreased by 2 weeks on average.",
+      "process": [
+        "Interviewed stakeholders and new hires to identify pain points",
+        "Mapped learning objectives to measurable outcomes",
+        "Designed microlearning modules in Articulate Rise",
+        "Created video tutorials using Camtasia",
+        "Developed interactive job aids and quick-reference guides",
+        "Piloted with a cohort of 15 new hires and iterated"
+      ]
+    },
+    {
+      "id": "job-aid-infographic",
+      "title": "Quick Reference: Customer Service Excellence",
+      "subtitle": "A visual guide to handling customer interactions with confidence",
+      "description": "This <strong>performance-based job aid</strong> provides customer service representatives with a visual, step-by-step guide to handling common customer scenarios, from greeting to resolution.",
+      "type": "Job Aid / Infographic",
+      "tools": [
+        "Canva",
+        "Adobe Illustrator"
+      ],
+      "thumbnail": "assets/images/project3-thumb.jpg",
+      "images": [
+        "assets/images/project3-full.jpg"
+      ],
+      "pdf": "assets/pdfs/sample-job-aid.pdf",
+      "demoUrl": "",
+      "featured": false,
+      "overview": "A visually engaging job aid designed for retail customer service representatives, providing quick-reference guidance for common customer interaction scenarios.",
+      "problem": "Customer service reps frequently consulted lengthy policy manuals during interactions, leading to longer resolution times and decreased customer satisfaction.",
+      "solution": "I created a visual, scannable job aid that distills key procedures into an intuitive flowchart format with clear decision points and scripted responses.",
+      "results": "Average call resolution time decreased by 20%, and customer satisfaction scores improved by 12%.",
+      "process": [
+        "Observed customer service interactions and identified common scenarios",
+        "Interviewed top-performing reps for best practices",
+        "Designed visual flowchart with decision points",
+        "Created polished graphics in Canva and Adobe Illustrator",
+        "Tested with a pilot group and refined based on feedback",
+        "Distributed digitally and as printed desk reference"
+      ]
+    }
   ]
 }
