@@ -1,24 +1,14 @@
 {
   "testimonials": [
-  {
-    "quote": "An incredible knack for solving tricky learning challenges. Their <strong>custom animations</strong> always take the experience to the next level. They bring a creative flair that not only grabs attention but <strong>makes even the most complex ideas easy to understand</strong>. Every detail is spot on, always aiming to give learners the best experience possible.",
-    "author": "Jane Smith",
-    "title": "Learning Experience Designer"
-  },
-  {
-    "quote": "I had the pleasure of witnessing their <strong>relationship-building abilities</strong> and <strong>strong work ethic</strong> firsthand. Their ability to <strong>understand and address specific client needs</strong>, no matter how nuanced, sets them apart as an instructional designer who can ensure their <strong>solutions are both effective and tailored</strong> to the audience.",
-    "author": "John Doe",
-    "title": "Operations Manager"
-  },
-  {
-    "quote": "A <strong>highly skilled instructional designer</strong> who creates a wide range of learning materials that truly 'wow' users. They are not only capable of creating engaging learning experiences but also <strong>incredibly intentional</strong> with their design decisions. Everything they produce is not only <strong>visually appealing</strong> but also thoughtfully built for the learner.",
-    "author": "Sarah Johnson",
-    "title": "Learning & Development Director"
-  },
-  {
-    "quote": "Working with them was a <strong>transformative experience</strong> for our training department. They took our outdated materials and turned them into <strong>engaging, modern learning experiences</strong> that our employees actually enjoy completing. Their attention to detail and <strong>learner-centered approach</strong> is truly exceptional.",
-    "author": "Michael Chen",
-    "title": "HR Director"
-  }
+    {
+      "quote": "\"Freelancer's work was truly exceptional, exceeding all expectations. The level of detail, dedication, and effort she put into every aspect of the project was evident and deeply appreciated. Her meticulous attention to detail and commitment to delivering high-quality results have not only impressed us but also significantly enhanced the overall impact of the project.\"",
+      "author": "Brandy Kress",
+      "title": "Individual Client"
+    },
+    {
+      "quote": "\"Zainab was a pleasure to work with. She was incredibly helpful and took the time to really understand my brand and the message I wanted to convey.\n\nHer approach was thorough, thoughtful, and creative, with a strong eye for detail. The final result felt aligned, polished, and on-brand. I would definitely recommend Z and would happily work with her again.\"",
+      "author": "Fiona Alexander",
+      "title": "Individual Client"
+    }
   ]
 }
