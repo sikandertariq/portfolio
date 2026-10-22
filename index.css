@@ -9,9 +9,9 @@
 /* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
   /* Color palette */
-  --color-primary:       #1a3a3a;
-  --color-primary-dark:  #122a2a;
-  --color-accent:        #8b3a2a;
+  --color-primary:       #F3ECE5;
+  --color-primary-dark:  #062D2A;
+  --color-accent:        #8C260F;
   --color-accent-hover:  #a34832;
   --color-accent-light:  #d4a99a;
   --color-bg-light:      #f5f0eb;
