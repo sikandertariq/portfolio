@@ -9,19 +9,23 @@
 /* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
   /* Color palette */
-  --color-primary:       #1a3a3a;
-  --color-primary-dark:  #122a2a;
-  --color-accent:        #8b3a2a;
-  --color-accent-hover:  #a34832;
-  --color-accent-light:  #d4a99a;
-  --color-bg-light:      #f5f0eb;
-  --color-bg-muted:      #e8d8ce;
-  --color-bg-card:       #d9c4b8;
-  --color-text-dark:     #1a2a2a;
-  --color-text-body:     #3a3a3a;
-  --color-text-light:    #f5f0eb;
-  --color-text-muted:    #b8a99e;
-  --color-border:        rgba(139, 58, 42, 0.3);
+  --color-primary: #062D2A;
+  --color-primary-dark: #041F1D;
+  --color-accent: #8C260F;
+  --color-accent-hover: #6F1D0C;
+  --color-accent-light: #B34A32;
+
+  --color-bg-light: #F3ECE5;
+  --color-bg-muted: #E8DCD0;
+  --color-bg-card: #FBF7F2;
+
+  --color-text-dark: #151B19;
+  --color-text-body: #343936;
+  --color-text-light: #F3ECE5;
+  --color-text-muted: #766B62;
+
+  --color-border: rgba(140, 38, 15, 0.22);
+}
 
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
