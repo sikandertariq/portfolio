@@ -9,14 +9,14 @@
 /* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
   /* Color palette */
-  --color-primary:       #062D2A;
-  --color-primary-dark:  #041F1D;
-  --color-accent:        #8C260F;
-  --color-accent-hover:  #6F1D0C;
+  --color-primary:       #7B1E2E;
+  --color-primary-dark:  #7B1E2E;
+  --color-accent:        #D9B25F;
+  --color-accent-hover:  #D9B25F;
   --color-accent-light:  #B34A32;
-  --color-bg-light:      #F3ECE5;
-  --color-bg-muted:      #E8DCD0;
-  --color-bg-card:       #FBF7F2;
+  --color-bg-light:      #6B4430;
+  --color-bg-muted:      #E6E9EB;
+  --color-bg-card:       #3E4651;
   --color-text-dark:     #151B19;
   --color-text-body:     #343936;
   --color-text-light:    #F3ECE5;
