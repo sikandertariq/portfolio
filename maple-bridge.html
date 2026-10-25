@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A self-initiated instructional design case study exploring scenario-based data security training for a fictional professional services company.">
+  <title>Data Security at Work | Instructional Design Case Study</title>
+  <style>
+    :root {
+      --ink: #202522;
+      --muted: #66716b;
+      --paper: #f7f8f4;
+      --surface: #ffffff;
+      --line: #dfe5de;
+      --accent: #b7d96b;
+      --accent-dark: #36512c;
+      --soft: #edf3e4;
+      --dark: #25332b;
+      --radius: 20px;
+      --shadow: 0 18px 45px rgba(26, 42, 30, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; text-decoration:none; }
+    .brand span { color: var(--accent-dark); }
+    .nav a.back { color: var(--muted); text-decoration:none; font-size:.92rem; }
+    .nav a.back:hover { color:var(--ink); }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--accent-dark); text-transform:uppercase; font-size:.76rem; font-weight:800; letter-spacing:.13em; }
+    .eyebrow::before { content:""; width:22px; height:3px; border-radius:10px; background:var(--accent); }
+    .hero { padding: 84px 0 68px; }
+    .hero-grid { display:grid; grid-template-columns: 1.12fr .88fr; align-items:center; gap:54px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(2.6rem, 6vw, 5.3rem); line-height:.99; letter-spacing:-.065em; max-width:760px; margin:20px 0 24px; }
+    .hero .lead { color:var(--muted); font-size:clamp(1.05rem, 2vw, 1.25rem); max-width:680px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:999px; padding:12px 19px; font-weight:750; font-size:.94rem; text-decoration:none; border:1px solid var(--dark); transition:transform .18s ease, background .18s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn.primary { background:var(--dark); color:white; }
+    .btn.secondary { background:transparent; }
+    .hero-art { min-height:390px; background:var(--soft); border:1px solid var(--line); border-radius:28px; padding:25px; position:relative; overflow:hidden; box-shadow:var(--shadow); }
+    .art-label { display:flex; justify-content:space-between; align-items:center; gap:10px; color:var(--muted); font-size:.76rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+    .art-card { position:absolute; left:9%; right:9%; top:24%; background:white; border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:0 12px 28px rgba(31,45,34,.08); }
+    .art-card small { display:block; color:var(--muted); font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
+    .art-card h3 { font-size:1.5rem; line-height:1.15; letter-spacing:-.04em; margin-bottom:18px; }
+    .decision { display:flex; gap:10px; align-items:center; padding:12px 13px; border:1px solid var(--line); border-radius:12px; margin-top:9px; font-size:.92rem; }
+    .decision .dot { flex:0 0 11px; height:11px; border-radius:50%; background:var(--accent); }
+    .decision.risky .dot { background:#e5a18b; }
+    .art-footer { position:absolute; bottom:22px; left:25px; right:25px; display:flex; justify-content:space-between; gap:12px; font-size:.78rem; color:var(--muted); }
+    .pill { display:inline-flex; padding:6px 10px; background:var(--soft); color:var(--accent-dark); border-radius:999px; font-size:.78rem; font-weight:750; }
+    .notice { margin-top:26px; padding:15px 18px; background:#fff9e9; border:1px solid #eee1b8; border-radius:14px; color:#66552a; font-size:.9rem; }
+    .meta-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:42px; }
+    .meta { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:17px; }
+    .meta b { display:block; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:5px; }
+    .meta span { font-weight:750; }
+    section { padding:72px 0; }
+    section.alt { background:#eef1e9; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .section-head { max-width:760px; margin-bottom:34px; }
+    h2 { font-size:clamp(2rem, 4vw, 3.25rem); letter-spacing:-.055em; line-height:1.05; margin:13px 0 16px; }
+    .section-head p { color:var(--muted); font-size:1.08rem; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+    .panel h3 { font-size:1.22rem; letter-spacing:-.025em; margin-bottom:12px; }
+    .panel p:last-child { margin-bottom:0; }
+    .panel p, .panel li { color:var(--muted); }
+    ul.clean { padding-left:20px; margin-bottom:0; }
+    ul.clean li { margin:8px 0; }
+    .objective { background:var(--dark); color:white; padding:28px; border-radius:var(--radius); margin-top:22px; }
+    .objective .label { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:.75rem; font-weight:800; }
+    .objective p { font-size:1.25rem; line-height:1.5; margin:10px 0 0; }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; counter-reset:step; }
+    .step { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:23px; min-height:205px; }
+    .step::before { counter-increment:step; content:"0" counter(step); display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--soft); color:var(--accent-dark); font-weight:850; margin-bottom:20px; }
+    .step h3 { font-size:1.08rem; margin-bottom:8px; }
+    .step p { color:var(--muted); font-size:.93rem; margin-bottom:0; }
+    .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .feature { border-radius:18px; background:var(--surface); border:1px solid var(--line); padding:23px; }
+    .feature .num { color:var(--accent-dark); font-size:.76rem; letter-spacing:.12em; font-weight:850; }
+    .feature h3 { margin:13px 0 8px; font-size:1.1rem; }
+    .feature p { color:var(--muted); font-size:.94rem; margin:0; }
+    .prototype { display:grid; grid-template-columns:1fr .8fr; gap:26px; align-items:center; }
+    .prototype-preview { background:var(--dark); color:white; border-radius:24px; padding:28px; min-height:300px; display:flex; flex-direction:column; justify-content:space-between; }
+    .preview-top { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:.76rem; font-weight:800; }
+    .preview-question { font-size:clamp(1.5rem,3vw,2.3rem); letter-spacing:-.04em; line-height:1.15; max-width:500px; }
+    .preview-option { border:1px solid rgba(255,255,255,.25); border-radius:12px; padding:12px 14px; margin-top:9px; font-size:.9rem; }
+    .prototype-copy p { color:var(--muted); }
+    .artifact-list { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .artifact { display:flex; justify-content:space-between; align-items:center; gap:15px; background:var(--surface); border:1px solid var(--line); border-radius:15px; padding:16px 18px; text-decoration:none; }
+    .artifact:hover { border-color:#9bb65b; }
+    .artifact span { display:block; font-weight:750; }
+    .artifact small { color:var(--muted); display:block; margin-top:3px; }
+    .arrow { font-size:1.25rem; color:var(--accent-dark); }
+    .evaluation-list { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .eval { border-top:3px solid var(--accent); padding:19px 18px; background:rgba(255,255,255,.72); border-radius:0 0 15px 15px; }
+    .eval h3 { font-size:1.04rem; margin-bottom:8px; }
+    .eval p { color:var(--muted); font-size:.93rem; margin:0; }
+    .reflection { background:var(--soft); border:1px solid var(--line); border-radius:22px; padding:28px; }
+    .reflection p { margin-bottom:0; color:#43513e; }
+    .footer { background:var(--dark); color:white; padding:38px 0; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .footer p { color:rgba(255,255,255,.7); margin:5px 0 0; font-size:.9rem; }
+    .footer a { color:var(--accent); text-decoration:none; font-weight:750; }
+    @media (max-width:850px) {
+      .hero-grid,.prototype { grid-template-columns:1fr; }
+      .hero-art { min-height:360px; }
+      .meta-grid { grid-template-columns:repeat(2,1fr); }
+      .steps { grid-template-columns:repeat(2,1fr); }
+      .feature-grid,.evaluation-list { grid-template-columns:1fr; }
+    }
+    @media (max-width:560px) {
+      .wrap { width:min(100% - 28px, 1120px); }
+      .hero { padding:54px 0 45px; }
+      section { padding:52px 0; }
+      .two-col,.artifact-list,.steps { grid-template-columns:1fr; }
+      .meta-grid { gap:8px; }
+      .meta { padding:13px; }
+      .panel { padding:22px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .nav a.back { max-width:130px; text-align:right; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { transition:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Portfolio home">ZAINAB<span>.</span></a>
+      <a class="back" href="https://zainabswork.vercel.app/">← Back to portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Instructional design case study</div>
+            <h1>Data Security at Work: Making the Right Decision</h1>
+            <p class="lead">A scenario-based learning concept designed to help employees pause, assess risk, and choose a safer next step before sharing confidential workplace files.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#solution">Explore the solution <span aria-hidden="true">↓</span></a>
+              <a class="btn secondary" href="#process">View my process</a>
+            </div>
+            <div class="notice"><strong>Portfolio transparency:</strong> Maple Bridge Advisory is a fictional organization. This is a self-initiated concept project, not commissioned client work. No learner pilot or workplace impact study has been conducted.</div>
+          </div>
+          <div class="hero-art" aria-label="Illustration of a workplace file-sharing decision">
+            <div class="art-label"><span>Decision point</span><span class="pill">Scenario 01</span></div>
+            <div class="art-card">
+              <small>Workplace situation</small>
+              <h3>You need to share a client file quickly. What should you check first?</h3>
+              <div class="decision"><span class="dot"></span><span>Confirm the recipient is authorized and use the approved sharing process.</span></div>
+              <div class="decision risky"><span class="dot"></span><span>Send it through the fastest available channel.</span></div>
+            </div>
+            <div class="art-footer"><span>Practice decision-making</span><span>Feedback → Retry → Apply</span></div>
+          </div>
+        </div>
+        <div class="meta-grid" aria-label="Project overview">
+          <div class="meta"><b>Project type</b><span>Self-initiated</span></div>
+          <div class="meta"><b>Audience</b><span>New consultants & support staff</span></div>
+          <div class="meta"><b>Format</b><span>Scenario-based eLearning concept</span></div>
+          <div class="meta"><b>Prototype tool</b><span>PowerPoint</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenge" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">01 / The challenge</div>
+          <h2>Make the safe choice easier to recognize.</h2>
+          <p>Security guidance can be hard to apply in the moment—especially when someone is busy, responding to a request, or trying to meet a deadline. The learning concept focuses on the decision employees make immediately before sharing a file.</p>
+        </div>
+        <div class="two-col">
+          <article class="panel">
+            <h3>Potential performance problem</h3>
+            <p>Employees may share confidential files without first checking whether the recipient is authorized or whether the sharing method follows the approved process.</p>
+          </article>
+          <article class="panel">
+            <h3>Design implication</h3>
+            <p>Rather than relying only on a policy summary, the concept gives learners realistic decisions, clear consequences, and an opportunity to retry after an unsafe choice.</p>
+          </article>
+        </div>
+        <div class="notice"><strong>Important assumption:</strong> In a real engagement, the performance gap and its causes would need to be validated with stakeholders and available evidence. Training alone may not solve barriers caused by tools, permissions, unclear procedures, or workload.</div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">02 / Audience & objective</div>
+          <h2>Design for a decision learners need to make.</h2>
+          <p>The proposed audience is newly hired consultants and administrative support staff who may handle client documents as part of their work.</p>
+        </div>
+        <div class="two-col">
+          <article class="panel">
+            <h3>Audience considerations</h3>
+            <ul class="clean">
+              <li>May have different levels of experience with company security procedures.</li>
+              <li>Need concise, relevant guidance that can be applied to a work task.</li>
+              <li>Benefit from seeing why a choice is risky, not just being told it is wrong.</li>
+              <li>Need a clear approved next step when they are uncertain.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Design response</h3>
+            <ul class="clean">
+              <li>Use short workplace scenarios instead of long blocks of policy text.</li>
+              <li>Give immediate, specific feedback for correct and incorrect choices.</li>
+              <li>Provide retry opportunities so mistakes become practice.</li>
+              <li>Keep navigation consistent and use readable, high-contrast layouts.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="objective">
+          <div class="label">Proposed measurable learning objective</div>
+          <p>Given three workplace file-sharing scenarios, the learner will correctly identify the secure next step in each scenario, achieving 100% on the scenario assessment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">03 / My process</div>
+          <h2>From a performance question to a learning prototype.</h2>
+          <p>The project was structured to make the reasoning behind the learning experience visible—not just the final slides.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Analyze</h3><p>Defined the potential performance problem, audience, context, assumptions, and questions that would need stakeholder validation.</p></article>
+          <article class="step"><h3>Design</h3><p>Created a measurable objective and mapped scenario decisions, feedback, and assessment alignment.</p></article>
+          <article class="step"><h3>Develop</h3><p>Built an editable PowerPoint prototype with branching answer paths, feedback, and retry navigation.</p></article>
+          <article class="step"><h3>Evaluate</h3><p>Outlined expert review, usability testing, learning checks, and a proposed follow-up to explore transfer to the workplace.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">04 / The solution</div>
+          <h2>Practice the decision, not just the definition.</h2>
+          <p>The prototype demonstrates a short scenario-based experience where learners select an action, receive feedback, and try again when needed.</p>
+        </div>
+        <div class="prototype">
+          <div class="prototype-preview" role="img" aria-label="Illustrative preview of a scenario question with two response choices">
+            <div class="preview-top">Scenario-based practice</div>
+            <div>
+              <div class="preview-question">A colleague asks you to send a client file to a new email address.</div>
+              <div class="preview-option">A. Send it immediately to avoid delaying the work.</div>
+              <div class="preview-option">B. Verify authorization and follow the approved sharing process.</div>
+            </div>
+            <div class="preview-top">Choose → Get feedback → Retry if needed</div>
+          </div>
+          <div class="prototype-copy">
+            <span class="pill">Prototype status: concept demonstration</span>
+            <h3 style="font-size:1.5rem;letter-spacing:-.04em;margin:18px 0 10px;">What the prototype demonstrates</h3>
+            <ul class="clean">
+              <li>Separate correct and incorrect feedback paths.</li>
+              <li>Retry links after an incorrect answer.</li>
+              <li>Scenario practice and a final assessment sequence.</li>
+              <li>Consistent visual structure and navigation intent.</li>
+            </ul>
+            <p style="margin-top:16px;">The PowerPoint version does not automatically calculate or store a cumulative assessment score. A production version would need reliable scoring and appropriate data capture.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="assets/maple_bridge_qa_v2.pptx" download>Download interactive prototype ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evaluation" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">05 / Evaluation plan</div>
+          <h2>Define the evidence before claiming success.</h2>
+          <p>The evaluation is proposed, not completed. It separates evidence of learning from evidence that behavior may be changing at work.</p>
+        </div>
+        <div class="evaluation-list">
+          <article class="eval"><h3>Expert review</h3><p>Ask a subject-matter reviewer to validate the policy logic, examples, and recommended actions before learner testing.</p></article>
+          <article class="eval"><h3>Usability & learning</h3><p>Test navigation and feedback with representative users, then check whether learners can correctly answer all three scenario items.</p></article>
+          <article class="eval"><h3>Transfer to work</h3><p>If feasible, review follow-up feedback and appropriate aggregate process indicators. Investigate workflow barriers before attributing any change to training.</p></article>
+        </div>
+        <div class="hero-actions">
+          <a class="btn secondary" href="assets/maple_bridge_evaluation_plan.docx" download>Download evaluation plan ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="artifacts">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">06 / Project artifacts</div>
+          <h2>Supporting design documentation.</h2>
+          <p>These documents show the thinking and planning behind the prototype. Add or remove links based on the files you decide to publish.</p>
+        </div>
+        <div class="artifact-list">
+          <a class="artifact" href="assets/performance_problem_analysis_data_security.docx" download><span>Performance problem analysis<small>Problem statement, assumptions, and discovery questions</small></span><b class="arrow">↗</b></a>
+          <a class="artifact" href="assets/maple_bridge_company_audience_profile.docx" download><span>Company & audience profile<small>Fictional context and audience considerations</small></span><b class="arrow">↗</b></a>
+          <a class="artifact" href="assets/maple_bridge_learning_objectives.docx" download><span>Learning objectives<small>Objective options and recommended wording</small></span><b class="arrow">↗</b></a>
+          <a class="artifact" href="assets/maple_bridge_data_security_storyboard.docx" download><span>Storyboard<small>Screen sequence, interactions, and feedback plan</small></span><b class="arrow">↗</b></a>
+        </div>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:14px;">Before publishing, confirm that each linked file is included in the <code>assets</code> folder. If you prefer a cleaner public portfolio, you can publish only the prototype and keep working documents private.</p>
+      </div>
+    </section>
+
+    <section id="reflection" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">07 / Reflection & next steps</div>
+          <h2>A prototype is a starting point for evidence-led improvement.</h2>
+        </div>
+        <div class="reflection">
+          <p>The next iteration would validate the security workflow with a subject-matter expert, test every answer and retry path in slideshow mode, improve accessibility, and implement reliable assessment scoring. A small usability pilot would then inform revisions before any broader rollout. Because this is a fictional, self-initiated project, no learner outcomes or business impact are claimed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Designed by Zainab</strong>
+        <p>Instructional design · Learning experience design · eLearning concepts</p>
+      </div>
+      <a href="https://zainabswork.vercel.app/">Visit portfolio ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
