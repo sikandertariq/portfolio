@@ -3,14 +3,16 @@
 
     python3 tools/pptx_to_player.py deck.pptx slides_dir courses/<slug>
 
-slides_dir holds one rendered image per slide (01.jpg, 02.jpg, ...), hidden
-slides included. Writes courses/<slug>/course.json plus copies of the slide
+slides_dir holds two renders per slide, hidden slides included: NN.webp
+(1920 wide) and NN@2x.webp (3840 wide, for full screen / retina). Writes courses/<slug>/course.json plus copies of the slide
 images and audio. Reproduces what the deck does in slide show: hyperlink
 buttons (incl. jumps to hidden slides), audio that auto-plays or plays when a
 shape is clicked, looping / play-across-slides audio, and slide transitions
 (as a crossfade; Morph can't be rebuilt from flat images).
 
-Slides are rendered with LibreOffice -> PDF -> JPG (unhide hidden slides first).
+Render slides from real PowerPoint (LibreOffice substitutes Calibri/Cambria and
+mis-draws button text): unhide all slides, File > Save As PDF, then rasterize the
+PDF with pypdfium2 at 3840 px and downscale to 1920 (WebP q92).
 ehr-challenge: audio/media4.mp3 was a 1-hour loop; trimmed afterwards to 10 min:
     ffmpeg -i media4.mp3 -t 600 -af "afade=t=in:d=2,afade=t=out:st=596:d=4" -ac 1 -b:a 64k out.mp3
 """
@@ -170,8 +172,9 @@ def main(pptx, slides_dir, out):
         dur = 0
         if tr is not None:
             dur = int(tr.get('{%s}dur' % NS['p14']) or {'slow': 1000, 'med': 750, 'fast': 500}.get(tr.get('spd'), 700))
-        img = f'slides/{i + 1:02}.jpg'
-        shutil.copy(f'{slides_dir}/{i + 1:02}.jpg', f'{out}/{img}')
+        img = f'slides/{i + 1:02}.webp'
+        for name in (f'{i + 1:02}.webp', f'{i + 1:02}@2x.webp'):
+            shutil.copy(f'{slides_dir}/{name}', f'{out}/slides/{name}')
         text = ' '.join(t.text.strip() for t in sld.iter('{%s}t' % NS['a']) if t.text and t.text.strip())
         slides.append({'image': img, 'hidden': sld.get('show') == '0', 'text': text,
                        'transition': min(dur, 1200),  # ponytail: crossfade stands in for Morph

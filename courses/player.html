@@ -15,12 +15,14 @@
     .stage { position: relative; width: min(100vw, calc(100dvh * var(--ratio, 1.7778)));
       aspect-ratio: var(--ratio, 1.7778); overflow: hidden; background: #111; }
     .stage img { position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: contain; opacity: 0; transition: opacity var(--fade, 0ms) ease; user-select: none; }
+      object-fit: contain; opacity: 0; transition: opacity var(--fade, 0ms) ease; user-select: none;
+      -webkit-user-drag: none; }
     .stage img.on { opacity: 1; }
 
-    .hotspot { position: absolute; padding: 0; border: 0; background: transparent;
-      border-radius: 10px; cursor: pointer; z-index: 2; transition: background .15s; }
-    .hotspot:hover { background: rgba(255, 255, 255, .14); }
+    /* invisible click areas over the slide's own buttons (keyboard users get an outline) */
+    .hotspot { position: absolute; padding: 0; border: 0; background: none; appearance: none;
+      cursor: pointer; z-index: 2; -webkit-tap-highlight-color: transparent; }
+    .hotspot:focus { outline: none; }
     .hotspot:focus-visible { outline: 3px solid #ffbf47; outline-offset: 2px; }
 
     .pill { position: absolute; z-index: 3; left: 50%; bottom: 4%; transform: translateX(-50%);
@@ -111,9 +113,17 @@
       return 'end';
     }
 
-    function preload(i) {
-      if (slides[i]) new Image().src = base + slides[i].image;
+    // 1920 or 3840 px render: the browser picks by on-screen size x pixel density
+    function setSrc(img, s) {
+      img.sizes = stage.clientWidth + 'px';
+      img.srcset = `${base + s.image} 1920w, ${base + s.image.replace('.webp', '@2x.webp')} 3840w`;
+      img.src = base + s.image;
     }
+    function preload(i) {
+      if (slides[i]) setSrc(new Image(), slides[i]);
+    }
+    // entering full screen makes the stage bigger: let the browser upgrade to the 3840 render
+    addEventListener('resize', () => { front.sizes = stage.clientWidth + 'px'; });
 
     let front = $('imgA'), backImg = $('imgB');
     async function show(i, fromBack) {
@@ -129,7 +139,7 @@
       });
 
       // crossfade (stands in for PowerPoint's Morph / Fade)
-      backImg.src = base + s.image;
+      setSrc(backImg, s);
       backImg.alt = s.text;
       try { await backImg.decode(); } catch {}
       stage.style.setProperty('--fade', (cur < 0 ? 0 : s.transition) + 'ms');
