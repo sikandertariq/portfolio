@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Course</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #000; overflow: hidden;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    body { display: grid; place-items: center; }
+
+    /* 16:9 (or the deck's ratio) stage, as large as the window allows */
+    .stage { position: relative; width: min(100vw, calc(100dvh * var(--ratio, 1.7778)));
+      aspect-ratio: var(--ratio, 1.7778); overflow: hidden; background: #111; }
+    .stage img { position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: contain; opacity: 0; transition: opacity var(--fade, 0ms) ease; user-select: none; }
+    .stage img.on { opacity: 1; }
+
+    .hotspot { position: absolute; padding: 0; border: 0; background: transparent;
+      border-radius: 10px; cursor: pointer; z-index: 2; transition: background .15s; }
+    .hotspot:hover { background: rgba(255, 255, 255, .14); }
+    .hotspot:focus-visible { outline: 3px solid #ffbf47; outline-offset: 2px; }
+
+    .pill { position: absolute; z-index: 3; left: 50%; bottom: 4%; transform: translateX(-50%);
+      padding: .6em 1.2em; border: 0; border-radius: 999px; font: 600 clamp(12px, 1.6vw, 16px) inherit;
+      background: rgba(20, 30, 40, .85); color: #fff; cursor: pointer; }
+    .pill[hidden] { display: none; }
+    .back { left: 2%; bottom: auto; top: 3%; transform: none; }
+
+    .screen { position: absolute; inset: 0; z-index: 4; display: grid; place-content: center; gap: 1rem;
+      text-align: center; color: #fff; background: rgba(10, 15, 20, .88); font-size: clamp(14px, 2vw, 22px); }
+    .screen[hidden] { display: none; }
+    .screen .pill { position: static; transform: none; justify-self: center; }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+    @media (prefers-reduced-motion: reduce) { .stage img { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="stage" id="stage" aria-label="Interactive course">
+    <img alt="" id="imgA" />
+    <img alt="" id="imgB" />
+    <div id="hotspots"></div>
+    <button class="pill" id="sound" hidden>🔊 Tap to turn on sound</button>
+    <button class="pill back" id="back" hidden>← Back</button>
+    <div class="screen" id="message" hidden></div>
+    <p class="sr-only" aria-live="polite" id="live"></p>
+  </main>
+
+  <script>
+  // Plays a course made by tools/pptx_to_player.py: courses/player.html?c=<slug>
+  (async () => {
+    const slug = new URLSearchParams(location.search).get('c') || '';
+    const $ = id => document.getElementById(id);
+    const stage = $('stage'), layer = $('hotspots'), live = $('live');
+
+    function fail(text) { $('message').textContent = text; $('message').hidden = false; }
+    if (!/^[\w-]+$/.test(slug)) return fail('Course not found.');
+
+    const base = `${slug}/`;
+    let course;
+    try {
+      const res = await fetch(base + 'course.json');
+      if (!res.ok) throw new Error(res.status);
+      course = await res.json();
+    } catch { return fail('Could not load this course. Please refresh the page.'); }
+
+    const slides = course.slides;
+    stage.style.setProperty('--ratio', course.aspect);
+
+    // ── audio: one element per file; `left` = slides it may still play across
+    const tracks = {};
+    let blocked = [];
+    function track(src) {
+      if (!tracks[src]) {
+        const a = new Audio(base + src);
+        a.preload = 'auto';
+        tracks[src] = { a, left: 0 };
+      }
+      return tracks[src];
+    }
+    function play(spec, restart) {
+      const t = track(spec.src);
+      t.a.loop = spec.loop;
+      t.a.volume = Math.min(1, spec.vol);
+      t.left = spec.span;
+      if (restart) t.a.currentTime = 0;
+      else if (!t.a.paused) return;       // already playing from an earlier slide: let it continue
+      t.a.play().catch(() => { blocked.push(t.a); $('sound').hidden = false; });
+    }
+    $('sound').onclick = () => {
+      blocked.forEach(a => a.play().catch(() => {}));
+      blocked = [];
+      $('sound').hidden = true;
+    };
+
+    // ── navigation
+    let cur = -1;
+    const history = [];
+    const visible = slides.map((s, i) => i).filter(i => !slides[i].hidden);
+
+    function resolve(to) {
+      if (typeof to === 'number') return to;
+      if (to === 'first') return visible[0];
+      if (to === 'last') return visible[visible.length - 1];
+      if (to === 'next') return visible.find(i => i > cur) ?? 'end';
+      if (to === 'prev') return [...visible].reverse().find(i => i < cur) ?? cur;
+      return 'end';
+    }
+
+    function preload(i) {
+      if (slides[i]) new Image().src = base + slides[i].image;
+    }
+
+    let front = $('imgA'), backImg = $('imgB');
+    async function show(i, fromBack) {
+      if (i === 'end') return end();
+      if (!slides[i] || i === cur) return;
+      $('message').hidden = true;
+      if (cur >= 0 && !fromBack) history.push(cur);
+      const s = slides[i];
+
+      // stop audio that doesn't carry over to this slide
+      Object.values(tracks).forEach(t => {
+        if (!t.a.paused && --t.left <= 0) { t.a.pause(); t.a.currentTime = 0; }
+      });
+
+      // crossfade (stands in for PowerPoint's Morph / Fade)
+      backImg.src = base + s.image;
+      backImg.alt = s.text;
+      try { await backImg.decode(); } catch {}
+      stage.style.setProperty('--fade', (cur < 0 ? 0 : s.transition) + 'ms');
+      backImg.classList.add('on');
+      front.classList.remove('on');
+      [front, backImg] = [backImg, front];
+      cur = i;
+
+      layer.replaceChildren(...s.links.map(link => {
+        const b = document.createElement('button');
+        b.className = 'hotspot';
+        const [x, y, w, h] = link.box;
+        Object.assign(b.style, { left: x + '%', top: y + '%', width: w + '%', height: h + '%' });
+        b.setAttribute('aria-label', link.label || 'Button');
+        b.onclick = () => {
+          if (link.play) play(s.audio.find(a => a.src === link.play) || { src: link.play, vol: 1, loop: false, span: 1 }, true);
+          else if (link.to?.url) window.open(link.to.url, '_blank', 'noopener');
+          else if (link.to === 'back') show(history.pop() ?? cur, true);
+          else show(resolve(link.to));
+        };
+        if (!link.play && !link.to?.url) preload(resolve(link.to));
+        return b;
+      }));
+
+      // a slide with no way out (no navigation buttons) gets a Back button
+      $('back').hidden = cur === visible[0] || s.links.some(l => !l.play);
+
+      s.audio.filter(a => a.start === 'auto').forEach(a => play(a, false));
+      live.textContent = s.text;
+    }
+    $('back').onclick = () => show(history.pop() ?? visible[0], true);
+
+    function end() {
+      Object.values(tracks).forEach(t => { t.a.pause(); t.a.currentTime = 0; });
+      const m = $('message');
+      m.innerHTML = '<p>You’ve reached the end of the course.</p>';
+      const again = document.createElement('button');
+      again.className = 'pill';
+      again.textContent = '↺ Start again';
+      again.onclick = () => { history.length = 0; cur = -1; show(visible[0]); };
+      m.append(again);
+      m.hidden = false;
+    }
+
+    show(visible[0]);
+  })();
+  </script>
+</body>
+</html>

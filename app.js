@@ -26,6 +26,19 @@ const ICONS = {
 };
 
 
+// ── Helpers: only embed https URLs; escape text placed in attributes ─
+function safeHttpsUrl(url) {
+  if (!url || !String(url).trim()) return '';
+  try {
+    const u = new URL(url, window.location.href);
+    return u.protocol === 'https:' || u.origin === window.location.origin ? u.href : '';
+  } catch { return ''; }
+}
+function escapeAttr(str) {
+  return String(str ?? '').replace(/[&"<>]/g, c => ({ '&': '&amp;', '"': '&quot;', '<': '&lt;', '>': '&gt;' }[c]));
+}
+
+
 // ── Helper: create image with placeholder fallback ───────────────────
 function createImage(src, alt, className = '', placeholderClass = 'placeholder-image') {
   if (!src || src.includes('placeholder')) {
@@ -120,23 +133,38 @@ function initLightbox() {
   overlay.id = 'lightbox';
   overlay.innerHTML = `
     <button class="lightbox-close" aria-label="Close lightbox">${ICONS.close}</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">${ICONS.arrowLeft}</button>
     <img src="" alt="" />
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">${ICONS.arrowRight}</button>
   `;
   document.body.appendChild(overlay);
 
   const overlayImg = overlay.querySelector('img');
   const closeBtn = overlay.querySelector('.lightbox-close');
+  const SELECTOR = '.project-gallery img, .gallery-item img';
+  let current = -1;
+
+  function show(i) {
+    const imgs = [...document.querySelectorAll(SELECTOR)];
+    if (!imgs.length) return;
+    current = (i + imgs.length) % imgs.length;
+    overlayImg.src = imgs[current].src;
+    overlayImg.alt = imgs[current].alt;
+    overlay.classList.toggle('single', imgs.length < 2);
+  }
 
   // Open lightbox on image click
   document.addEventListener('click', (e) => {
-    const galleryImg = e.target.closest('.project-gallery img, .gallery-item img');
+    const galleryImg = e.target.closest(SELECTOR);
     if (galleryImg) {
-      overlayImg.src = galleryImg.src;
-      overlayImg.alt = galleryImg.alt;
+      show([...document.querySelectorAll(SELECTOR)].indexOf(galleryImg));
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
+      closeBtn.focus();
     }
   });
+  overlay.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
+  overlay.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
 
   // Close lightbox
   function closeLightbox() {
@@ -149,7 +177,10 @@ function initLightbox() {
     if (e.target === overlay) closeLightbox();
   });
   document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
   });
 }
 
@@ -300,7 +331,7 @@ function createProjectCard(project) {
     <div class="project-card-tools">
       ${project.tools.map(t => `<span class="tool-tag">${t}</span>`).join('')}
     </div>
-    <a href="project.html?id=${project.id}" class="btn btn-primary">Learn More</a>
+    <a href="project.html?id=${encodeURIComponent(project.id)}" class="btn btn-primary">Learn More</a>
   `;
 
   card.appendChild(imageWrapper);
@@ -425,8 +456,32 @@ async function renderProjectPage() {
   // Set page title
   document.title = `${project.title} | Portfolio`;
 
+  // Live demo (published Storyline/Rise URL) replaces the hero image
+  const demoEl = document.getElementById('project-demo');
+  const demoUrl = safeHttpsUrl(project.demoUrl);
+  if (demoEl && demoUrl) {
+    demoEl.className = 'project-demo';
+    demoEl.innerHTML = `
+      <div class="project-demo-frame">
+        <iframe src="${demoUrl}" title="${escapeAttr(project.title)} — interactive demo"
+          allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="project-demo-actions">
+        <a href="${demoUrl}" class="btn btn-primary project-demo-fullscreen" target="_blank" rel="noopener noreferrer">Open full screen</a>
+        <span>Best viewed on desktop with sound on.</span>
+      </p>`;
+    // True fullscreen where supported (not iPhone Safari); otherwise the link opens a new tab
+    demoEl.querySelector('.project-demo-fullscreen').addEventListener('click', (e) => {
+      const frame = demoEl.querySelector('iframe');
+      if (frame.requestFullscreen && document.fullscreenEnabled) {
+        e.preventDefault();
+        frame.requestFullscreen();
+      }
+    });
+  }
+
   // Hero image
-  if (heroImg) {
+  if (heroImg && !demoUrl) {
     const img = createImage(
       project.images && project.images[0] ? project.images[0] : project.thumbnail,
       project.title,
@@ -441,15 +496,19 @@ async function renderProjectPage() {
     heroImg.appendChild(img);
   }
 
-  // Content sections
-  if (overviewEl && project.overview) overviewEl.textContent = project.overview;
-  if (problemEl && project.problem) problemEl.textContent = project.problem;
-  if (solutionEl && project.solution) solutionEl.textContent = project.solution;
-  if (resultsEl && project.results) resultsEl.textContent = project.results;
+  // Content sections (heading + body hidden when left blank in the CMS)
+  [[overviewEl, project.overview], [problemEl, project.problem],
+   [solutionEl, project.solution], [resultsEl, project.results]].forEach(([el, text]) => {
+    if (!el) return;
+    if (text) el.textContent = text;
+    else { el.previousElementSibling?.remove(); el.remove(); }
+  });
 
   // Process steps
-  if (processEl && project.process) {
+  if (processEl && project.process?.length) {
     processEl.innerHTML = project.process.map(step => `<li>${step}</li>`).join('');
+  } else if (processEl) {
+    processEl.previousElementSibling?.remove(); processEl.remove();
   }
 
   // Sidebar tools
@@ -458,8 +517,8 @@ async function renderProjectPage() {
   }
 
   // Image gallery (skip first if used as hero)
-  if (galleryEl && project.images && project.images.length > 1) {
-    const galleryImages = project.images.slice(1);
+  const galleryImages = (project.images || []).slice(demoUrl ? 0 : 1);
+  if (galleryEl && galleryImages.length) {
     galleryImages.forEach(src => {
       const img = createImage(src, `${project.title} screenshot`, '', 'placeholder-project');
       if (img.tagName !== 'IMG') {
@@ -521,10 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderContactPage();
       break;
     case 'project':
-      renderProjectPage().then(() => {
-        setTimeout(initScrollAnimations, 100);
-        initLightbox();
-      });
+      renderProjectPage().then(() => setTimeout(initScrollAnimations, 100));
       break;
   }
 });

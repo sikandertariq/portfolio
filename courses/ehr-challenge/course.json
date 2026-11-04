@@ -1,0 +1,761 @@
+{
+ "aspect": 1.7777777777777777,
+ "slides": [
+  {
+   "image": "slides/01.jpg",
+   "hidden": false,
+   "text": "Clinical Decisions The Nurse\u2019s EHR Challenge A realistic, interactive simulation to practice accurate, safe and policy-aligned electronic health record ( EH R) documentation Begin",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media1.mp3",
+     "vol": 0.8,
+     "loop": true,
+     "span": 2,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      17.362,
+      40.326,
+      14.417,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 13"
+    },
+    {
+     "box": [
+      40.927,
+      40.524,
+      4.552,
+      8.093
+     ],
+     "play": "audio/media1.mp3",
+     "label": "Play narration"
+    }
+   ]
+  },
+  {
+   "image": "slides/02.jpg",
+   "hidden": false,
+   "text": "Welcome to the RIVERMERE HEALTH practice environment. You will review a fictional record, identify documentation issues, and choose an appropriate next action. Continue",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media2.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      44.06,
+      56.17,
+      14.417,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 14"
+    },
+    {
+     "box": [
+      80.615,
+      52.729,
+      3.415,
+      6.071
+     ],
+     "play": "audio/media2.mp3",
+     "label": "Play narration"
+    }
+   ]
+  },
+  {
+   "image": "slides/03.jpg",
+   "hidden": false,
+   "text": "Clinical Decisions: The Nurse\u2019s EHR Challenge Practice accurate and safe documentation in a realistic hospital EHR environment Start Simulation 1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Help Exit Your Goal Complete the documentation workflow accurately and consistently using the hospital EHR Estimated Time 10 \u2013 15 Minutes How It Works Follow the scenario, interact with EHR, and make decisions. You can retry if needed Help Exit",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media4.mp3",
+     "vol": 0.8,
+     "loop": true,
+     "span": 1,
+     "start": "auto"
+    },
+    {
+     "src": "audio/media3.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      89.132,
+      2.018,
+      3.947,
+      7.018
+     ],
+     "to": 13,
+     "label": "Help"
+    },
+    {
+     "box": [
+      23.464,
+      74.977,
+      25.843,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 13"
+    },
+    {
+     "box": [
+      89.131,
+      2.077,
+      3.947,
+      7.018
+     ],
+     "to": 13,
+     "label": "Help"
+    },
+    {
+     "box": [
+      88.011,
+      8.272,
+      6.187,
+      4.039
+     ],
+     "to": 13,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.373,
+      8.371,
+      6.187,
+      4.039
+     ],
+     "to": 14,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      18.824,
+      39.794,
+      3.415,
+      6.071
+     ],
+     "play": "audio/media3.mp3",
+     "label": "Play narration"
+    }
+   ]
+  },
+  {
+   "image": "slides/04.jpg",
+   "hidden": false,
+   "text": "Scenario 1: Select the Correct Patient and Encounter Continue You need to review the morning assessment for a 68 year old female who was admitted yesterday to the Medical Unit for pneumonia Continue",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media5.mp3",
+     "vol": 0.16667,
+     "loop": false,
+     "span": 2,
+     "start": "auto"
+    },
+    {
+     "src": "audio/media6.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      37.605,
+      57.1,
+      22.492,
+      5.834
+     ],
+     "to": 4,
+     "label": "Continue"
+    },
+    {
+     "box": [
+      80.615,
+      52.729,
+      3.415,
+      6.071
+     ],
+     "play": "audio/media6.mp3",
+     "label": "Play narration"
+    }
+   ]
+  },
+  {
+   "image": "slides/05.jpg",
+   "hidden": false,
+   "text": "Before accessing a patient's record, always verify at least two patient identifiers. Check for similar or duplicate patient records, Verify that the encounter details match the patient's current visit and, review all information carefully before proceeding with any documentation or care-related activities. Continue Continue",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media7.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    },
+    {
+     "src": "audio/media8.mp3",
+     "vol": 0.21212,
+     "loop": true,
+     "span": 1,
+     "start": "auto"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      10.738,
+      72.627,
+      22.492,
+      5.834
+     ],
+     "to": 5,
+     "label": "Continue"
+    },
+    {
+     "box": [
+      34.159,
+      68.052,
+      3.415,
+      6.071
+     ],
+     "play": "audio/media7.mp3",
+     "label": "Play narration"
+    }
+   ]
+  },
+  {
+   "image": "slides/06.jpg",
+   "hidden": false,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Select the Correct Patient and Encounter Patient Search Miller Name MRN Date of Birth Age Unit Miller, Patricia Miller, Patrick Miller, Paula Miller, Paula 243653 832494 487594 734329 14 Mar 1958 18 Aug 1954 03 Jan 1988 14 Mar 1958 68 72 38 68 Medical Surgery Medical Rehab Patient Details Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Date Encounter type Unit Status 02 Nov 2026 08 Sep 2026 12 May 2026 11 Jan 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Respiratory Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Submit Back",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      93.428,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 15,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      88.013,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 10,
+     "label": "Help"
+    },
+    {
+     "box": [
+      79.552,
+      91.16,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit"
+    },
+    {
+     "box": [
+      63.354,
+      91.407,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    }
+   ]
+  },
+  {
+   "image": "slides/07.jpg",
+   "hidden": false,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Review the Record Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Submit Back Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Vital Signs Medications Orders Lab Results Imaging Care Plan Nursing Notes 02 Nov 2026    09:00 Patient resting in bed. Alert and oriented. Reports SOB. 02 given via nasal cannula. Lung sounds: clear bilaterally. Denies chest pain. No cough. Vital signs stable. Patient tolerated breakfast. Ambulated to bathroom with assistance. Plan: Continue current treatment. Signed: S. Jenkins, RN Your Task Identify all documentation issues in this nursing note. Click on the text to highlight the issues you find. Select all that apply. Missing pain level assessment Missing O, flow rate Inconsistent lung assessment Vital signs are not documented \ufeff\ufeffMissing patient response to oxygen \ufeff\ufeffMissing time for ambulation \ufeff\ufeffMissing provider notification \ufeff\ufeffNote is missing the nurse's full name",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      93.428,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 16,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      79.552,
+      91.16,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit"
+    },
+    {
+     "box": [
+      63.354,
+      91.407,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    },
+    {
+     "box": [
+      88.013,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 11,
+     "label": "Help"
+    }
+   ]
+  },
+  {
+   "image": "slides/08.jpg",
+   "hidden": false,
+   "text": "Scenario 2: Choose the Appropriate Next Action Continue You are completing the nursing note and notice that the patient's pain level is documented as 8/10, but there is no record of any pain medication administered, and no provider notification is documented.",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      37.605,
+      57.159,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Continue"
+    }
+   ]
+  },
+  {
+   "image": "slides/09.jpg",
+   "hidden": false,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      93.428,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 17,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      88.013,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 12,
+     "label": "Help"
+    },
+    {
+     "box": [
+      79.552,
+      91.16,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit"
+    },
+    {
+     "box": [
+      63.354,
+      91.407,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    }
+   ]
+  },
+  {
+   "image": "slides/10.jpg",
+   "hidden": false,
+   "text": "Congratulations! Exit You've successfully completed the RIVERMERE HEALTH EHR scenarios by demonstrating your ability to select the correct patient, review patient records for accuracy and completeness, identify documentation issues, and choose appropriate next actions while following safe, accurate, and policy-aligned documentation practices. Restart",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      34.875,
+      54.439,
+      18.411,
+      5.834
+     ],
+     "to": "first",
+     "label": "Restart"
+    }
+   ]
+  },
+  {
+   "image": "slides/11.jpg",
+   "hidden": true,
+   "text": "Ready ? Selecting the Correct Patient 01. Verify two identifiers Confirm the patient's full name and MRN, DOB or another approved identifier. 02. Check for similar records Compare identifiers carefully. Never assume the first search result is correct. 03. Verify the encounter Confirm the encounter type, date, status, clinical unit and whether it matches the task or care activity. 04. Confirm before proceeding Check the patient banner. Stop if any information does not match. Remember A room number or bed location is never an acceptable patient identifier.",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      35.324,
+      91.19,
+      13.888,
+      5.834
+     ],
+     "to": 5,
+     "label": "Ready  ?"
+    }
+   ]
+  },
+  {
+   "image": "slides/12.jpg",
+   "hidden": true,
+   "text": "Got It? EHR Review Record Checklist 01. Patient & Encounter Information Verify patient identifiers, encounter date, unit, and status. Remember A room number or bed location is never an acceptable patient identifier. 02. Allergies & Safety Alerts Review allergies, reactions, and relevant safety alerts. 03. Vital Signs & Assessments Check vital signs, pain assessment, and nursing findings. 04. Medications & Treatments Review medication orders, administration, and treatments. 05. Orders & Investigations Check provider orders, laboratory results, and imaging. 06. Nursing Notes & Documentation Check whether notes are dated, timed, clear, complete, and authenticated. 07. Care Plan & Patient Progress Review goals, interventions, and patient response. 08. Consistency & Completeness Look for missing, conflicting, or inaccurate information.",
+   "transition": 1200,
+   "audio": [],
+   "links": []
+  },
+  {
+   "image": "slides/13.jpg",
+   "hidden": true,
+   "text": "Got it ? Choosing the Appropriate Next Action 01. Understand the concern Identify what is missing, inconsistent, or potentially unsafe in the patient's record. 02. Review the available information Check relevant nursing notes, assessments, medication records, provider notes, and orders before deciding what to do. 03. Prioritize patient safety Consider whether the concern requires prompt assessment, intervention, or communication with the appropriate healthcare professional. 04. Follow approved procedures Check the patient banner. Stop if any information does not match. Remember Never delete, alter, or backdate documentation to hide an error. Follow the approved correction or late-entry procedure. 05. Document accurately Record actions taken, relevant communication, the patient's response, and required follow-up according to policy.",
+   "transition": 1200,
+   "audio": [],
+   "links": []
+  },
+  {
+   "image": "slides/14.jpg",
+   "hidden": true,
+   "text": "Hi, I'm Evelyn, your Head Nurse! Welcome to the team! I'll be here to guide you, if you have questions along the way. I'm here to help. Tap help and I will be there for you! Let\u2019s Start Let\u2019s Start",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media5.mp3",
+     "vol": 0.30303,
+     "loop": true,
+     "span": 1,
+     "start": "auto"
+    },
+    {
+     "src": "audio/media9.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 999,
+     "start": "auto"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      49.401,
+      62.882,
+      22.492,
+      5.834
+     ],
+     "to": 2,
+     "label": "Let\u2019s Start"
+    }
+   ]
+  },
+  {
+   "image": "slides/15.jpg",
+   "hidden": true,
+   "text": "Clinical Decisions: The Nurse\u2019s EHR Challenge Practice accurate and safe documentation in a realistic hospital EHR environment Start Simulation 1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Help Exit Your Goal Complete the documentation workflow accurately and consistently using the hospital EHR Estimated Time 10 \u2013 15 Minutes How It Works Follow the scenario, interact with EHR, and make decisions. You can retry if needed Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge Resume Simulation Restart Simulation Return to Main Menu",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      24.587,
+      76.106,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Start Simulation"
+    },
+    {
+     "box": [
+      89.132,
+      1.424,
+      3.947,
+      7.018
+     ],
+     "to": 13,
+     "label": "Help"
+    },
+    {
+     "box": [
+      27.106,
+      28.591,
+      4.189,
+      7.148
+     ],
+     "to": 2,
+     "label": "Pause"
+    },
+    {
+     "box": [
+      28.299,
+      46.215,
+      26.125,
+      4.937
+     ],
+     "to": 2,
+     "label": "Resume Simulation"
+    },
+    {
+     "box": [
+      28.344,
+      54.695,
+      26.125,
+      4.937
+     ],
+     "to": 1,
+     "label": "Restart Simulation"
+    },
+    {
+     "box": [
+      28.446,
+      62.896,
+      26.125,
+      4.937
+     ],
+     "to": 0,
+     "label": "Return to Main Menu"
+    }
+   ]
+  },
+  {
+   "image": "slides/16.jpg",
+   "hidden": true,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Select the Correct Patient and Encounter Patient Search Miller Name MRN Date of Birth Age Unit Miller, Patricia Miller, Patrick Miller, Paula Miller, Paula 243653 832494 487594 734329 14 Mar 1958 18 Aug 1954 03 Jan 1988 14 Mar 1958 68 72 38 68 Medical Surgery Medical Rehab Patient Details Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Date Encounter type Unit Status 02 Nov 2026 08 Sep 2026 12 May 2026 11 Jan 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Respiratory Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Submit Back Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      27.106,
+      28.591,
+      4.189,
+      7.148
+     ],
+     "to": 2,
+     "label": "Pause"
+    },
+    {
+     "box": [
+      28.343,
+      54.727,
+      26.125,
+      4.937
+     ],
+     "to": 1,
+     "label": "Restart Simulation"
+    },
+    {
+     "box": [
+      28.49,
+      62.897,
+      26.125,
+      4.937
+     ],
+     "to": 0,
+     "label": "Return to Main Menu"
+    },
+    {
+     "box": [
+      28.343,
+      46.244,
+      26.125,
+      4.937
+     ],
+     "to": 5,
+     "label": "Resume Simulation"
+    }
+   ]
+  },
+  {
+   "image": "slides/17.jpg",
+   "hidden": true,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Review the Record Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Submit Back Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Vital Signs Medications Orders Lab Results Imaging Care Plan Nursing Notes 02 Nov 2026    09:00 Patient resting in bed. Alert and oriented. Reports SOB. 02 given via nasal cannula. Lung sounds: clear bilaterally. Denies chest pain. No cough. Vital signs stable. Patient tolerated breakfast. Ambulated to bathroom with assistance. Plan: Continue current treatment. Signed: S. Jenkins, RN Your Task Identify all documentation issues in this nursing note. Click on the text to highlight the issues you find. Select all that apply. Missing pain level assessment Missing O, flow rate Inconsistent lung assessment Vital signs are not documented \ufeff\ufeffMissing patient response to oxygen \ufeff\ufeffMissing time for ambulation \ufeff\ufeffMissing provider notification \ufeff\ufeffNote is missing the nurse's full name Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      88.013,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 11,
+     "label": "Help"
+    },
+    {
+     "box": [
+      27.106,
+      28.591,
+      4.189,
+      7.148
+     ],
+     "to": 2,
+     "label": "Pause"
+    },
+    {
+     "box": [
+      28.343,
+      54.727,
+      26.125,
+      4.937
+     ],
+     "to": 1,
+     "label": "Restart Simulation"
+    },
+    {
+     "box": [
+      28.49,
+      62.897,
+      26.125,
+      4.937
+     ],
+     "to": 0,
+     "label": "Return to Main Menu"
+    },
+    {
+     "box": [
+      28.343,
+      46.244,
+      26.125,
+      4.937
+     ],
+     "to": 5,
+     "label": "Resume Simulation"
+    }
+   ]
+  },
+  {
+   "image": "slides/18.jpg",
+   "hidden": true,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      88.013,
+      7.794,
+      6.187,
+      4.039
+     ],
+     "to": 12,
+     "label": "Help"
+    },
+    {
+     "box": [
+      79.552,
+      91.16,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit"
+    },
+    {
+     "box": [
+      63.354,
+      91.407,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    },
+    {
+     "box": [
+      27.106,
+      28.591,
+      4.189,
+      7.148
+     ],
+     "to": 2,
+     "label": "Pause"
+    },
+    {
+     "box": [
+      28.343,
+      54.727,
+      26.125,
+      4.937
+     ],
+     "to": 1,
+     "label": "Restart Simulation"
+    },
+    {
+     "box": [
+      28.49,
+      62.897,
+      26.125,
+      4.937
+     ],
+     "to": 0,
+     "label": "Return to Main Menu"
+    },
+    {
+     "box": [
+      28.343,
+      46.244,
+      26.125,
+      4.937
+     ],
+     "to": 5,
+     "label": "Resume Simulation"
+    }
+   ]
+  }
+ ]
+}

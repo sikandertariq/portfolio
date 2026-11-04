@@ -1,6 +1,33 @@
 {
   "projects": [
     {
+      "id": "nurse-ehr-challenge",
+      "title": "Clinical Decisions: The Nurse’s EHR Challenge",
+      "subtitle": "Can you spot what’s missing in a patient record before it becomes a safety risk?",
+      "description": "A <strong>scenario-based EHR simulation</strong> where nurses practice accurate, safe and policy-aligned documentation inside a realistic (fictional) hospital record system at Rivermere Health.",
+      "type": "eLearning Simulation",
+      "tools": [
+        "Microsoft PowerPoint"
+      ],
+      "thumbnail": "/courses/ehr-challenge/slides/01.jpg",
+      "images": [],
+      "pdf": "",
+      "demoUrl": "/courses/player.html?c=ehr-challenge",
+      "featured": false,
+      "overview": "Learners step into Rivermere Health, a fictional hospital, and work through a mock electronic health record. Guided by Evelyn, their head nurse, they select the right patient and encounter, review a nursing note for documentation gaps, and choose the safest next action. The experience takes 10–15 minutes and lets learners retry.",
+      "problem": "Documentation errors in EHRs, like choosing the wrong patient among look-alike records or leaving gaps in a nursing note, are a patient-safety risk. Policy documents explain the rules, but nurses rarely get to practice applying them in a system that looks and behaves like the real thing.",
+      "solution": "I built a realistic EHR interface (patient search, banner, tabs for notes, vitals, medications and orders) and wrapped it in two branching scenarios: (1) select the correct patient and encounter from near-duplicate records using two identifiers, and (2) find the gaps in a pain-assessment note and choose the appropriate next action. Each step has narrated audio, a progress tracker, on-demand help and job-aid style feedback checklists.",
+      "results": "Learners practice three high-stakes skills in a risk-free environment: patient identification, record review, and escalation decisions, with feedback tied directly to documentation policy.",
+      "process": [
+        "Identified the target behaviors: verify two patient identifiers, review records for completeness, escalate safely",
+        "Wrote the realistic scenarios and distractors (near-duplicate patients, incomplete pain documentation)",
+        "Designed the mock EHR interface and the Rivermere Health brand",
+        "Storyboarded the slides, help screens and pause menus",
+        "Added narration, a progress tracker and retry paths",
+        "Built the clickable simulation in PowerPoint with triggers, hyperlinked navigation and Morph transitions"
+      ]
+    },
+    {
       "id": "https://devlin.ai/embed/8d2e9e161f717907a831c91e9c89dd2e?mode=standalone",
       "title": "Data Security at Work",
       "subtitle": "Making the Right Decision",

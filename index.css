@@ -927,7 +927,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px 14px;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--color-accent-light);
+  color: var(--color-text-light);
   letter-spacing: 0.03em;
 }
 
@@ -1690,3 +1690,55 @@ h1, h2, h3, h4, h5, h6 {
 .placeholder-project {
   background: linear-gradient(135deg, var(--color-primary) 0%, #2a5a5a 60%, var(--color-accent) 100%);
 }
+
+
+/* ===================================================================
+   LIVE DEMO EMBED (Storyline / Rise) + LIGHTBOX NAV
+   =================================================================== */
+.project-demo { margin-bottom: var(--space-xl); }
+
+.project-demo-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #000;
+}
+
+.project-demo-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.25); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-overlay.single .lightbox-nav { display: none; }
+.lightbox-close svg, .lightbox-nav svg { width: 24px; height: 24px; }
