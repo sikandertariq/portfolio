@@ -13,7 +13,7 @@
       "images": [],
       "pdf": "",
       "demoUrl": "/courses/player.html?c=ehr-challenge",
-      "featured": false,
+      "featured": true,
       "overview": "Learners step into Rivermere Health, a fictional hospital, and work through a mock electronic health record. Guided by Evelyn, their head nurse, they select the right patient and encounter, review a nursing note for documentation gaps, and choose the safest next action. The experience takes 10–15 minutes and lets learners retry.",
       "problem": "Documentation errors in EHRs, like choosing the wrong patient among look-alike records or leaving gaps in a nursing note, are a patient-safety risk. Policy documents explain the rules, but nurses rarely get to practice applying them in a system that looks and behaves like the real thing.",
       "solution": "I built a realistic EHR interface (patient search, banner, tabs for notes, vitals, medications and orders) and wrapped it in two branching scenarios: (1) select the correct patient and encounter from near-duplicate records using two identifiers, and (2) find the gaps in a pain-assessment note and choose the appropriate next action. Each step has narrated audio, a progress tracker, on-demand help and job-aid style feedback checklists.",
