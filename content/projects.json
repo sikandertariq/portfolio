@@ -7,14 +7,14 @@
       "description": "A <strong>scenario-based EHR simulation</strong> where nurses practice accurate, safe and policy-aligned documentation inside a realistic (fictional) hospital record system at Rivermere Health.",
       "type": "eLearning Simulation",
       "tools": [
-        "Articulate Storyline"
+        "Articulate Storyline 360"
       ],
       "thumbnail": "/courses/ehr-challenge/slides/01.webp",
       "images": [],
       "pdf": "",
       "demoUrl": "/courses/player.html?c=ehr-challenge",
       "featured": true,
-      "overview": "Learners step into Rivermere Health, a fictional hospital, and work through a mock electronic health record. Guided by Evelyn, their head nurse, they select the right patient and encounter, review a nursing note for documentation gaps, and choose the safest next action. The experience takes 10–15 minutes and lets learners retry.",
+      "overview": "Learners step into Rivermere Health, a fictional hospital, and work through a mock electronic health record.",
       "problem": "Documentation errors in EHRs, like choosing the wrong patient among look-alike records or leaving gaps in a nursing note, are a patient-safety risk. Policy documents explain the rules, but nurses rarely get to practice applying them in a system that looks and behaves like the real thing.",
       "solution": "I built a realistic EHR interface (patient search, banner, tabs for notes, vitals, medications and orders) and wrapped it in two branching scenarios: (1) select the correct patient and encounter from near-duplicate records using two identifiers, and (2) find the gaps in a pain-assessment note and choose the appropriate next action. Each step has narrated audio, a progress tracker, on-demand help and job-aid style feedback checklists.",
       "results": "Learners practice three high-stakes skills in a risk-free environment: patient identification, record review, and escalation decisions, with feedback tied directly to documentation policy.",
@@ -28,8 +28,6 @@
       ],
       "documents": [
         {
-          "title": "Performance Problem Analysis",
-          "intro": "Self-initiated portfolio project based on a hypothetical healthcare organization. This document frames a potential workplace performance problem before a training solution is selected.",
           "blocks": [
             {
               "heading": "Context",
@@ -72,11 +70,11 @@
               "heading": "ID recommendation",
               "text": "Do not assume that training alone will solve the problem. First validate the performance gap and investigate its causes. If nurses lack the knowledge or skills needed to document accurately, a short scenario-based EHR simulation may help them practise patient selection, data entry, error identification, and record review. If the main barriers involve unclear procedures, interface design, workload, or limited access to practice, those issues should also be addressed."
             }
-          ]
+          ],
+          "intro": "Self-initiated portfolio project based on a hypothetical healthcare organization. This document frames a potential workplace performance problem before a training solution is selected.",
+          "title": "Performance Problem Analysis"
         },
         {
-          "title": "Needs Analysis",
-          "intro": "Define the intended learners, their current capability, the desired performance, relevant constraints, and the information to obtain from subject-matter experts (SMEs) before deciding what instruction to build.",
           "blocks": [
             {
               "heading": "Learners",
@@ -105,10 +103,11 @@
               ]
             }
           ],
-          "note": "This is a fictional, self-initiated instructional design portfolio project. Rivermere Health, the learner scenario, and the potential performance issues are hypothetical and are not based on data from a real healthcare organization. The questions and suggested information to obtain from subject-matter experts were drafted with assistance from OpenAI’s ChatGPT; they are proposed prompts, not findings supplied or validated by actual subject-matter experts. Before any real-world use, clinical details, documentation requirements, and policies must be verified with qualified healthcare subject-matter experts and authoritative organizational sources."
+          "intro": "Define the intended learners, their current capability, the desired performance, relevant constraints, and the information to obtain from subject-matter experts (SMEs) before deciding what instruction to build.",
+          "note": "This is a fictional, self-initiated instructional design portfolio project. Rivermere Health, the learner scenario, and the potential performance issues are hypothetical and are not based on data from a real healthcare organization. The questions and suggested information to obtain from subject-matter experts were drafted with assistance from OpenAI’s ChatGPT; they are proposed prompts, not findings supplied or validated by actual subject-matter experts. Before any real-world use, clinical details, documentation requirements, and policies must be verified with qualified healthcare subject-matter experts and authoritative organizational sources.",
+          "title": "Needs Analysis"
         },
         {
-          "title": "Action Map: What Must the Nurse Do?",
           "table": {
             "head": [
               "Critical action",
@@ -142,10 +141,10 @@
                 "Choose among scenario options, receive explanatory feedback, and retry during practice."
               ]
             ]
-          }
+          },
+          "title": "Action Map: What Must the Nurse Do?"
         },
         {
-          "title": "Learning Objectives",
           "table": {
             "head": [
               "No.",
@@ -173,7 +172,8 @@
                 "Select the correct next action for each scenario."
               ]
             ]
-          }
+          },
+          "title": "Learning Objectives"
         }
       ]
     },
