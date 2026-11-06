@@ -14,10 +14,10 @@
     /* 16:9 (or the deck's ratio) stage, as large as the window allows */
     .stage { position: relative; width: min(100vw, calc(100dvh * var(--ratio, 1.7778)));
       aspect-ratio: var(--ratio, 1.7778); overflow: hidden; background: #111; }
-    .stage img { position: absolute; inset: 0; width: 100%; height: 100%;
+    .stage .slide { position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: contain; opacity: 0; transition: opacity var(--fade, 0ms) ease; user-select: none;
       -webkit-user-drag: none; }
-    .stage img.on { opacity: 1; }
+    .stage .slide.on { opacity: 1; }
 
     /* invisible click areas over the slide's own buttons (keyboard users get an outline) */
     .hotspot { position: absolute; padding: 0; border: 0; background: none; appearance: none;
@@ -40,15 +40,16 @@
 
     /* shapes the deck shows/hides on click (cut out by the converter) */
     .layer { position: absolute; z-index: 1; pointer-events: none; }
+    #layers { transition: opacity var(--fade, 0ms) ease; }
     .layer[hidden], .hotspot[hidden] { display: none; }
 
-    @media (prefers-reduced-motion: reduce) { .stage img { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .stage .slide { transition: none; } }
   </style>
 </head>
 <body>
   <main class="stage" id="stage" aria-label="Interactive course">
-    <img alt="" id="imgA" />
-    <img alt="" id="imgB" />
+    <img alt="" id="imgA" class="slide" />
+    <img alt="" id="imgB" class="slide" />
     <div id="layers"></div>
     <div id="hotspots"></div>
     <button class="pill" id="sound" hidden>🔊 Tap to turn on sound</button>
@@ -169,6 +170,12 @@
       cur = i;
 
       vis = {}; layerEls = {};  // PowerPoint resets a slide's animations each visit
+      const layersEl = $('layers');
+      layersEl.style.transition = 'none';  // new slide's layers fade in with it
+      layersEl.style.opacity = 0;
+      void layersEl.offsetWidth;  // commit opacity 0 before fading in (no rAF: it pauses in hidden tabs)
+      layersEl.style.transition = '';
+      layersEl.style.opacity = 1;
       $('layers').replaceChildren(...s.overlays.filter(o => o.src).map(o => {
         const img = new Image();
         img.className = 'layer';
