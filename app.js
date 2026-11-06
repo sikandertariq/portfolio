@@ -511,6 +511,29 @@ async function renderProjectPage() {
     processEl.previousElementSibling?.remove(); processEl.remove();
   }
 
+  // Design documents: collapsible sections with text blocks and/or a table
+  const docsEl = document.getElementById('project-documents');
+  if (docsEl && project.documents?.length) {
+    const esc = escapeAttr;
+    const block = b => `<h4>${esc(b.heading)}</h4>` + (Array.isArray(b.text)
+      ? `<ul>${b.text.map(t => `<li>${esc(t)}</li>`).join('')}</ul>`
+      : `<p>${esc(b.text)}</p>`);
+    const table = t => `<div class="doc-table-wrap"><table class="doc-table">
+      <thead><tr>${t.head.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead>
+      <tbody>${t.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table></div>`;
+    docsEl.innerHTML = '<h2>Design Documents</h2>' + project.documents.map((d, i) => `
+      <details class="doc-section"${i === 0 ? ' open' : ''}>
+        <summary>${esc(d.title)}</summary>
+        <div class="doc-body">
+          ${d.intro ? `<p class="doc-intro">${esc(d.intro)}</p>` : ''}
+          ${(d.blocks || []).map(block).join('')}
+          ${d.table ? table(d.table) : ''}
+          ${d.note ? `<p class="doc-note">${esc(d.note)}</p>` : ''}
+        </div>
+      </details>`).join('');
+  }
+
   // Sidebar tools
   if (toolsEl && project.tools) {
     toolsEl.innerHTML = project.tools.map(t => `<span class="tool-tag">${t}</span>`).join('');

@@ -7,7 +7,7 @@
       "description": "A <strong>scenario-based EHR simulation</strong> where nurses practice accurate, safe and policy-aligned documentation inside a realistic (fictional) hospital record system at Rivermere Health.",
       "type": "eLearning Simulation",
       "tools": [
-        "Microsoft PowerPoint"
+        "Articulate Storyline"
       ],
       "thumbnail": "/courses/ehr-challenge/slides/01.webp",
       "images": [],
@@ -24,7 +24,157 @@
         "Designed the mock EHR interface and the Rivermere Health brand",
         "Storyboarded the slides, help screens and pause menus",
         "Added narration, a progress tracker and retry paths",
-        "Built the clickable simulation in PowerPoint with triggers, hyperlinked navigation and Morph transitions"
+        "Built the interactive simulation in Articulate Storyline"
+      ],
+      "documents": [
+        {
+          "title": "Performance Problem Analysis",
+          "intro": "Self-initiated portfolio project based on a hypothetical healthcare organization. This document frames a potential workplace performance problem before a training solution is selected.",
+          "blocks": [
+            {
+              "heading": "Context",
+              "text": "Rivermere Health is a fictional healthcare organization that provides inpatient care. Newly hired nurses must use an electronic health record (EHR) system to document patient assessments, enter clinical information, and review records. The organization wants to investigate whether onboarding nurses experience difficulties completing accurate, complete, and consistent electronic documentation."
+            },
+            {
+              "heading": "Performance problem",
+              "text": "The organization is concerned that newly hired nurses may enter incomplete or inconsistent information, select inappropriate documentation fields, or fail to identify errors when reviewing electronic patient records. This is a hypothetical problem statement to guide investigation; it has not been validated using actual employee performance data or interviews."
+            },
+            {
+              "heading": "Desired performance",
+              "text": "Nurses should select the correct patient and encounter, accurately document the supplied clinical information in the appropriate fields, complete required documentation, identify inconsistencies, and follow the organization's approved review and record-completion procedures."
+            },
+            {
+              "heading": "Potential gap to investigate",
+              "text": "Current performance is not yet known. The potential gap is the difference between the expected EHR documentation workflow and nurses' actual performance in realistic documentation situations."
+            },
+            {
+              "heading": "Possible contributing factors",
+              "text": [
+                "Knowledge or skill: Nurses may not understand documentation requirements or may lack practice navigating the EHR.",
+                "Process clarity: Documentation procedures may be unclear or difficult to locate.",
+                "Tools or access: Nurses may have insufficient access to practice environments or usable guidance.",
+                "Work environment: Time pressure, interruptions, or competing demands may contribute to documentation errors.",
+                "Reinforcement: Supervisors may not consistently provide feedback or reinforce approved documentation practices."
+              ]
+            },
+            {
+              "heading": "Questions to investigate",
+              "text": [
+                "What documentation errors, omissions, or near misses have been observed, and how frequently do they occur?",
+                "What does the organization's documentation policy require nurses to do?",
+                "Can nurses locate the correct patient, enter information accurately, and review records in a realistic practice environment?",
+                "Are the EHR interface, onboarding materials, and documentation procedures clear and accessible?",
+                "Do nurses need training, guided practice, job aids, workflow improvements, or a combination of interventions?",
+                "How will the organization measure whether documentation performance improves?"
+              ]
+            },
+            {
+              "heading": "ID recommendation",
+              "text": "Do not assume that training alone will solve the problem. First validate the performance gap and investigate its causes. If nurses lack the knowledge or skills needed to document accurately, a short scenario-based EHR simulation may help them practise patient selection, data entry, error identification, and record review. If the main barriers involve unclear procedures, interface design, workload, or limited access to practice, those issues should also be addressed."
+            }
+          ]
+        },
+        {
+          "title": "Needs Analysis",
+          "intro": "Define the intended learners, their current capability, the desired performance, relevant constraints, and the information to obtain from subject-matter experts (SMEs) before deciding what instruction to build.",
+          "blocks": [
+            {
+              "heading": "Learners",
+              "text": "Newly hired registered nurses or nurses transitioning into a hospital that uses an electronic health record (EHR). Adult professionals with varied levels of EHR experience, digital confidence, prior clinical settings, and familiarity with local documentation policies."
+            },
+            {
+              "heading": "Current capability",
+              "text": "They may understand basic nursing documentation principles and the importance of accurate patient records from prior education or clinical practice. They may be uncertain about navigating the specific EHR, choosing the correct patient or encounter, entering information into the appropriate fields, recognizing missing or inconsistent information, or following the local review and completion process."
+            },
+            {
+              "heading": "Desired performance",
+              "text": "Given a fictional patient scenario and the organization’s approved rules, the nurse completes the selected documentation workflow accurately and consistently: select the correct patient and encounter; place supplied information in the appropriate fields; identify missing or inconsistent details; review the record before completion; and choose the appropriate next action when an issue is identified."
+            },
+            {
+              "heading": "Tools",
+              "text": "Developed in Articulate Storyline 360 with a polished, modern hospital interface, restrained animation, clear navigation, immediate feedback, and retry functionality."
+            },
+            {
+              "heading": "Information needed from subject-matter experts",
+              "text": [
+                "Which documentation task should be taught? What information is required, where does it belong, what terminology is approved, and what makes an entry complete and accurate?",
+                "What are the exact steps? Which errors or omissions matter most? What should a nurse do when information is missing, contradictory, or entered in the wrong place? What actions must never be simulated as acceptable?",
+                "What do new nurses struggle with most? What evidence supports this (observations, de-identified audits, incident trends, educator feedback, or competency checks)? What can learners already do independently?",
+                "Which current policies and procedures govern the task? Are there organization-specific rules, escalation steps, or legal requirements that the simulation must reflect?",
+                "What would count as competent performance? Which critical errors should trigger corrective feedback? What score or completion standard is appropriate, and who will review and approve the final scenario?"
+              ]
+            }
+          ],
+          "note": "This is a fictional, self-initiated instructional design portfolio project. Rivermere Health, the learner scenario, and the potential performance issues are hypothetical and are not based on data from a real healthcare organization. The questions and suggested information to obtain from subject-matter experts were drafted with assistance from OpenAI’s ChatGPT; they are proposed prompts, not findings supplied or validated by actual subject-matter experts. Before any real-world use, clinical details, documentation requirements, and policies must be verified with qualified healthcare subject-matter experts and authoritative organizational sources."
+        },
+        {
+          "title": "Action Map: What Must the Nurse Do?",
+          "table": {
+            "head": [
+              "Critical action",
+              "Potential error to investigate",
+              "Practice activity in the simulation"
+            ],
+            "rows": [
+              [
+                "1. Select the correct patient and encounter.",
+                "Selecting a record that does not match the supplied identifiers or choosing the wrong encounter.",
+                "Compare a task brief with fictional patient/encounter cards and select the matching record."
+              ],
+              [
+                "2. Review the available chart information.",
+                "Skipping relevant information or overlooking a mismatch in the supplied details.",
+                "Explore clearly labeled chart panels and identify information relevant to the task."
+              ],
+              [
+                "3. Review information in the appropriate documentation fields.",
+                "Placing supplied information in the wrong field or treating an incomplete note as complete.",
+                "Inspect a sample note containing predefined, reviewable issues."
+              ],
+              [
+                "4. Identify missing or inconsistent details.",
+                "Overlooking a predefined omission or guessing an unsupported detail.",
+                "Select issues supported by the fictional record and the rules shown in the simulation."
+              ],
+              [
+                "5. Choose the appropriate next action.",
+                "Ignoring a discrepancy, guessing missing information, or proceeding without following the stated procedure.",
+                "Choose among scenario options, receive explanatory feedback, and retry during practice."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Learning Objectives",
+          "table": {
+            "head": [
+              "No.",
+              "Measurable learning objective",
+              "Assessment method",
+              "Proposed success criterion"
+            ],
+            "rows": [
+              [
+                "1",
+                "Given a fictional patient scenario, identify the intended patient and encounter by matching the supplied identifiers to the information displayed in the EHR.",
+                "Patient-selection interaction",
+                "Select the correct patient and encounter without error."
+              ],
+              [
+                "2",
+                "Given a fictional EHR note containing predefined omissions or inconsistencies, identify the documentation issues according to the criteria provided in the simulation.",
+                "Interactive error-spotting activity",
+                "Identify all predefined critical issues in the sample note."
+              ],
+              [
+                "3",
+                "Given a documentation scenario, select the action that follows the fictional organization’s stated procedures when information is missing or inconsistent.",
+                "Scenario-based decision with feedback",
+                "Select the correct next action for each scenario."
+              ]
+            ]
+          }
+        }
       ]
     },
     {
