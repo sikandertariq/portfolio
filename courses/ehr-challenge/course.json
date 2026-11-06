@@ -5,45 +5,15 @@
    "image": "slides/01.webp",
    "hidden": false,
    "text": "Clinical Decisions The Nurse\u2019s EHR Challenge A realistic, interactive simulation to practice accurate, safe and policy-aligned electronic health record ( EH R) documentation Begin",
-   "transition": 1200,
+   "transition": 0,
    "audio": [
     {
      "src": "audio/media1.mp3",
-     "vol": 0.8,
+     "vol": 0.27273,
      "loop": true,
      "span": 2,
      "start": "click"
-    }
-   ],
-   "links": [
-    {
-     "box": [
-      17.362,
-      40.326,
-      14.417,
-      8.093
-     ],
-     "to": "next",
-     "label": "Rounded Rectangle 13"
     },
-    {
-     "box": [
-      40.927,
-      40.524,
-      4.552,
-      8.093
-     ],
-     "play": "audio/media1.mp3",
-     "label": "Play narration"
-    }
-   ]
-  },
-  {
-   "image": "slides/02.webp",
-   "hidden": false,
-   "text": "Welcome to the RIVERMERE HEALTH practice environment. You will review a fictional record, identify documentation issues, and choose an appropriate next action. Continue",
-   "transition": 1200,
-   "audio": [
     {
      "src": "audio/media2.mp3",
      "vol": 0.8,
@@ -55,14 +25,50 @@
    "links": [
     {
      "box": [
-      44.06,
-      56.17,
+      40.927,
+      40.524,
+      4.552,
+      8.093
+     ],
+     "actions": [
+      {
+       "play": "audio/media1.mp3"
+      },
+      {
+       "play": "audio/media2.mp3"
+      }
+     ],
+     "label": "Play narration"
+    },
+    {
+     "box": [
+      17.362,
+      40.326,
       14.417,
       8.093
      ],
      "to": "next",
-     "label": "Rounded Rectangle 14"
-    },
+     "label": "Rounded Rectangle 13"
+    }
+   ],
+   "overlays": [],
+   "start": []
+  },
+  {
+   "image": "slides/02.webp",
+   "hidden": false,
+   "text": "Welcome to the RIVERMERE HEALTH practice environment. You will review a fictional record, identify documentation issues, and choose an appropriate next action. Continue",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media3.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
     {
      "box": [
       80.615,
@@ -70,26 +76,42 @@
       3.415,
       6.071
      ],
-     "play": "audio/media2.mp3",
+     "actions": [
+      {
+       "play": "audio/media3.mp3"
+      }
+     ],
      "label": "Play narration"
+    },
+    {
+     "box": [
+      44.06,
+      56.17,
+      14.417,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 14"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
    "image": "slides/03.webp",
    "hidden": false,
    "text": "Clinical Decisions: The Nurse\u2019s EHR Challenge Practice accurate and safe documentation in a realistic hospital EHR environment Start Simulation 1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Help Exit Your Goal Complete the documentation workflow accurately and consistently using the hospital EHR Estimated Time 10 \u2013 15 Minutes How It Works Follow the scenario, interact with EHR, and make decisions. You can retry if needed Help Exit",
-   "transition": 1200,
+   "transition": 1000,
    "audio": [
     {
-     "src": "audio/media4.mp3",
+     "src": "audio/media5.mp3",
      "vol": 0.8,
      "loop": true,
      "span": 1,
      "start": "auto"
     },
     {
-     "src": "audio/media3.mp3",
+     "src": "audio/media4.mp3",
      "vol": 0.8,
      "loop": false,
      "span": 1,
@@ -104,7 +126,7 @@
       3.947,
       7.018
      ],
-     "to": 13,
+     "to": 15,
      "label": "Help"
     },
     {
@@ -124,7 +146,7 @@
       3.947,
       7.018
      ],
-     "to": 13,
+     "to": 15,
      "label": "Help"
     },
     {
@@ -134,7 +156,7 @@
       6.187,
       4.039
      ],
-     "to": 13,
+     "to": 15,
      "label": "Help"
     },
     {
@@ -144,8 +166,28 @@
       6.187,
       4.039
      ],
-     "to": 14,
+     "to": 16,
      "label": "Exit"
+    },
+    {
+     "box": [
+      94.856,
+      2.703,
+      3.22,
+      5.605
+     ],
+     "to": 16,
+     "label": "Oval 32"
+    },
+    {
+     "box": [
+      95.214,
+      3.28,
+      2.503,
+      4.45
+     ],
+     "to": 16,
+     "label": "Pause"
     },
     {
      "box": [
@@ -154,26 +196,32 @@
       3.415,
       6.071
      ],
-     "play": "audio/media3.mp3",
+     "actions": [
+      {
+       "play": "audio/media4.mp3"
+      }
+     ],
      "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
    "image": "slides/04.webp",
    "hidden": false,
    "text": "Scenario 1: Select the Correct Patient and Encounter Continue You need to review the morning assessment for a 68 year old female who was admitted yesterday to the Medical Unit for pneumonia Continue",
-   "transition": 1200,
+   "transition": 1000,
    "audio": [
     {
-     "src": "audio/media5.mp3",
+     "src": "audio/media6.mp3",
      "vol": 0.16667,
      "loop": false,
      "span": 2,
      "start": "auto"
     },
     {
-     "src": "audio/media6.mp3",
+     "src": "audio/media7.mp3",
      "vol": 0.8,
      "loop": false,
      "span": 1,
@@ -198,10 +246,16 @@
       3.415,
       6.071
      ],
-     "play": "audio/media6.mp3",
+     "actions": [
+      {
+       "play": "audio/media7.mp3"
+      }
+     ],
      "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
    "image": "slides/05.webp",
@@ -210,14 +264,14 @@
    "transition": 1200,
    "audio": [
     {
-     "src": "audio/media7.mp3",
+     "src": "audio/media8.mp3",
      "vol": 0.8,
      "loop": false,
      "span": 1,
      "start": "click"
     },
     {
-     "src": "audio/media8.mp3",
+     "src": "audio/media9.mp3",
      "vol": 0.21212,
      "loop": true,
      "span": 1,
@@ -232,7 +286,7 @@
       22.492,
       5.834
      ],
-     "to": 5,
+     "to": "next",
      "label": "Continue"
     },
     {
@@ -242,76 +296,443 @@
       3.415,
       6.071
      ],
-     "play": "audio/media7.mp3",
+     "actions": [
+      {
+       "play": "audio/media8.mp3"
+      }
+     ],
      "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
    "image": "slides/06.webp",
    "hidden": false,
-   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Select the Correct Patient and Encounter Patient Search Miller Name MRN Date of Birth Age Unit Miller, Patricia Miller, Patrick Miller, Paula Miller, Paula 243653 832494 487594 734329 14 Mar 1958 18 Aug 1954 03 Jan 1988 14 Mar 1958 68 72 38 68 Medical Surgery Medical Rehab Patient Details Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Date Encounter type Unit Status 02 Nov 2026 08 Sep 2026 12 May 2026 11 Jan 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Respiratory Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Submit Back",
-   "transition": 1200,
-   "audio": [],
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Select the Correct Patient and Encounter Miller Name MRN Date of Birth Age Unit Miller, Patricia Miller, Patrick Miller, Paula Miller, Patricia 243653 832494 487594 734329 14 Mar 1958 18 Aug 1954 03 Jan 1988 24 Mar 1958 68 72 38 68 Medical Surgery Medical Rehab Search Patient\u2026 Help Back Patient Details Patrick Miller MRN: 832494 DOB: 18 Aug 1954 (72y) Male Date Encounter type Unit Status 18 Aug 2026 03 Oct 2026 11 Jun 2026 05 Feb 2026 Surgical Admission Emergency Visit Outpatient Follow-up Outpatient Visit Surgery Emergency Surgery Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Patient Details Paula Miller MRN: 487594 DOB: 03 Jan 1988 (38y) Female Date Encounter type Unit Status 20 Oct 2026 29 Sep 2026 16 Jul 2026 08 Mar 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Medical Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Patient Details Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Date Encounter type Unit Status 02 Nov 2026 08 Sep 2026 12 May 2026 11 Jan 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Respiratory Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Patient Details Patricia A. Miller MRN: 734329 DOB: 24 Mar 1958 (68y) Female Date Encounter type Unit Status 21 Oct 2026 30 Sep 2026 12 Jun 2026 19 Feb 2026 Rehabilitation Admission Outpatient Follow-up Emergency Visit Outpatient Visit Rehab Rehab Emergency Rehab Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Help Exit Back Your Task You need to review the morning assessment for a 68 year old female who was admitted yesterday to the Medical Unit for pneumonia Submit Submit",
+   "transition": 1000,
+   "audio": [
+    {
+     "src": "audio/media10.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
    "links": [
     {
      "box": [
-      93.428,
-      7.794,
-      6.187,
-      4.039
+      95.27,
+      2.703,
+      2.503,
+      4.45
      ],
-     "to": 15,
-     "label": "Exit"
+     "to": 17,
+     "label": "Pause"
     },
     {
      "box": [
-      88.013,
-      7.794,
-      6.187,
-      4.039
+      89.132,
+      1.424,
+      3.947,
+      7.018
      ],
-     "to": 10,
+     "to": 12,
      "label": "Help"
     },
     {
      "box": [
-      79.552,
-      91.16,
-      22.492,
-      5.834
+      19.448,
+      76.518,
+      44.196,
+      10.416
      ],
-     "to": "next",
-     "label": "Submit"
+     "actions": [
+      {
+       "show": "222"
+      },
+      {
+       "hide": "106"
+      },
+      {
+       "hide": "13"
+      },
+      {
+       "hide": "271"
+      },
+      {
+       "show": "295"
+      },
+      {
+       "hide": "272"
+      }
+     ],
+     "label": "Select"
     },
     {
      "box": [
-      63.354,
-      91.407,
+      19.537,
+      65.917,
+      44.196,
+      9.907
+     ],
+     "actions": [
+      {
+       "show": "106"
+      },
+      {
+       "hide": "13"
+      },
+      {
+       "hide": "271"
+      },
+      {
+       "hide": "222"
+      },
+      {
+       "show": "295"
+      },
+      {
+       "hide": "272"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      19.555,
+      55.565,
+      44.196,
+      9.907
+     ],
+     "actions": [
+      {
+       "show": "13"
+      },
+      {
+       "hide": "222"
+      },
+      {
+       "hide": "106"
+      },
+      {
+       "hide": "271"
+      },
+      {
+       "show": "295"
+      },
+      {
+       "hide": "272"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      19.587,
+      45.324,
+      44.196,
+      9.907
+     ],
+     "actions": [
+      {
+       "show": "271"
+      },
+      {
+       "hide": "222"
+      },
+      {
+       "hide": "106"
+      },
+      {
+       "hide": "13"
+      },
+      {
+       "show": "272"
+      },
+      {
+       "hide": "295"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      88.011,
+      7.742,
+      6.187,
+      4.039
+     ],
+     "to": 17,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.286,
+      7.709,
+      6.187,
+      4.039
+     ],
+     "to": 17,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      63.317,
+      91.505,
       22.492,
       5.834
      ],
      "to": "prev",
      "label": "Back"
+    },
+    {
+     "box": [
+      83.19,
+      90.483,
+      15.158,
+      7.982
+     ],
+     "to": 6,
+     "label": "Submit - Correct",
+     "gate": [
+      "272"
+     ]
+    },
+    {
+     "box": [
+      83.275,
+      90.128,
+      15.149,
+      7.982
+     ],
+     "to": 20,
+     "label": "Submit - Incorrect",
+     "gate": [
+      "295"
+     ]
+    },
+    {
+     "box": [
+      18.198,
+      19.435,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media10.mp3"
+      }
+     ],
+     "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "spid": "13",
+     "visible": false,
+     "src": "slides/06-13.webp",
+     "box": [
+      65.807,
+      20.139,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "106",
+     "visible": true,
+     "src": "slides/06-106.webp",
+     "box": [
+      65.729,
+      20.139,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "271",
+     "visible": true,
+     "src": "slides/06-271.webp",
+     "box": [
+      65.807,
+      20.093,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "222",
+     "visible": true,
+     "src": "slides/06-222.webp",
+     "box": [
+      65.755,
+      20.139,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "272",
+     "visible": true,
+     "src": "slides/06-272.webp",
+     "box": [
+      82.995,
+      90.139,
+      15.521,
+      8.426
+     ]
+    },
+    {
+     "spid": "295",
+     "visible": false,
+     "src": "slides/06-295.webp",
+     "box": [
+      82.969,
+      90.0,
+      15.521,
+      8.426
+     ]
+    }
+   ],
+   "start": []
   },
   {
    "image": "slides/07.webp",
    "hidden": false,
-   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Review the Record Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Submit Back Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Vital Signs Medications Orders Lab Results Imaging Care Plan Nursing Notes 02 Nov 2026    09:00 Patient resting in bed. Alert and oriented. Reports SOB. 02 given via nasal cannula. Lung sounds: clear bilaterally. Denies chest pain. No cough. Vital signs stable. Patient tolerated breakfast. Ambulated to bathroom with assistance. Plan: Continue current treatment. Signed: S. Jenkins, RN Your Task Identify all documentation issues in this nursing note. Click on the text to highlight the issues you find. Select all that apply. Missing pain level assessment Missing O, flow rate Inconsistent lung assessment Vital signs are not documented \ufeff\ufeffMissing patient response to oxygen \ufeff\ufeffMissing time for ambulation \ufeff\ufeffMissing provider notification \ufeff\ufeffNote is missing the nurse's full name",
-   "transition": 1200,
-   "audio": [],
+   "text": "Scenario 2: Review the Patient Record Continue You have to review Patricia Miller\u2019s morning nursing assessment and identify any missing information, documentation errors, and inconsistencies that need to be addressed. Continue",
+   "transition": 1000,
+   "audio": [
+    {
+     "src": "audio/media6.mp3",
+     "vol": 0.16667,
+     "loop": false,
+     "span": 1,
+     "start": "auto"
+    },
+    {
+     "src": "audio/media11.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
    "links": [
     {
      "box": [
-      93.428,
-      7.794,
-      6.187,
-      4.039
+      37.605,
+      57.1,
+      22.492,
+      5.834
      ],
-     "to": 16,
-     "label": "Exit"
+     "to": "next",
+     "label": "Continue"
+    },
+    {
+     "box": [
+      80.615,
+      52.729,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media11.mp3"
+      }
+     ],
+     "label": "Play narration"
+    }
+   ],
+   "overlays": [],
+   "start": []
+  },
+  {
+   "image": "slides/08.webp",
+   "hidden": false,
+   "text": "As you review the patient's record, look beyond what has been documented. Check whether important assessment findings, vital signs, interventions, and patient responses have been recorded. Remember, accurate documentation is essential for safe patient care and effective communication among healthcare professionals. Continue Continue",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media9.mp3",
+     "vol": 0.21212,
+     "loop": true,
+     "span": 1,
+     "start": "auto"
+    },
+    {
+     "src": "audio/media12.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      11.104,
+      82.546,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Continue"
+    },
+    {
+     "box": [
+      35.285,
+      78.14,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media12.mp3"
+      }
+     ],
+     "label": "Play narration"
+    }
+   ],
+   "overlays": [],
+   "start": []
+  },
+  {
+   "image": "slides/09.webp",
+   "hidden": false,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Review the Record Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Submit Back Your Task Review Patricia Miller\u2019s morning nursing assessment and identify any missing information, documentation errors, and inconsistencies that need to be addressed. Tap to highlight the Notes. Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Nursing Notes Your Task Identify all documentation issues in this nursing note. Click on the text to highlight the issues you find. Select all that apply. 02 Nov 2026    09:00 Patient resting in bed. Alert and oriented. Reports SOB. 02 given via nasal cannula. Lung sounds: clear bilaterally. Denies chest pain. No cough. Vital signs stable. Patient tolerated breakfast. Ambulated to bathroom with assistance. Plan: Continue current treatment. Signed: S. Jenkins, RN Missing pain level assessment Missing O, flow rate Inconsistent lung assessment Vital signs are not documented \ufeffMissing patient response to oxygen \ufeffMissing time for ambulation \ufeffMissing provider notification \ufeffNote is missing the nurse's full name Help Exit Submit Back",
+   "transition": 1000,
+   "audio": [
+    {
+     "src": "audio/media13.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      95.27,
+      2.703,
+      2.503,
+      4.45
+     ],
+     "to": 18,
+     "label": "Pause"
+    },
+    {
+     "box": [
+      83.033,
+      90.03,
+      15.395,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 206"
     },
     {
      "box": [
@@ -325,8 +746,202 @@
     },
     {
      "box": [
+      89.132,
+      1.424,
+      3.947,
+      7.018
+     ],
+     "to": 13,
+     "label": "Help"
+    },
+    {
+     "box": [
+      18.423,
+      53.217,
+      22.583,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "15"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.391,
+      56.883,
+      22.583,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "56"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.556,
+      68.745,
+      10.302,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "65"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.69,
+      84.273,
+      13.022,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "77"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.797,
+      76.338,
+      22.236,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "76"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      58.24,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "84"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      61.63,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "86"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      68.629,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "88"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      72.166,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "89"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      75.629,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "90"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      82.549,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "92"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      88.03,
+      7.743,
+      6.187,
+      4.039
+     ],
+     "to": 13,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.431,
+      7.815,
+      6.187,
+      4.039
+     ],
+     "to": 18,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      79.569,
+      91.204,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit"
+    },
+    {
+     "box": [
       63.354,
-      91.407,
+      91.359,
       22.492,
       5.834
      ],
@@ -335,23 +950,176 @@
     },
     {
      "box": [
-      88.013,
-      7.794,
-      6.187,
-      4.039
+      17.792,
+      17.414,
+      3.415,
+      6.071
      ],
-     "to": 11,
-     "label": "Help"
+     "actions": [
+      {
+       "play": "audio/media13.mp3"
+      }
+     ],
+     "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "spid": "15",
+     "visible": false,
+     "src": "slides/09-15.webp",
+     "box": [
+      18.411,
+      53.194,
+      22.604,
+      3.796
+     ]
+    },
+    {
+     "spid": "56",
+     "visible": false,
+     "src": "slides/09-56.webp",
+     "box": [
+      18.438,
+      57.315,
+      22.604,
+      3.796
+     ]
+    },
+    {
+     "spid": "65",
+     "visible": false,
+     "src": "slides/09-65.webp",
+     "box": [
+      18.62,
+      68.565,
+      10.208,
+      3.796
+     ]
+    },
+    {
+     "spid": "76",
+     "visible": false,
+     "src": "slides/09-76.webp",
+     "box": [
+      18.698,
+      76.435,
+      22.344,
+      3.796
+     ]
+    },
+    {
+     "spid": "77",
+     "visible": false,
+     "src": "slides/09-77.webp",
+     "box": [
+      18.542,
+      84.028,
+      12.396,
+      3.796
+     ]
+    },
+    {
+     "spid": "84",
+     "visible": false,
+     "src": "slides/09-84.webp",
+     "box": [
+      67.188,
+      59.398,
+      1.016,
+      1.852
+     ]
+    },
+    {
+     "spid": "86",
+     "visible": false,
+     "src": "slides/09-86.webp",
+     "box": [
+      67.188,
+      62.87,
+      1.016,
+      1.852
+     ]
+    },
+    {
+     "spid": "88",
+     "visible": false,
+     "src": "slides/09-88.webp",
+     "box": [
+      67.188,
+      69.815,
+      1.016,
+      1.806
+     ]
+    },
+    {
+     "spid": "89",
+     "visible": false,
+     "src": "slides/09-89.webp",
+     "box": [
+      67.188,
+      73.287,
+      1.016,
+      1.806
+     ]
+    },
+    {
+     "spid": "90",
+     "visible": false,
+     "src": "slides/09-90.webp",
+     "box": [
+      67.188,
+      76.759,
+      1.016,
+      1.806
+     ]
+    },
+    {
+     "spid": "92",
+     "visible": false,
+     "src": "slides/09-92.webp",
+     "box": [
+      67.188,
+      83.657,
+      1.016,
+      1.852
+     ]
+    }
+   ],
+   "start": []
   },
   {
-   "image": "slides/08.webp",
+   "image": "slides/10.webp",
    "hidden": false,
-   "text": "Scenario 2: Choose the Appropriate Next Action Continue You are completing the nursing note and notice that the patient's pain level is documented as 8/10, but there is no record of any pain medication administered, and no provider notification is documented.",
-   "transition": 1200,
-   "audio": [],
+   "text": "Scenario 3: Choose the Appropriate Next Action Continue You are completing the nursing note and notice that the patient's pain level is documented as 8/10, but there is no record of any pain medication administered, and no provider notification is documented. Continue",
+   "transition": 1000,
+   "audio": [
+    {
+     "src": "audio/media14.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    },
+    {
+     "src": "audio/media6.mp3",
+     "vol": 0.16667,
+     "loop": false,
+     "span": 1,
+     "start": "auto"
+    }
+   ],
    "links": [
+    {
+     "box": [
+      42.911,
+      56.009,
+      14.417,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 4"
+    },
     {
      "box": [
       37.605,
@@ -361,81 +1129,472 @@
      ],
      "to": "next",
      "label": "Continue"
-    }
-   ]
-  },
-  {
-   "image": "slides/09.webp",
-   "hidden": false,
-   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back",
-   "transition": 1200,
-   "audio": [],
-   "links": [
-    {
-     "box": [
-      93.428,
-      7.794,
-      6.187,
-      4.039
-     ],
-     "to": 17,
-     "label": "Exit"
     },
     {
      "box": [
-      88.013,
-      7.794,
-      6.187,
-      4.039
+      53.472,
+      59.989,
+      2.5,
+      0.0
      ],
-     "to": 12,
-     "label": "Help"
+     "to": "next",
+     "label": "Straight Arrow Connector 8"
     },
     {
      "box": [
-      79.552,
-      91.16,
+      80.615,
+      52.729,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media14.mp3"
+      }
+     ],
+     "label": "Play narration"
+    },
+    {
+     "box": [
+      42.911,
+      55.906,
+      14.417,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 10"
+    },
+    {
+     "box": [
+      37.605,
+      57.056,
       22.492,
       5.834
      ],
      "to": "next",
-     "label": "Submit"
+     "label": "Continue"
+    },
+    {
+     "box": [
+      53.472,
+      59.886,
+      2.5,
+      0.0
+     ],
+     "to": "next",
+     "label": "Straight Arrow Connector 12"
+    }
+   ],
+   "overlays": [],
+   "start": []
+  },
+  {
+   "image": "slides/11.webp",
+   "hidden": false,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back Help Exit Submit Back Submit",
+   "transition": 1000,
+   "audio": [
+    {
+     "src": "audio/media15.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      67.531,
+      34.319,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "87"
+      },
+      {
+       "hide": "86"
+      },
+      {
+       "hide": "84"
+      },
+      {
+       "hide": "62"
+      },
+      {
+       "hide": "64"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.467,
+      44.261,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "64"
+      },
+      {
+       "show": "65"
+      },
+      {
+       "hide": "88"
+      },
+      {
+       "hide": "87"
+      },
+      {
+       "hide": "86"
+      },
+      {
+       "hide": "84"
+      },
+      {
+       "hide": "62"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.404,
+      54.203,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "62"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      },
+      {
+       "hide": "87"
+      },
+      {
+       "hide": "86"
+      },
+      {
+       "hide": "84"
+      },
+      {
+       "hide": "64"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.34,
+      64.145,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "84"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      },
+      {
+       "hide": "87"
+      },
+      {
+       "hide": "86"
+      },
+      {
+       "hide": "62"
+      },
+      {
+       "hide": "64"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.277,
+      74.088,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "86"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      },
+      {
+       "hide": "87"
+      },
+      {
+       "hide": "84"
+      },
+      {
+       "hide": "62"
+      },
+      {
+       "hide": "64"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      83.033,
+      90.03,
+      15.395,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 9"
+    },
+    {
+     "box": [
+      88.038,
+      7.818,
+      6.187,
+      4.039
+     ],
+     "to": 14,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.446,
+      7.756,
+      6.187,
+      4.039
+     ],
+     "to": 19,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      83.033,
+      90.132,
+      15.395,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 72",
+     "gate": [
+      "65"
+     ]
+    },
+    {
+     "box": [
+      79.552,
+      91.261,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit",
+     "gate": [
+      "65"
+     ]
     },
     {
      "box": [
       63.354,
-      91.407,
+      91.478,
       22.492,
       5.834
      ],
      "to": "prev",
      "label": "Back"
+    },
+    {
+     "box": [
+      83.238,
+      90.049,
+      15.149,
+      7.982
+     ],
+     "to": 21,
+     "label": "Submit - Incorrect",
+     "gate": [
+      "88"
+     ]
+    },
+    {
+     "box": [
+      17.792,
+      13.669,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media15.mp3"
+      }
+     ],
+     "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "spid": "84",
+     "visible": false,
+     "src": "slides/11-84.webp",
+     "box": [
+      68.125,
+      65.926,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "86",
+     "visible": false,
+     "src": "slides/11-86.webp",
+     "box": [
+      68.125,
+      75.833,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "64",
+     "visible": false,
+     "src": "slides/11-64.webp",
+     "box": [
+      68.307,
+      46.111,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "65",
+     "visible": false,
+     "src": "slides/11-65.webp",
+     "box": [
+      79.557,
+      90.139,
+      20.443,
+      8.102
+     ]
+    },
+    {
+     "spid": "62",
+     "visible": false,
+     "src": "slides/11-62.webp",
+     "box": [
+      68.151,
+      56.019,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "87",
+     "visible": false,
+     "src": "slides/11-87.webp",
+     "box": [
+      68.333,
+      36.065,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "88",
+     "visible": true,
+     "src": "slides/11-88.webp",
+     "box": [
+      82.943,
+      89.954,
+      15.521,
+      8.38
+     ]
+    }
+   ],
+   "start": []
   },
   {
-   "image": "slides/10.webp",
+   "image": "slides/12.webp",
    "hidden": false,
-   "text": "Congratulations! Exit You've successfully completed the RIVERMERE HEALTH EHR scenarios by demonstrating your ability to select the correct patient, review patient records for accuracy and completeness, identify documentation issues, and choose appropriate next actions while following safe, accurate, and policy-aligned documentation practices. Restart",
+   "text": "Congratulations! Exit You've successfully completed the RIVERMERE HEALTH EHR scenarios by demonstrating your ability to select the correct patient, review patient records for accuracy and completeness, identify documentation issues, and choose appropriate next actions while following safe, accurate, and policy-aligned documentation practices. Restart Restart Exit",
    "transition": 1200,
-   "audio": [],
+   "audio": [
+    {
+     "src": "audio/media16.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
    "links": [
     {
      "box": [
       34.875,
-      54.439,
+      54.4,
       18.411,
       5.834
      ],
      "to": "first",
      "label": "Restart"
+    },
+    {
+     "box": [
+      46.373,
+      54.343,
+      18.411,
+      5.834
+     ],
+     "to": "end",
+     "label": "Exit"
+    },
+    {
+     "box": [
+      71.204,
+      16.356,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media16.mp3"
+      }
+     ],
+     "label": "Play narration"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
-   "image": "slides/11.webp",
+   "image": "slides/13.webp",
    "hidden": true,
-   "text": "Ready ? Selecting the Correct Patient 01. Verify two identifiers Confirm the patient's full name and MRN, DOB or another approved identifier. 02. Check for similar records Compare identifiers carefully. Never assume the first search result is correct. 03. Verify the encounter Confirm the encounter type, date, status, clinical unit and whether it matches the task or care activity. 04. Confirm before proceeding Check the patient banner. Stop if any information does not match. Remember A room number or bed location is never an acceptable patient identifier.",
+   "text": "Ready ? Selecting the Correct Patient 01. Verify two identifiers Confirm the patient's full name and MRN, DOB or another approved identifier. 02. Check for similar records Compare identifiers carefully. Never assume the first search result is correct. 03. Verify the encounter Confirm the encounter type, date, status, clinical unit and whether it matches the task or care activity. 04. Confirm before proceeding Check the patient banner. Stop if any information does not match. Remember A room number or bed location is never an acceptable patient identifier. Ready ?",
    "transition": 1200,
    "audio": [],
    "links": [
@@ -449,39 +1608,67 @@
      "to": 5,
      "label": "Ready  ?"
     }
-   ]
-  },
-  {
-   "image": "slides/12.webp",
-   "hidden": true,
-   "text": "Got It? EHR Review Record Checklist 01. Patient & Encounter Information Verify patient identifiers, encounter date, unit, and status. Remember A room number or bed location is never an acceptable patient identifier. 02. Allergies & Safety Alerts Review allergies, reactions, and relevant safety alerts. 03. Vital Signs & Assessments Check vital signs, pain assessment, and nursing findings. 04. Medications & Treatments Review medication orders, administration, and treatments. 05. Orders & Investigations Check provider orders, laboratory results, and imaging. 06. Nursing Notes & Documentation Check whether notes are dated, timed, clear, complete, and authenticated. 07. Care Plan & Patient Progress Review goals, interventions, and patient response. 08. Consistency & Completeness Look for missing, conflicting, or inaccurate information.",
-   "transition": 1200,
-   "audio": [],
-   "links": []
-  },
-  {
-   "image": "slides/13.webp",
-   "hidden": true,
-   "text": "Got it ? Choosing the Appropriate Next Action 01. Understand the concern Identify what is missing, inconsistent, or potentially unsafe in the patient's record. 02. Review the available information Check relevant nursing notes, assessments, medication records, provider notes, and orders before deciding what to do. 03. Prioritize patient safety Consider whether the concern requires prompt assessment, intervention, or communication with the appropriate healthcare professional. 04. Follow approved procedures Check the patient banner. Stop if any information does not match. Remember Never delete, alter, or backdate documentation to hide an error. Follow the approved correction or late-entry procedure. 05. Document accurately Record actions taken, relevant communication, the patient's response, and required follow-up according to policy.",
-   "transition": 1200,
-   "audio": [],
-   "links": []
+   ],
+   "overlays": [],
+   "start": []
   },
   {
    "image": "slides/14.webp",
+   "hidden": true,
+   "text": "Got It? EHR Review Record Checklist 01. Patient & Encounter Information Verify patient identifiers, encounter date, unit, and status. Remember A room number or bed location is never an acceptable patient identifier. 02. Allergies & Safety Alerts Review allergies, reactions, and relevant safety alerts. 03. Vital Signs & Assessments Check vital signs, pain assessment, and nursing findings. 04. Medications & Treatments Review medication orders, administration, and treatments. 05. Orders & Investigations Check provider orders, laboratory results, and imaging. 06. Nursing Notes & Documentation Check whether notes are dated, timed, clear, complete, and authenticated. 07. Care Plan & Patient Progress Review goals, interventions, and patient response. 08. Consistency & Completeness Look for missing, conflicting, or inaccurate information. Got It?",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      42.417,
+      92.351,
+      13.888,
+      5.834
+     ],
+     "to": 8,
+     "label": "Got It?"
+    }
+   ],
+   "overlays": [],
+   "start": []
+  },
+  {
+   "image": "slides/15.webp",
+   "hidden": true,
+   "text": "Got it ? Choosing the Appropriate Next Action 01. Understand the concern Identify what is missing, inconsistent, or potentially unsafe in the patient's record. 02. Review the available information Check relevant nursing notes, assessments, medication records, provider notes, and orders before deciding what to do. 03. Prioritize patient safety Consider whether the concern requires prompt assessment, intervention, or communication with the appropriate healthcare professional. 04. Follow approved procedures Check the patient banner. Stop if any information does not match. Remember Never delete, alter, or backdate documentation to hide an error. Follow the approved correction or late-entry procedure. 05. Document accurately Record actions taken, relevant communication, the patient's response, and required follow-up according to policy. Got it ?",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      35.324,
+      91.18,
+      13.888,
+      5.834
+     ],
+     "to": 10,
+     "label": "Got it ?"
+    }
+   ],
+   "overlays": [],
+   "start": []
+  },
+  {
+   "image": "slides/16.webp",
    "hidden": true,
    "text": "Hi, I'm Evelyn, your Head Nurse! Welcome to the team! I'll be here to guide you, if you have questions along the way. I'm here to help. Tap help and I will be there for you! Let\u2019s Start Let\u2019s Start",
    "transition": 1200,
    "audio": [
     {
-     "src": "audio/media5.mp3",
+     "src": "audio/media6.mp3",
      "vol": 0.30303,
      "loop": true,
      "span": 1,
      "start": "auto"
     },
     {
-     "src": "audio/media9.mp3",
+     "src": "audio/media17.mp3",
      "vol": 0.8,
      "loop": false,
      "span": 999,
@@ -499,10 +1686,12 @@
      "to": 2,
      "label": "Let\u2019s Start"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
-   "image": "slides/15.webp",
+   "image": "slides/17.webp",
    "hidden": true,
    "text": "Clinical Decisions: The Nurse\u2019s EHR Challenge Practice accurate and safe documentation in a realistic hospital EHR environment Start Simulation 1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Help Exit Your Goal Complete the documentation workflow accurately and consistently using the hospital EHR Estimated Time 10 \u2013 15 Minutes How It Works Follow the scenario, interact with EHR, and make decisions. You can retry if needed Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge Resume Simulation Restart Simulation Return to Main Menu",
    "transition": 1200,
@@ -525,7 +1714,7 @@
       3.947,
       7.018
      ],
-     "to": 13,
+     "to": 15,
      "label": "Help"
     },
     {
@@ -568,10 +1757,12 @@
      "to": 0,
      "label": "Return to Main Menu"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
-   "image": "slides/16.webp",
+   "image": "slides/18.webp",
    "hidden": true,
    "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Select the Correct Patient and Encounter Patient Search Miller Name MRN Date of Birth Age Unit Miller, Patricia Miller, Patrick Miller, Paula Miller, Paula 243653 832494 487594 734329 14 Mar 1958 18 Aug 1954 03 Jan 1988 14 Mar 1958 68 72 38 68 Medical Surgery Medical Rehab Patient Details Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Date Encounter type Unit Status 02 Nov 2026 08 Sep 2026 12 May 2026 11 Jan 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Respiratory Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Submit Back Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
    "transition": 1200,
@@ -617,88 +1808,203 @@
      "to": 5,
      "label": "Resume Simulation"
     }
-   ]
+   ],
+   "overlays": [],
+   "start": []
   },
   {
-   "image": "slides/17.webp",
+   "image": "slides/19.webp",
    "hidden": true,
-   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Review the Record Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Submit Back Your Task Select the correct patient and the correct encounter for this scenario. When you are ready, click Submit. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Vital Signs Medications Orders Lab Results Imaging Care Plan Nursing Notes 02 Nov 2026    09:00 Patient resting in bed. Alert and oriented. Reports SOB. 02 given via nasal cannula. Lung sounds: clear bilaterally. Denies chest pain. No cough. Vital signs stable. Patient tolerated breakfast. Ambulated to bathroom with assistance. Plan: Continue current treatment. Signed: S. Jenkins, RN Your Task Identify all documentation issues in this nursing note. Click on the text to highlight the issues you find. Select all that apply. Missing pain level assessment Missing O, flow rate Inconsistent lung assessment Vital signs are not documented \ufeff\ufeffMissing patient response to oxygen \ufeff\ufeffMissing time for ambulation \ufeff\ufeffMissing provider notification \ufeff\ufeffNote is missing the nurse's full name Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Review the Record Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Submit Back Your Task Review Patricia Miller\u2019s morning nursing assessment and identify any missing information, documentation errors, and inconsistencies that need to be addressed. Tap to highlight the Notes. Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Nursing Notes Your Task Identify all documentation issues in this nursing note. Click on the text to highlight the issues you find. Select all that apply. 02 Nov 2026    09:00 Patient resting in bed. Alert and oriented. Reports SOB. 02 given via nasal cannula. Lung sounds: clear bilaterally. Denies chest pain. No cough. Vital signs stable. Patient tolerated breakfast. Ambulated to bathroom with assistance. Plan: Continue current treatment. Signed: S. Jenkins, RN Missing pain level assessment Missing O, flow rate Inconsistent lung assessment Vital signs are not documented \ufeffMissing patient response to oxygen \ufeffMissing time for ambulation \ufeffMissing provider notification \ufeffNote is missing the nurse's full name Help Exit Submit Back Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
    "transition": 1200,
-   "audio": [],
-   "links": [
+   "audio": [
     {
-     "box": [
-      88.013,
-      7.794,
-      6.187,
-      4.039
-     ],
-     "to": 11,
-     "label": "Help"
-    },
-    {
-     "box": [
-      27.106,
-      28.591,
-      4.189,
-      7.148
-     ],
-     "to": 2,
-     "label": "Pause"
-    },
-    {
-     "box": [
-      28.343,
-      54.727,
-      26.125,
-      4.937
-     ],
-     "to": 1,
-     "label": "Restart Simulation"
-    },
-    {
-     "box": [
-      28.49,
-      62.897,
-      26.125,
-      4.937
-     ],
-     "to": 0,
-     "label": "Return to Main Menu"
-    },
-    {
-     "box": [
-      28.343,
-      46.244,
-      26.125,
-      4.937
-     ],
-     "to": 5,
-     "label": "Resume Simulation"
+     "src": "audio/media13.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
     }
-   ]
-  },
-  {
-   "image": "slides/18.webp",
-   "hidden": true,
-   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
-   "transition": 1200,
-   "audio": [],
+   ],
    "links": [
     {
      "box": [
-      88.013,
-      7.794,
+      18.423,
+      53.217,
+      22.583,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "143"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.391,
+      56.883,
+      22.583,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "144"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.556,
+      68.745,
+      10.302,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "145"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.69,
+      84.273,
+      13.022,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "147"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      18.797,
+      76.338,
+      22.236,
+      3.795
+     ],
+     "actions": [
+      {
+       "show": "146"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      58.24,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "174"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      61.63,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "175"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      68.629,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "176"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      72.166,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "177"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      75.629,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "178"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      66.249,
+      82.549,
+      31.142,
+      4.488
+     ],
+     "actions": [
+      {
+       "show": "179"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      88.03,
+      7.743,
       6.187,
       4.039
      ],
-     "to": 12,
+     "to": 13,
      "label": "Help"
     },
     {
      "box": [
-      79.552,
-      91.16,
+      93.431,
+      7.815,
+      6.187,
+      4.039
+     ],
+     "to": 18,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      79.569,
+      91.204,
       22.492,
       5.834
      ],
@@ -708,12 +2014,26 @@
     {
      "box": [
       63.354,
-      91.407,
+      91.359,
       22.492,
       5.834
      ],
      "to": "prev",
      "label": "Back"
+    },
+    {
+     "box": [
+      17.792,
+      17.414,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media13.mp3"
+      }
+     ],
+     "label": "Play narration"
     },
     {
      "box": [
@@ -752,10 +2072,920 @@
       26.125,
       4.937
      ],
-     "to": 5,
+     "to": 8,
      "label": "Resume Simulation"
     }
-   ]
+   ],
+   "overlays": [
+    {
+     "spid": "143",
+     "visible": false,
+     "src": "slides/19-143.webp",
+     "box": [
+      18.411,
+      53.194,
+      22.604,
+      3.796
+     ]
+    },
+    {
+     "spid": "144",
+     "visible": false,
+     "src": "slides/19-144.webp",
+     "box": [
+      18.438,
+      57.315,
+      22.604,
+      3.796
+     ]
+    },
+    {
+     "spid": "145",
+     "visible": false,
+     "src": "slides/19-145.webp",
+     "box": [
+      18.62,
+      68.565,
+      10.208,
+      3.796
+     ]
+    },
+    {
+     "spid": "146",
+     "visible": false,
+     "src": "slides/19-146.webp",
+     "box": [
+      18.698,
+      76.435,
+      22.344,
+      3.796
+     ]
+    },
+    {
+     "spid": "147",
+     "visible": false,
+     "src": "slides/19-147.webp",
+     "box": [
+      18.542,
+      84.028,
+      12.396,
+      3.796
+     ]
+    },
+    {
+     "spid": "174",
+     "visible": false,
+     "src": "slides/19-174.webp",
+     "box": [
+      67.188,
+      59.398,
+      1.016,
+      1.852
+     ]
+    },
+    {
+     "spid": "175",
+     "visible": false,
+     "src": "slides/19-175.webp",
+     "box": [
+      67.188,
+      62.87,
+      1.016,
+      1.852
+     ]
+    },
+    {
+     "spid": "176",
+     "visible": false,
+     "src": "slides/19-176.webp",
+     "box": [
+      67.188,
+      69.815,
+      1.016,
+      1.806
+     ]
+    },
+    {
+     "spid": "177",
+     "visible": false,
+     "src": "slides/19-177.webp",
+     "box": [
+      67.188,
+      73.287,
+      1.016,
+      1.806
+     ]
+    },
+    {
+     "spid": "178",
+     "visible": false,
+     "src": "slides/19-178.webp",
+     "box": [
+      67.188,
+      76.759,
+      1.016,
+      1.806
+     ]
+    },
+    {
+     "spid": "179",
+     "visible": false,
+     "src": "slides/19-179.webp",
+     "box": [
+      67.188,
+      83.657,
+      1.016,
+      1.852
+     ]
+    }
+   ],
+   "start": []
+  },
+  {
+   "image": "slides/20.webp",
+   "hidden": true,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back Help Exit Submit Back Submit Simulation Paused Restart Simulation Return to Main Menu Resume Simulation You\u2019ve paused the Nurse\u2019s EHR Challenge",
+   "transition": 1200,
+   "audio": [
+    {
+     "src": "audio/media15.mp3",
+     "vol": 0.8,
+     "loop": false,
+     "span": 1,
+     "start": "click"
+    }
+   ],
+   "links": [
+    {
+     "box": [
+      67.531,
+      34.319,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "202"
+      },
+      {
+       "show": "204"
+      },
+      {
+       "hide": "191"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.467,
+      44.261,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "190"
+      },
+      {
+       "show": "191"
+      },
+      {
+       "hide": "204"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.404,
+      54.203,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "197"
+      },
+      {
+       "show": "204"
+      },
+      {
+       "hide": "191"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.34,
+      64.145,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "200"
+      },
+      {
+       "show": "204"
+      },
+      {
+       "hide": "191"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.277,
+      74.088,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "201"
+      },
+      {
+       "show": "204"
+      },
+      {
+       "hide": "191"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      83.033,
+      90.03,
+      15.395,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 175"
+    },
+    {
+     "box": [
+      88.038,
+      7.818,
+      6.187,
+      4.039
+     ],
+     "to": 14,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.446,
+      7.756,
+      6.187,
+      4.039
+     ],
+     "to": 19,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      79.552,
+      91.261,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit",
+     "gate": [
+      "191"
+     ]
+    },
+    {
+     "box": [
+      63.354,
+      91.478,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    },
+    {
+     "box": [
+      83.238,
+      90.049,
+      15.149,
+      7.982
+     ],
+     "to": 20,
+     "label": "Submit - Incorrect",
+     "gate": [
+      "204"
+     ]
+    },
+    {
+     "box": [
+      17.792,
+      13.669,
+      3.415,
+      6.071
+     ],
+     "actions": [
+      {
+       "play": "audio/media15.mp3"
+      }
+     ],
+     "label": "Play narration"
+    },
+    {
+     "box": [
+      27.106,
+      28.591,
+      4.189,
+      7.148
+     ],
+     "to": 2,
+     "label": "Pause"
+    },
+    {
+     "box": [
+      28.343,
+      54.727,
+      26.125,
+      4.937
+     ],
+     "to": 1,
+     "label": "Restart Simulation"
+    },
+    {
+     "box": [
+      28.49,
+      62.897,
+      26.125,
+      4.937
+     ],
+     "to": 0,
+     "label": "Return to Main Menu"
+    },
+    {
+     "box": [
+      28.343,
+      46.244,
+      26.125,
+      4.937
+     ],
+     "to": 10,
+     "label": "Resume Simulation"
+    }
+   ],
+   "overlays": [
+    {
+     "spid": "190",
+     "visible": false,
+     "src": "slides/20-190.webp",
+     "box": [
+      68.307,
+      46.111,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "191",
+     "visible": false
+    },
+    {
+     "spid": "197",
+     "visible": false,
+     "src": "slides/20-197.webp",
+     "box": [
+      68.151,
+      56.019,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "200",
+     "visible": false,
+     "src": "slides/20-200.webp",
+     "box": [
+      68.125,
+      65.926,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "201",
+     "visible": false,
+     "src": "slides/20-201.webp",
+     "box": [
+      68.125,
+      75.833,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "202",
+     "visible": false,
+     "src": "slides/20-202.webp",
+     "box": [
+      68.333,
+      36.065,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "204",
+     "visible": true,
+     "src": "slides/20-204.webp",
+     "box": [
+      82.943,
+      89.954,
+      15.521,
+      8.38
+     ]
+    }
+   ],
+   "start": []
+  },
+  {
+   "image": "slides/21.webp",
+   "hidden": true,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Select the Correct Patient and Encounter Miller Name MRN Date of Birth Age Unit Miller, Patricia Miller, Patrick Miller, Paula Miller, Patricia 243653 832494 487594 734329 14 Mar 1958 18 Aug 1954 03 Jan 1988 24 Mar 1958 68 72 38 68 Medical Surgery Medical Rehab Patient Details Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Date Encounter type Unit Status 02 Nov 2026 08 Sep 2026 12 May 2026 11 Jan 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Respiratory Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Search Patient\u2026 Help Submit Back Patient Details Patrick Miller MRN: 832494 DOB: 18 Aug 1954 (72y) Male Date Encounter type Unit Status 18 Aug 2026 03 Oct 2026 11 Jun 2026 05 Feb 2026 Surgical Admission Emergency Visit Outpatient Follow-up Outpatient Visit Surgery Emergency Surgery Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Patient Details Paula Miller MRN: 487594 DOB: 03 Jan 1988 (38y) Female Date Encounter type Unit Status 20 Oct 2026 29 Sep 2026 16 Jul 2026 08 Mar 2026 Inpatient Admission Emergency Visit Outpatient Follow-up Outpatient Visit Medical Emergency Medical Medical Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Patient Details Patricia A. Miller MRN: 734329 DOB: 24 Mar 1958 (68y) Female Date Encounter type Unit Status 21 Oct 2026 30 Sep 2026 12 Jun 2026 19 Feb 2026 Rehabilitation Admission Outpatient Follow-up Emergency Visit Outpatient Visit Rehab Rehab Emergency Rehab Active Discharge Discharge Discharge Encounters Demographics Allergies Alerts Help Exit Submit Back Your Task You need to review the morning assessment for a 68 year old female who was admitted yesterday to the Medical Unit for pneumonia Incorrect Patient Selection Try Again You have selected the wrong patient. Before proceeding, always verify the patient's Medical Record Number (MRN) and date of birth to ensure you are accessing the correct medical record. Try Again",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      19.555,
+      55.565,
+      44.196,
+      9.907
+     ],
+     "actions": [
+      {
+       "show": "13"
+      },
+      {
+       "hide": "222"
+      },
+      {
+       "hide": "106"
+      },
+      {
+       "hide": "271"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      19.587,
+      45.324,
+      44.196,
+      9.907
+     ],
+     "actions": [
+      {
+       "show": "271"
+      },
+      {
+       "hide": "222"
+      },
+      {
+       "hide": "106"
+      },
+      {
+       "hide": "13"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      19.537,
+      65.917,
+      44.196,
+      9.907
+     ],
+     "actions": [
+      {
+       "show": "106"
+      },
+      {
+       "hide": "13"
+      },
+      {
+       "hide": "271"
+      },
+      {
+       "hide": "222"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      19.448,
+      76.518,
+      44.196,
+      10.416
+     ],
+     "actions": [
+      {
+       "show": "222"
+      },
+      {
+       "hide": "106"
+      },
+      {
+       "hide": "13"
+      },
+      {
+       "hide": "271"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      88.011,
+      7.742,
+      6.187,
+      4.039
+     ],
+     "to": 12,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.286,
+      7.709,
+      6.187,
+      4.039
+     ],
+     "to": 17,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      79.706,
+      91.118,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit"
+    },
+    {
+     "box": [
+      63.317,
+      91.505,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    },
+    {
+     "box": [
+      36.973,
+      65.782,
+      26.125,
+      5.834
+     ],
+     "to": 5,
+     "label": "Try Again"
+    }
+   ],
+   "overlays": [
+    {
+     "spid": "271",
+     "visible": true,
+     "src": "slides/21-271.webp",
+     "box": [
+      65.807,
+      20.093,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "13",
+     "visible": false,
+     "src": "slides/21-13.webp",
+     "box": [
+      65.807,
+      20.139,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "106",
+     "visible": true,
+     "src": "slides/21-106.webp",
+     "box": [
+      65.729,
+      20.139,
+      33.594,
+      68.102
+     ]
+    },
+    {
+     "spid": "222",
+     "visible": true,
+     "src": "slides/21-222.webp",
+     "box": [
+      65.755,
+      20.139,
+      33.594,
+      68.102
+     ]
+    }
+   ],
+   "start": []
+  },
+  {
+   "image": "slides/22.webp",
+   "hidden": true,
+   "text": "1 2 3 4 5 Welcome Select Patient Review & Identify Choose Next Action Complete Exit Choose the Appropriate Next Action Patricia Miller MRN: 243653 DOB: 14 Mar 1958 (68y) Female Encounter type: Date: Unit: Attending Provider: Nursing Notes Tip Think about patient safety, accurate communication, and the organization's documentation policy. Search Patient\u2026 Help Inpatient Admission 02 Nov 2026 Medical \u2013 4B Dr. L. Carter Allergies Penicillin Latex Medications Provider Notes Orders Nursing Notes 02 Nov 2026    14:00 Patient reports increased abdominal pain, 8/10, sharp and constant. BP 132/84, HR 88, Temp 37.2\u00b0C, RR 18, SpO , 97% on room air. Patient appears uncomfortable, guarding abdomen. No PRN pain medication documented. No provider notification documented. Plan: Continue to monitor. Signed: : S. Jenkins, RN What should you do next? Select the most appropriate action based on Rivermere Health's documentation procedures. A. Add a late entry to document that pain medication was given . B. Notify the provider about the patient's pain level and document the notification. C. Delete the pain assessment since it was not followed by medication. D. Ask the patient if they still have pain and document only their response. E. Leave the note as it is, since pain medication may have been given by another nurse. Submit Back Help Exit Submit Back Submit Incorrect Appropriate Action Try Again You have selected the wrong next action. Before proceeding, u nderstand the concern, review the available information, follow approved procedures and document accurately Try Again",
+   "transition": 1200,
+   "audio": [],
+   "links": [
+    {
+     "box": [
+      67.531,
+      34.319,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "87"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.467,
+      44.261,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "64"
+      },
+      {
+       "show": "65"
+      },
+      {
+       "hide": "88"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.404,
+      54.203,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "62"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.34,
+      64.145,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "84"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      67.277,
+      74.088,
+      30.857,
+      6.732
+     ],
+     "actions": [
+      {
+       "show": "86"
+      },
+      {
+       "show": "88"
+      },
+      {
+       "hide": "65"
+      }
+     ],
+     "label": "Select"
+    },
+    {
+     "box": [
+      83.033,
+      90.03,
+      15.395,
+      8.093
+     ],
+     "to": "next",
+     "label": "Rounded Rectangle 9"
+    },
+    {
+     "box": [
+      88.038,
+      7.818,
+      6.187,
+      4.039
+     ],
+     "to": 14,
+     "label": "Help"
+    },
+    {
+     "box": [
+      93.446,
+      7.756,
+      6.187,
+      4.039
+     ],
+     "to": 19,
+     "label": "Exit"
+    },
+    {
+     "box": [
+      79.552,
+      91.261,
+      22.492,
+      5.834
+     ],
+     "to": "next",
+     "label": "Submit",
+     "gate": [
+      "65"
+     ]
+    },
+    {
+     "box": [
+      63.354,
+      91.478,
+      22.492,
+      5.834
+     ],
+     "to": "prev",
+     "label": "Back"
+    },
+    {
+     "box": [
+      83.238,
+      90.049,
+      15.149,
+      7.982
+     ],
+     "to": 20,
+     "label": "Submit - Incorrect",
+     "gate": [
+      "88"
+     ]
+    },
+    {
+     "box": [
+      34.657,
+      64.71,
+      30.686,
+      7.058
+     ],
+     "to": 10,
+     "label": "Rounded Rectangle 96"
+    },
+    {
+     "box": [
+      34.733,
+      64.675,
+      30.686,
+      7.058
+     ],
+     "to": 10,
+     "label": "Rounded Rectangle 103"
+    },
+    {
+     "box": [
+      37.013,
+      65.354,
+      26.125,
+      5.834
+     ],
+     "to": 10,
+     "label": "Try Again"
+    }
+   ],
+   "overlays": [
+    {
+     "spid": "64",
+     "visible": false,
+     "src": "slides/22-64.webp",
+     "box": [
+      68.307,
+      46.111,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "65",
+     "visible": false
+    },
+    {
+     "spid": "62",
+     "visible": false,
+     "src": "slides/22-62.webp",
+     "box": [
+      68.151,
+      56.019,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "84",
+     "visible": false,
+     "src": "slides/22-84.webp",
+     "box": [
+      68.125,
+      65.926,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "86",
+     "visible": false,
+     "src": "slides/22-86.webp",
+     "box": [
+      68.125,
+      75.833,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "87",
+     "visible": false,
+     "src": "slides/22-87.webp",
+     "box": [
+      68.333,
+      36.065,
+      0.625,
+      1.204
+     ]
+    },
+    {
+     "spid": "88",
+     "visible": true,
+     "src": "slides/22-88.webp",
+     "box": [
+      82.943,
+      89.954,
+      15.521,
+      8.38
+     ]
+    }
+   ],
+   "start": []
   }
  ]
 }

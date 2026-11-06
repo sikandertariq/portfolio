@@ -38,6 +38,10 @@
 
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
+    /* shapes the deck shows/hides on click (cut out by the converter) */
+    .layer { position: absolute; z-index: 1; pointer-events: none; }
+    .layer[hidden], .hotspot[hidden] { display: none; }
+
     @media (prefers-reduced-motion: reduce) { .stage img { transition: none; } }
   </style>
 </head>
@@ -45,6 +49,7 @@
   <main class="stage" id="stage" aria-label="Interactive course">
     <img alt="" id="imgA" />
     <img alt="" id="imgB" />
+    <div id="layers"></div>
     <div id="hotspots"></div>
     <button class="pill" id="sound" hidden>🔊 Tap to turn on sound</button>
     <button class="pill back" id="back" hidden>← Back</button>
@@ -115,7 +120,7 @@
 
     // 1920 or 3840 px render: the browser picks by on-screen size x pixel density
     function setSrc(img, s) {
-      img.sizes = stage.clientWidth + 'px';
+      img.sizes = (stage.clientWidth || 1920) + 'px';
       img.srcset = `${base + s.image} 1920w, ${base + s.image.replace('.webp', '@2x.webp')} 3840w`;
       img.src = base + s.image;
     }
@@ -123,7 +128,21 @@
       if (slides[i]) setSrc(new Image(), slides[i]);
     }
     // entering full screen makes the stage bigger: let the browser upgrade to the 3840 render
-    addEventListener('resize', () => { front.sizes = stage.clientWidth + 'px'; });
+    addEventListener('resize', () => { front.sizes = (stage.clientWidth || 1920) + 'px'; });
+
+    // ── shapes that appear/disappear: vis[spid] is their current state
+    let vis = {}, layerEls = {};
+    function apply(step, s) {
+      if (step.play) return play(s.audio.find(a => a.src === step.play) || { src: step.play, vol: 1, loop: false, span: 1 }, true);
+      const id = step.show ?? step.hide;
+      vis[id] = 'show' in step;
+      if (layerEls[id]) layerEls[id].hidden = !vis[id];
+    }
+    function refreshGates() {  // buttons inside hidden shapes can't be clicked
+      layer.querySelectorAll('.hotspot').forEach(b => {
+        if (b.dataset.gate) b.hidden = !b.dataset.gate.split(' ').every(g => vis[g]);
+      });
+    }
 
     let front = $('imgA'), backImg = $('imgB');
     async function show(i, fromBack) {
@@ -141,12 +160,26 @@
       // crossfade (stands in for PowerPoint's Morph / Fade)
       setSrc(backImg, s);
       backImg.alt = s.text;
-      try { await backImg.decode(); } catch {}
+      // wait for the image, but never hang on it (e.g. a hidden tab may not decode)
+      await Promise.race([backImg.decode().catch(() => {}), new Promise(r => setTimeout(r, 1500))]);
       stage.style.setProperty('--fade', (cur < 0 ? 0 : s.transition) + 'ms');
       backImg.classList.add('on');
       front.classList.remove('on');
       [front, backImg] = [backImg, front];
       cur = i;
+
+      vis = {}; layerEls = {};  // PowerPoint resets a slide's animations each visit
+      $('layers').replaceChildren(...s.overlays.filter(o => o.src).map(o => {
+        const img = new Image();
+        img.className = 'layer';
+        img.src = base + o.src;
+        img.alt = '';
+        const [x, y, w, h] = o.box;
+        Object.assign(img.style, { left: x + '%', top: y + '%', width: w + '%', height: h + '%' });
+        return layerEls[o.spid] = img;
+      }));
+      s.overlays.forEach(o => apply({ [o.visible ? 'show' : 'hide']: o.spid }, s));
+      (s.start || []).forEach(step => apply(step, s));
 
       layer.replaceChildren(...s.links.map(link => {
         const b = document.createElement('button');
@@ -154,18 +187,22 @@
         const [x, y, w, h] = link.box;
         Object.assign(b.style, { left: x + '%', top: y + '%', width: w + '%', height: h + '%' });
         b.setAttribute('aria-label', link.label || 'Button');
+        if (link.gate) b.dataset.gate = link.gate.join(' ');
         b.onclick = () => {
-          if (link.play) play(s.audio.find(a => a.src === link.play) || { src: link.play, vol: 1, loop: false, span: 1 }, true);
-          else if (link.to?.url) window.open(link.to.url, '_blank', 'noopener');
+          (link.actions || []).forEach(step => apply(step, s));
+          refreshGates();
+          if (link.to === undefined) return;
+          if (link.to.url) window.open(link.to.url, '_blank', 'noopener');
           else if (link.to === 'back') show(history.pop() ?? cur, true);
           else show(resolve(link.to));
         };
-        if (!link.play && !link.to?.url) preload(resolve(link.to));
+        if (link.to !== undefined && !link.to.url) preload(resolve(link.to));
         return b;
       }));
+      refreshGates();
 
       // a slide with no way out (no navigation buttons) gets a Back button
-      $('back').hidden = cur === visible[0] || s.links.some(l => !l.play);
+      $('back').hidden = cur === visible[0] || s.links.some(l => l.to !== undefined);
 
       s.audio.filter(a => a.start === 'auto').forEach(a => play(a, false));
       live.textContent = s.text;
