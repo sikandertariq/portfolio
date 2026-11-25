@@ -204,7 +204,19 @@ async function renderHomePage() {
   const heroTagline = document.getElementById('hero-tagline');
   const heroImage = document.getElementById('hero-image-container');
 
-  if (heroHeading) heroHeading.innerHTML = `<span class="underline-accent">${config.heroHeading}</span>`;
+  const heroName = document.getElementById('hero-name');
+  const heroRole = document.getElementById('hero-role');
+  if (heroName) heroName.textContent = config.name || '';
+  if (heroRole) {
+    // Keep each job title on one line; only break between them
+    const parts = String(config.title || '').split(/\s*\/\s*/).filter(Boolean);
+    heroRole.innerHTML = `<span class="hero-role-text">${parts.map(r => `<span>${escapeAttr(r)}</span>`).join('<span class="hero-role-sep">/</span>')}</span>`;
+    heroRole.hidden = !parts.length;
+  }
+  // Words wrapped in <em> in the headline get the gold underline
+  if (heroHeading) heroHeading.innerHTML = /<em>/i.test(config.heroHeading || '')
+    ? config.heroHeading
+    : `<span class="underline-accent">${config.heroHeading}</span>`;
   if (heroTagline) heroTagline.innerHTML = config.tagline;
   if (heroImage) {
     const img = createImage(config.headshot, `Photo of ${config.name}`, 'hero-image', 'hero-image placeholder-headshot');

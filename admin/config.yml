@@ -41,8 +41,8 @@ collections:
           - { name: name, label: "Full Name", widget: string }
           - { name: firstName, label: "First Name", widget: string }
           - { name: initials, label: "Initials (shown in the logo)", widget: string, hint: "e.g. JS" }
-          - { name: title, label: "Your Title", widget: string, hint: "e.g. Instructional Designer" }
-          - { name: heroHeading, label: "Homepage Headline", widget: string, hint: "e.g. Hi, I'm Jane!" }
+          - { name: title, label: "Your Title", widget: string, hint: "Shown under your name at the top of the homepage, e.g. Instructional Designer" }
+          - { name: heroHeading, label: "Homepage Headline", widget: string, hint: "Wrap a word in <em>like this</em> to give it the gold underline." }
           - name: tagline
             label: "Homepage Tagline"
             widget: text
