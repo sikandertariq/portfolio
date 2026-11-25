@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-9 -28 108 98">
+  <defs><clipPath id="znclip"><rect x="-20" y="-1.5" width="130" height="63"/></clipPath></defs>
+  <path d="M2 2 H38 L2 58 H38 M50 58 V2 L88 58 V2" fill="none" stroke="#7B1E2E" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="square" clip-path="url(#znclip)"/>
+  <circle cx="88" cy="-13" r="5.5" fill="#D9B25F"/>
+</svg>
