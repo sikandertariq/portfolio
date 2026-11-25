@@ -2474,3 +2474,71 @@ h1, h2, h3, h4, h5, h6 {
 .footer--light .footer-nav a { color: var(--color-primary); }
 .footer--light .footer-social a { color: var(--color-primary); border-color: rgba(123, 30, 46, 0.35); }
 .footer--light .footer-social a:hover { border-color: var(--color-primary); background: rgba(123, 30, 46, 0.06); }
+
+
+/* ===================================================================
+   CONTACT PAGE — Let's talk, contact cards, message form
+   =================================================================== */
+.contact-eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #A9823A;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-intro-col .contact-intro { margin-bottom: var(--space-lg); max-width: 520px; }
+
+.contact-cards { display: grid; gap: var(--space-sm); max-width: 440px; }
+
+.contact-form-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+.form-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.contact-form .form-input::placeholder,
+.contact-form .form-textarea::placeholder { color: rgba(243, 236, 229, 0.55); }
+
+#contact-submit:disabled { opacity: 0.7; cursor: wait; transform: none; }
+
+.form-status {
+  margin-top: var(--space-sm);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  min-height: 1.4em;
+  color: var(--color-text-light);
+}
+
+.form-status.is-success {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(217, 178, 95, 0.18);
+  border: 1px solid rgba(217, 178, 95, 0.6);
+}
+
+.form-status.is-error {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Resume page: small link to the contact page under the downloads */
+.resume-talk {
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+}
+
+.resume-talk a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

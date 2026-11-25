@@ -520,36 +520,55 @@ async function renderContactPage() {
   if (!config) return;
 
   updateSiteWide(config);
+  renderContactCards(document.getElementById('contact-cards'), config);
 
-  // Email link
-  const emailLink = document.getElementById('contact-email');
-  if (emailLink) {
-    emailLink.href = `mailto:${config.email}`;
-    emailLink.textContent = config.email;
-  }
-
-  // LinkedIn link
-  const linkedinLink = document.getElementById('contact-linkedin');
-  if (linkedinLink) {
-    linkedinLink.href = config.linkedin;
-    linkedinLink.textContent = 'View LinkedIn Profile';
-  }
-
-  // Form handler
+  // Message form: sends to the site email through FormSubmit (formsubmit.co)
   const form = document.getElementById('contact-form');
-  const successMsg = document.getElementById('form-success');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // In a real scenario, you'd send the form data to a server
-      // For now, just show a success message
-      if (successMsg) successMsg.classList.add('show');
+  const status = document.getElementById('form-status');
+  const button = document.getElementById('contact-submit');
+  if (!form || !config.email) return;
+
+  const show = (msg, kind) => {
+    status.textContent = msg;
+    status.className = `form-status ${kind || ''}`;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (data._honey) return;                      // a bot filled the hidden field
+    if (!data.name.trim() || !data.message.trim() || !form.querySelector('[type=email]').checkValidity() || !data.email.trim()) {
+      show('Please fill in your name, a valid email and a message.', 'is-error');
+      return;
+    }
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    show('');
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(config.email)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: data.name.trim(),
+          email: data.email.trim(),
+          message: data.message.trim(),
+          _replyto: data.email.trim(),
+          _subject: `New message from your portfolio: ${data.name.trim()}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || String(out.success) === 'false') throw new Error(out.message || 'send failed');
       form.reset();
-      setTimeout(() => {
-        if (successMsg) successMsg.classList.remove('show');
-      }, 5000);
-    });
-  }
+      show("Thanks for reaching out! Your message is on its way and I'll get back to you soon.", 'is-success');
+    } catch (err) {
+      show(`Sorry, that didn't send. Please try again, or email me directly at ${config.email}.`, 'is-error');
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Send Message';
+    }
+  });
 }
 
 
@@ -615,16 +634,6 @@ async function renderResumePage() {
     ].filter(Boolean).join('');
   }
 
-  // PDF preview
-  const preview = document.getElementById('resume-preview');
-  const previewFrame = document.getElementById('resume-preview-frame');
-  if (pdf && preview && previewFrame) {
-    previewFrame.innerHTML = `
-      <iframe src="${escapeAttr(pdf)}#toolbar=0&navpanes=0&view=FitH" title="Resume preview" loading="lazy"></iframe>
-      <a class="resume-preview-open" href="${escapeAttr(pdf)}" target="_blank" rel="noopener">Open the PDF in a new tab</a>`;
-    preview.hidden = false;
-  }
-
   // Video
   const videoSection = document.getElementById('resume-video-section');
   const videoEl = document.getElementById('resume-video');
@@ -636,22 +645,24 @@ async function renderResumePage() {
     videoSection.hidden = false;
   }
 
-  // Contact cards
-  const list = document.getElementById('resume-contact-list');
-  if (list) {
-    const waDigits = String(config.whatsapp || '').replace(/\D/g, '');
-    const linkedin = safeHttpsUrl(config.linkedin);
-    const card = (href, icon, label, value, newTab) => `
-      <a class="resume-contact-card" href="${escapeAttr(href)}"${newTab ? ' target="_blank" rel="noopener noreferrer"' : ''}>
-        <span class="resume-contact-icon">${icon}</span>
-        <span class="resume-contact-text"><span class="resume-contact-label">${label}</span><span class="resume-contact-value">${escapeAttr(value)}</span></span>
-      </a>`;
-    list.innerHTML = [
-      waDigits && card(`https://wa.me/${waDigits}`, RESUME_ICONS.whatsapp, 'WhatsApp', config.whatsapp, true),
-      config.email && card(`mailto:${config.email}`, ICONS.email, 'Email', config.email, false),
-      linkedin && card(linkedin, ICONS.linkedin, 'LinkedIn', 'View my profile', true),
-    ].filter(Boolean).join('');
-  }
+}
+
+
+// Contact cards (WhatsApp / email / LinkedIn) — used on the Contact page
+function renderContactCards(list, config) {
+  if (!list) return;
+  const waDigits = String(config.whatsapp || '').replace(/\D/g, '');
+  const linkedin = safeHttpsUrl(config.linkedin);
+  const card = (href, icon, label, value, newTab) => `
+    <a class="resume-contact-card" href="${escapeAttr(href)}"${newTab ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+      <span class="resume-contact-icon">${icon}</span>
+      <span class="resume-contact-text"><span class="resume-contact-label">${label}</span><span class="resume-contact-value">${escapeAttr(value)}</span></span>
+    </a>`;
+  list.innerHTML = [
+    waDigits && card(`https://wa.me/${waDigits}`, RESUME_ICONS.whatsapp, 'WhatsApp', config.whatsapp, true),
+    config.email && card(`mailto:${config.email}`, ICONS.email, 'Email', config.email, false),
+    linkedin && card(linkedin, ICONS.linkedin, 'LinkedIn', 'View my profile', true),
+  ].filter(Boolean).join('');
 }
 
 
@@ -846,7 +857,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderAboutPage().then(() => setTimeout(initScrollAnimations, 100));
       break;
     case 'contact':
-      renderContactPage();
+      renderContactPage().then(() => setTimeout(initScrollAnimations, 100));
       break;
     case 'resume':
       renderResumePage().then(() => setTimeout(initScrollAnimations, 100));
