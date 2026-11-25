@@ -49,6 +49,20 @@ collections:
             hint: "Short intro under your name. You can make words bold with <strong>like this</strong>."
           - { name: headshot, label: "Hero Photo (homepage)", widget: image, required: false }
           - { name: aboutPhoto, label: "About Page Photo", widget: image, required: false }
+          - name: aboutFacts
+            label: "About Page — Fun-Fact Stickers"
+            label_singular: "Sticker"
+            widget: list
+            required: false
+            summary: "{{fields.text}}"
+            hint: "Short facts shown as tilted stickers around your About photo. Up to 6; 4 looks best."
+            fields:
+              - { name: text, label: "Text", widget: string, hint: "Keep it short, e.g. chai over coffee, always" }
+              - name: icon
+                label: "Icon"
+                widget: select
+                required: false
+                options: ["sparkle", "palette", "heart", "play", "book_open", "book", "coffee", "star", "cat", "music", "plane"]
           - name: aboutBio
             label: "About Me — Paragraphs"
             widget: list

@@ -441,6 +441,26 @@ async function renderAboutPage() {
     photoContainer.appendChild(img);
   }
 
+  // Fun-fact stickers around the photo
+  const stickers = document.getElementById('about-stickers');
+  const facts = (config.aboutFacts || []).filter(f => f && f.text);
+  if (stickers) {
+    stickers.innerHTML = facts.slice(0, 6).map((f, i) => `
+      <li class="about-sticker about-sticker--${i + 1}" style="--i:${i}">
+        <span class="about-sticker-text">${escapeAttr(f.text)}</span>
+        ${STICKER_ICONS[f.icon] ? `<span class="about-sticker-icon" aria-hidden="true">${STICKER_ICONS[f.icon]}</span>` : ''}
+      </li>`).join('');
+    const collage = document.getElementById('about-collage');
+    if (collage) {
+      collage.classList.toggle('no-stickers', !facts.length);
+      // pop the stickers in once the collage scrolls into view
+      const io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) { collage.classList.add('is-in'); io.disconnect(); }
+      }), { threshold: 0.25 });
+      io.observe(collage);
+    }
+  }
+
   // Skills
   const skillsGrid = document.getElementById('skills-grid');
   if (skillsGrid && config.skills) {
@@ -449,6 +469,22 @@ async function renderAboutPage() {
     `).join('');
   }
 }
+
+
+// Little icons for the About page stickers (pick one per fact in the admin page)
+const STICKER_ICONS = {
+  sparkle: '<svg viewBox="0 0 24 24"><path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>',
+  palette: '<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.8-1.7h2.1A4.3 4.3 0 0 0 21 11c0-4.4-4-8-9-8zm-5 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>',
+  heart: '<svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.6-9.1C.9 8 3 4.5 6.6 4.5c2.2 0 3.6 1.3 4.2 2.3h.4c.6-1 2-2.3 4.2-2.3 3.6 0 5.7 3.5 4.2 6.9-2.1 4.5-9.6 9.1-9.6 9.1z"/></svg>',
+  play: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 14.5v-9l7 4.5-7 4.5z"/></svg>',
+  book: '<svg viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v16H6.5a1 1 0 0 0 0 2H20v2H6.5A2.5 2.5 0 0 1 4 19.5v-15zM8 6v2h8V6H8z"/></svg>',
+  coffee: '<svg viewBox="0 0 24 24"><path d="M3 8h14v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6V8zm14 1h1.5a3 3 0 0 1 0 6H17v-2h1.5a1 1 0 0 0 0-2H17V9zM2 20h17v2H2v-2zM7 2.5c.8.8.8 1.7 0 2.5s-.8 1.7 0 2.5H5.6c-.8-.8-.8-1.7 0-2.5s.8-1.7 0-2.5H7zm4 0c.8.8.8 1.7 0 2.5s-.8 1.7 0 2.5H9.6c-.8-.8-.8-1.7 0-2.5s.8-1.7 0-2.5H11z"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>',
+  cat: '<svg viewBox="0 0 24 24"><path d="M4 3l4 4.2C9.2 6.8 10.6 6.5 12 6.5s2.8.3 4 .7L20 3v8.5c0 4.7-3.6 8.5-8 8.5s-8-3.8-8-8.5V3zm5 9.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zm6 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 16l-1.2 1h2.4L12 16z"/></svg>',
+  music: '<svg viewBox="0 0 24 24"><path d="M20 2.5v13a3.5 3.5 0 1 1-2-3.2V7.1L10 8.8v8.7a3.5 3.5 0 1 1-2-3.2V4.9l12-2.4z"/></svg>',
+  plane: '<svg viewBox="0 0 24 24"><path d="M21 15.5v-2l-8-5V3.2a1.5 1.5 0 0 0-3 0v5.3l-8 5v2l8-2.5v5.2l-2 1.5V21l3.5-1 3.5 1v-1.3l-2-1.5V13l8 2.5z"/></svg>',
+  book_open: '<svg viewBox="0 0 24 24"><path d="M2 4.5c2.8-.9 6-.6 9 1.2v14.6c-3-1.8-6.2-2.1-9-1.2V4.5zm20 0v14.6c-2.8-.9-6-.6-9 1.2V5.7c3-1.8 6.2-2.1 9-1.2z"/></svg>',
+};
 
 
 // ── CONTACT PAGE ─────────────────────────────────────────────────────

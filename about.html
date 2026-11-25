@@ -34,16 +34,18 @@
   <!-- ═══ ABOUT HERO ═══ -->
   <section class="about-hero" id="about-hero">
     <div class="container">
+      <h1 class="about-fun-heading">(about me)</h1>
+
+      <!-- Photo with fun-fact stickers around it (stickers come from site-config.json → aboutFacts) -->
+      <div class="about-collage" id="about-collage">
+        <figure class="about-polaroid" id="about-photo-container"></figure>
+        <ul class="about-stickers" id="about-stickers"></ul>
+      </div>
+
       <div class="about-content fade-in-up">
-        <h1 class="about-heading">
-          <span class="underline-accent">More about me...</span>
-        </h1>
         <div class="about-text" id="about-bio">
           <!-- Loaded from site-config.json -->
         </div>
-      </div>
-      <div class="fade-in-up" id="about-photo-container">
-        <!-- Photo loaded dynamically -->
       </div>
     </div>
   </section>
