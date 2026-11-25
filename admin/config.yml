@@ -65,6 +65,30 @@ collections:
             widget: object
             fields:
               - { name: linkedin, label: "LinkedIn URL", widget: string }
+          - { name: whatsapp, label: "WhatsApp Number", widget: string, required: false, hint: "With country code, e.g. +92 300 1234567. Shown on the Resume page." }
+          - name: resumeIntro
+            label: "Resume Page — Intro Text"
+            widget: text
+            required: false
+            hint: "A sentence or two under the 'My Resume' heading. Leave blank to hide."
+          - name: resumePdf
+            label: "Resume (PDF)"
+            widget: file
+            required: false
+            media_folder: "/assets/resume"
+            public_folder: "/assets/resume"
+          - name: resumeDocx
+            label: "Resume (Word .docx)"
+            widget: file
+            required: false
+            media_folder: "/assets/resume"
+            public_folder: "/assets/resume"
+          - { name: resumeVideoTitle, label: "Resume Page — Video Heading", widget: string, required: false, hint: "e.g. A quick introduction. Leave blank to show 'Video'." }
+          - name: resumeVideo
+            label: "Resume Page — Video Link"
+            widget: string
+            required: false
+            hint: "Paste a Loom, YouTube, Vimeo or Google Drive share link. Leave blank to hide the video."
 
   # ----------------------------------------------------------
   # 2) PROJECTS — your portfolio items

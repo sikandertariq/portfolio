@@ -1776,3 +1776,152 @@ h1, h2, h3, h4, h5, h6 {
 
 /* let wide tables scroll inside their wrapper instead of widening the page grid */
 .project-detail-main { min-width: 0; }
+
+
+/* ===================================================================
+   RESUME PAGE
+   =================================================================== */
+.resume-hero {
+  margin-top: var(--nav-height);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  background: var(--color-bg-light);
+}
+
+.resume-intro-block { max-width: 760px; }
+.resume-intro-block .contact-intro { margin-bottom: var(--space-lg); }
+
+.resume-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.resume-downloads .btn { gap: 10px; padding: 14px 30px; }
+.resume-downloads .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline-dark:hover {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+.resume-section-title {
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.resume-video-section { padding: var(--space-lg) 0; }
+.resume-video-section[hidden], .resume-preview[hidden] { display: none; }
+
+.resume-video-frame { max-width: 960px; }
+
+/* A video file sets its own shape; links (Loom, YouTube…) keep the 16:9 frame */
+.resume-video-frame:has(video) { aspect-ratio: auto; }
+
+.resume-video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+}
+
+.resume-main { padding: var(--space-lg) 0 var(--space-2xl); }
+
+.resume-main .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.resume-preview { min-width: 0; }
+
+.resume-preview-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.3;   /* about the shape of one page */
+  border: 0;
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.resume-preview-open {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.resume-contact { position: sticky; top: calc(var(--nav-height) + var(--space-md)); }
+
+.resume-contact-list { display: grid; gap: var(--space-sm); }
+
+.resume-contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.resume-contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.resume-contact-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.resume-contact-icon svg { width: 20px; height: 20px; fill: var(--color-text-light); }
+
+.resume-contact-text { display: flex; flex-direction: column; min-width: 0; }
+
+.resume-contact-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.resume-contact-value {
+  color: var(--color-text-dark);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* With no PDF set, the contact cards take the full width */
+.resume-main .container:has(.resume-preview[hidden]) { grid-template-columns: minmax(0, 1fr); max-width: 760px; margin-left: 0; }
+
+@media (max-width: 992px) {
+  .resume-main .container { grid-template-columns: minmax(0, 1fr); }
+  .resume-contact { position: static; order: -1; }
+}
+
+@media (max-width: 768px) {
+  .resume-hero { padding-top: var(--space-xl); }
+  .resume-preview { display: none; }  /* phones show PDFs badly in a frame; the Download button covers it */
+  .resume-downloads .btn { flex: 1 1 100%; }
+}

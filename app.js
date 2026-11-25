@@ -409,6 +409,108 @@ async function renderContactPage() {
 }
 
 
+// ── RESUME PAGE ──────────────────────────────────────────────────────
+const RESUME_ICONS = {
+  download: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+  whatsapp: `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>`,
+};
+
+// Turn a Loom / YouTube / Vimeo / Google Drive link, or a video file, into an embed.
+function videoEmbedHtml(url, title) {
+  const safe = safeHttpsUrl(url);
+  if (!safe) return '';
+  const u = new URL(safe);
+  const host = u.hostname.replace(/^www\./, '');
+  const t = escapeAttr(title || 'Video');
+  const frame = src => `<iframe src="${escapeAttr(src)}" title="${t}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+
+  if (/\.(mp4|webm|mov|m4v)$/i.test(u.pathname)) {
+    const poster = u.origin === window.location.origin ? u.pathname.replace(/\.[^.]+$/, '-poster.jpg') : '';
+    return `<video controls playsinline preload="metadata" ${poster ? `poster="${escapeAttr(poster)}"` : ''} title="${t}"><source src="${escapeAttr(u.href)}"></video>`;
+  }
+  if (host.endsWith('loom.com')) {
+    const id = u.pathname.split('/').filter(Boolean).pop();
+    return id ? frame(`https://www.loom.com/embed/${id}`) : '';
+  }
+  if (host === 'youtu.be' || host.endsWith('youtube.com')) {
+    const id = host === 'youtu.be' ? u.pathname.slice(1)
+      : (u.searchParams.get('v') || u.pathname.split('/').filter(Boolean).pop());
+    return id ? frame(`https://www.youtube-nocookie.com/embed/${id}`) : '';
+  }
+  if (host.endsWith('vimeo.com')) {
+    const id = u.pathname.split('/').filter(Boolean).pop();
+    return id ? frame(`https://player.vimeo.com/video/${id}`) : '';
+  }
+  if (host === 'drive.google.com') {
+    const m = u.pathname.match(/\/file\/d\/([^/]+)/);
+    return m ? frame(`https://drive.google.com/file/d/${m[1]}/preview`) : '';
+  }
+  return frame(u.href);
+}
+
+async function renderResumePage() {
+  const config = await loadJSON('content/site-config.json');
+  if (!config) return;
+
+  updateSiteWide(config);
+
+  const intro = document.getElementById('resume-intro');
+  if (intro) {
+    if (config.resumeIntro) intro.innerHTML = config.resumeIntro;
+    else intro.remove();
+  }
+
+  // Download buttons (each one only shows when its file is set)
+  const pdf = safeHttpsUrl(config.resumePdf);
+  const docx = safeHttpsUrl(config.resumeDocx);
+  const downloads = document.getElementById('resume-downloads');
+  if (downloads) {
+    downloads.innerHTML = [
+      pdf && `<a class="btn btn-dark" href="${escapeAttr(pdf)}" download>${RESUME_ICONS.download}<span>Download PDF</span></a>`,
+      docx && `<a class="btn btn-outline-dark" href="${escapeAttr(docx)}" download>${RESUME_ICONS.download}<span>Download Word</span></a>`,
+    ].filter(Boolean).join('');
+  }
+
+  // PDF preview
+  const preview = document.getElementById('resume-preview');
+  const previewFrame = document.getElementById('resume-preview-frame');
+  if (pdf && preview && previewFrame) {
+    previewFrame.innerHTML = `
+      <iframe src="${escapeAttr(pdf)}#toolbar=0&navpanes=0&view=FitH" title="Resume preview" loading="lazy"></iframe>
+      <a class="resume-preview-open" href="${escapeAttr(pdf)}" target="_blank" rel="noopener">Open the PDF in a new tab</a>`;
+    preview.hidden = false;
+  }
+
+  // Video
+  const videoSection = document.getElementById('resume-video-section');
+  const videoEl = document.getElementById('resume-video');
+  const videoHtml = videoEmbedHtml(config.resumeVideo, config.resumeVideoTitle);
+  if (videoHtml && videoSection && videoEl) {
+    videoEl.innerHTML = videoHtml;
+    const titleEl = document.getElementById('resume-video-title');
+    if (titleEl && config.resumeVideoTitle) titleEl.textContent = config.resumeVideoTitle;
+    videoSection.hidden = false;
+  }
+
+  // Contact cards
+  const list = document.getElementById('resume-contact-list');
+  if (list) {
+    const waDigits = String(config.whatsapp || '').replace(/\D/g, '');
+    const linkedin = safeHttpsUrl(config.linkedin);
+    const card = (href, icon, label, value, newTab) => `
+      <a class="resume-contact-card" href="${escapeAttr(href)}"${newTab ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+        <span class="resume-contact-icon">${icon}</span>
+        <span class="resume-contact-text"><span class="resume-contact-label">${label}</span><span class="resume-contact-value">${escapeAttr(value)}</span></span>
+      </a>`;
+    list.innerHTML = [
+      waDigits && card(`https://wa.me/${waDigits}`, RESUME_ICONS.whatsapp, 'WhatsApp', config.whatsapp, true),
+      config.email && card(`mailto:${config.email}`, ICONS.email, 'Email', config.email, false),
+      linkedin && card(linkedin, ICONS.linkedin, 'LinkedIn', 'View my profile', true),
+    ].filter(Boolean).join('');
+  }
+}
+
+
 // ── PROJECT DETAIL PAGE ──────────────────────────────────────────────
 async function renderProjectPage() {
   const config = await loadJSON('content/site-config.json');
@@ -601,6 +703,9 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
     case 'contact':
       renderContactPage();
+      break;
+    case 'resume':
+      renderResumePage().then(() => setTimeout(initScrollAnimations, 100));
       break;
     case 'project':
       renderProjectPage().then(() => setTimeout(initScrollAnimations, 100));
