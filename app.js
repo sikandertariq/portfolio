@@ -251,31 +251,100 @@ async function renderHomePage() {
 // ── Render Testimonials ──────────────────────────────────────────────
 function renderTestimonials(testimonials) {
   const track = document.getElementById('testimonials-track');
-  if (!track || !testimonials) return;
+  if (!track || !testimonials || !testimonials.length) return;
 
-  track.innerHTML = testimonials.map(t => `
-    <div class="testimonial-card">
-      <div class="testimonial-quote">${t.quote}</div>
-      <div class="testimonial-author">- ${t.author}</div>
-      <div class="testimonial-title">${t.title}</div>
-    </div>
-  `).join('');
+  const star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 8.24l-7.19-.61L12 1 9.19 7.63 2 8.24l5.46 5.73L5.82 21z"/></svg>';
+  const initials = name => String(name || '?').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
 
-  // Navigation arrows
+  track.innerHTML = testimonials.map((t, i) => {
+    // Drop the wrapping quote marks (the card draws its own) and split paragraphs
+    const text = String(t.quote || '').trim().replace(/^["“]+|["”]+$/g, '').trim();
+    const paras = text.split(/\n\s*\n/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+    const score = Math.max(0, Math.min(5, Number(t.rating) || 0));
+    const rating = Math.round(score);
+    const photo = safeHttpsUrl(t.photo);
+    const site = safeHttpsUrl(t.website);
+    const company = t.company
+      ? (site ? `<a href="${escapeAttr(site)}" target="_blank" rel="noopener noreferrer">${escapeAttr(t.company)}</a>` : escapeAttr(t.company))
+      : '';
+    const role = [t.title && escapeAttr(t.title), company].filter(Boolean).join(' at ');
+    const meta = [t.location, t.date].filter(Boolean).join(' · ');
+    return `
+    <article class="testimonial-card" aria-roledescription="review" aria-label="Review ${i + 1} of ${testimonials.length}">
+      <div class="testimonial-top">
+        <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+        <div class="testimonial-badges">
+          ${rating ? `<div class="testimonial-stars" role="img" aria-label="Rated ${score.toFixed(1)} out of 5">${star.repeat(rating)}<span>${score.toFixed(1)}</span></div>` : ''}
+          ${t.source ? `<span class="testimonial-source">${escapeAttr(t.source)}</span>` : ''}
+        </div>
+      </div>
+      ${t.project ? `<div class="testimonial-project">${escapeAttr(t.project)}</div>` : ''}
+      <div class="testimonial-quote">${paras}</div>
+      <button class="testimonial-more" type="button" hidden>Read more</button>
+      <footer class="testimonial-person">
+        <div class="testimonial-avatar">${photo
+          ? `<img src="${escapeAttr(photo)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${initials(t.author)}'))">`
+          : initials(t.author)}</div>
+        <div class="testimonial-who">
+          <div class="testimonial-author">${escapeAttr(t.author)}</div>
+          ${role ? `<div class="testimonial-title">${role}</div>` : ''}
+          ${t.about ? `<div class="testimonial-meta">${escapeAttr(t.about)}</div>` : ''}
+          ${meta ? `<div class="testimonial-meta">${escapeAttr(meta)}</div>` : ''}
+        </div>
+      </footer>
+    </article>`;
+  }).join('');
+
+  // "Read more" only on reviews that are actually cut off
+  const fitMore = () => track.querySelectorAll('.testimonial-card').forEach(card => {
+    const q = card.querySelector('.testimonial-quote');
+    const btn = card.querySelector('.testimonial-more');
+    if (card.classList.contains('expanded')) return;
+    btn.hidden = q.scrollHeight <= q.clientHeight + 2;
+  });
+  track.addEventListener('click', e => {
+    const btn = e.target.closest('.testimonial-more');
+    if (!btn) return;
+    const card = btn.closest('.testimonial-card');
+    const open = card.classList.toggle('expanded');
+    btn.textContent = open ? 'Show less' : 'Read more';
+  });
+  requestAnimationFrame(fitMore);
+  window.addEventListener('resize', fitMore);
+
+  // Arrows scroll one card at a time; dots show where you are
   const prevBtn = document.querySelector('.testimonial-nav.prev');
   const nextBtn = document.querySelector('.testimonial-nav.next');
-  const cardWidth = 350;
+  const dots = document.getElementById('testimonials-dots');
+  const step = () => {
+    const card = track.querySelector('.testimonial-card');
+    return card ? card.offsetWidth + parseFloat(getComputedStyle(track).columnGap || 0) : 350;
+  };
+  if (prevBtn) prevBtn.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  if (nextBtn) nextBtn.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    });
-  }
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth;
+    const scrollable = max > 4;
+    if (prevBtn) prevBtn.disabled = !scrollable || track.scrollLeft <= 4;
+    if (nextBtn) nextBtn.disabled = !scrollable || track.scrollLeft >= max - 4;
+    [prevBtn, nextBtn].forEach(b => b && (b.hidden = !scrollable));
+    if (!dots) return;
+    const cards = [...track.querySelectorAll('.testimonial-card')];
+    const perView = Math.max(1, Math.round(track.clientWidth / step()));
+    const pages = scrollable ? cards.length - perView + 1 : 0;
+    if (dots.children.length !== pages) {
+      dots.innerHTML = Array.from({ length: pages }, (_, i) =>
+        `<button type="button" aria-label="Go to review ${i + 1}"></button>`).join('');
+      [...dots.children].forEach((d, i) => d.addEventListener('click', () =>
+        track.scrollTo({ left: i * step(), behavior: 'smooth' })));
+    }
+    const current = Math.round(track.scrollLeft / step());
+    [...dots.children].forEach((d, i) => d.classList.toggle('active', i === current));
+  };
+  track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', update);
+  update();
 }
 
 

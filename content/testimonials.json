@@ -1,14 +1,36 @@
 {
   "testimonials": [
     {
-      "quote": "\"Freelancer's work was truly exceptional, exceeding all expectations. The level of detail, dedication, and effort she put into every aspect of the project was evident and deeply appreciated. Her meticulous attention to detail and commitment to delivering high-quality results have not only impressed us but also significantly enhanced the overall impact of the project.\"",
-      "author": "Brandy Kress",
-      "title": "Individual Client"
+      "quote": "Zainab is absolutely amazing to work with! She has a beautiful design aesthetic and is incredibly talented. She took all of my ideas, thoughts, and details and elevated them with her design skills. The final product came out wonderfully and was delivered on time. I would absolutely hire her again!",
+      "author": "Keyanna Murril",
+      "title": "Entrepreneur, artist, and creative specialist",
+      "company": "Creative K Consultancy",
+      "website": "https://www.creativek.net/",
+      "source": "Upwork"
     },
     {
-      "quote": "\"Zainab was a pleasure to work with. She was incredibly helpful and took the time to really understand my brand and the message I wanted to convey.\n\nHer approach was thorough, thoughtful, and creative, with a strong eye for detail. The final result felt aligned, polished, and on-brand. I would definitely recommend Z and would happily work with her again.\"",
-      "author": "Fiona Alexander",
-      "title": "Individual Client"
+      "quote": "Zainab was a pleasure to work with. She was incredibly helpful and took the time to really understand my brand and the message I wanted to convey.\n\nHer approach was thorough, thoughtful, and creative, with a strong eye for detail. The final result felt aligned, polished, and on-brand. I would definitely recommend Z and would happily work with her again.",
+      "author": "Braden Cobb",
+      "title": "Founder",
+      "company": "Kidz Economy",
+      "website": "https://www.kidzeconomy.com/",
+      "about": "International Educator | Pearson International Schools Global Innovation Award Winner for Financial Literacy",
+      "source": "Upwork"
+    },
+    {
+      "quote": "Amazing service, I would totally work with Zainab again. She listened to everything I requested, has a clear eye for detail, responded quickly to feedback and produced an end result that was exactly what I had envisioned. Highly recommend. Thank you!",
+      "author": "Suzan Khaimi",
+      "title": "Principal",
+      "company": "Oklahoma Islamic Academy",
+      "website": "https://www.oklahomaislamicacademy.org/",
+      "source": "Upwork"
+    },
+    {
+      "quote": "Freelancer's work on the presentation was truly exceptional, exceeding all expectations. The level of detail, dedication, and effort she put into every aspect of the project was evident and deeply appreciated. Her meticulous attention to detail and commitment to delivering high-quality results have not only impressed us but also significantly enhanced the overall impact of the presentation.",
+      "author": "Niluka Kavanagh",
+      "title": "Entrepreneur, keynote speaker, advisor, and writer",
+      "about": "Focused on human behavior, the future of work, and emerging technologies",
+      "source": "Upwork"
     }
   ]
 }

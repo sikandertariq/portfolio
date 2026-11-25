@@ -166,3 +166,12 @@ collections:
                 hint: "The testimonial text. <strong>bold</strong> allowed."
               - { name: author, label: "Author Name", widget: string }
               - { name: title, label: "Author Title / Role", widget: string }
+              - { name: company, label: "Company (optional)", widget: string, required: false }
+              - { name: website, label: "Company Website (optional)", widget: string, required: false, hint: "Full link, e.g. https://example.com — makes the company name clickable." }
+              - { name: about, label: "More About Them (optional)", widget: string, required: false, hint: "A short extra line, e.g. awards or focus areas." }
+              - { name: location, label: "Location (optional)", widget: string, required: false, hint: "e.g. United States" }
+              - { name: photo, label: "Client Photo (optional)", widget: image, required: false, hint: "A square photo works best. Without one, their initials are shown." }
+              - { name: project, label: "Project (optional)", widget: string, required: false, hint: "The job the review is for, shown as a small tag." }
+              - { name: rating, label: "Star Rating (optional)", widget: number, value_type: float, min: 1, max: 5, step: 0.1, required: false }
+              - { name: date, label: "Date (optional)", widget: string, required: false, hint: "e.g. Oct 2026" }
+              - { name: source, label: "Where it's from (optional)", widget: string, required: false, hint: "e.g. Upwork — shown as a small badge." }
