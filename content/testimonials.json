@@ -6,7 +6,8 @@
       "title": "Entrepreneur, artist, and creative specialist",
       "company": "Creative K Consultancy",
       "website": "https://www.creativek.net/",
-      "source": "Upwork"
+      "source": "Upwork",
+      "photo": "/assets/images/clients/keyanna-murril.jpg"
     },
     {
       "quote": "Zainab was a pleasure to work with. She was incredibly helpful and took the time to really understand my brand and the message I wanted to convey.\n\nHer approach was thorough, thoughtful, and creative, with a strong eye for detail. The final result felt aligned, polished, and on-brand. I would definitely recommend Z and would happily work with her again.",
@@ -15,7 +16,8 @@
       "company": "Kidz Economy",
       "website": "https://www.kidzeconomy.com/",
       "about": "International Educator | Pearson International Schools Global Innovation Award Winner for Financial Literacy",
-      "source": "Upwork"
+      "source": "Upwork",
+      "photo": "/assets/images/clients/braden-cobb.jpg"
     },
     {
       "quote": "Amazing service, I would totally work with Zainab again. She listened to everything I requested, has a clear eye for detail, responded quickly to feedback and produced an end result that was exactly what I had envisioned. Highly recommend. Thank you!",
@@ -23,14 +25,16 @@
       "title": "Principal",
       "company": "Oklahoma Islamic Academy",
       "website": "https://www.oklahomaislamicacademy.org/",
-      "source": "Upwork"
+      "source": "Upwork",
+      "photo": "/assets/images/clients/suzan-khaimi.jpg"
     },
     {
       "quote": "Freelancer's work on the presentation was truly exceptional, exceeding all expectations. The level of detail, dedication, and effort she put into every aspect of the project was evident and deeply appreciated. Her meticulous attention to detail and commitment to delivering high-quality results have not only impressed us but also significantly enhanced the overall impact of the presentation.",
       "author": "Niluka Kavanagh",
       "title": "Entrepreneur, keynote speaker, advisor, and writer",
       "about": "Focused on human behavior, the future of work, and emerging technologies",
-      "source": "Upwork"
+      "source": "Upwork",
+      "photo": "/assets/images/clients/niluka-kavanagh.jpg"
     }
   ]
 }
