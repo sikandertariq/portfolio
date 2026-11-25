@@ -2326,3 +2326,151 @@ h1, h2, h3, h4, h5, h6 {
   }
   .about-sticker-icon svg { width: 20px; height: 20px; }
 }
+
+
+/* ===================================================================
+   ABOUT PAGE — grouped skills (light scheme)
+   =================================================================== */
+.skills-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 420px at 90% 0%, rgba(217, 178, 95, 0.16), transparent 60%),
+    radial-gradient(700px 380px at 0% 100%, rgba(123, 30, 46, 0.06), transparent 60%),
+    #F8F6F5;
+}
+
+.skills-header { text-align: center; max-width: 720px; margin: 0 auto var(--space-xl); }
+
+.skills-eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #A9823A;
+  margin-bottom: var(--space-xs);
+}
+
+.skills-section .skills-heading { color: var(--color-primary); margin-bottom: var(--space-sm); }
+
+.skills-intro {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.skills-groups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.skill-group {
+  flex: 0 1 calc((100% - 2 * var(--space-md)) / 3);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(123, 30, 46, 0.08);
+  border-top: 4px solid var(--color-accent);
+  box-shadow: 0 14px 34px rgba(60, 20, 30, 0.08);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium), opacity var(--transition-slow);
+}
+
+.skill-group:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px rgba(60, 20, 30, 0.14);
+}
+
+.skill-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.skill-group-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 6px 14px rgba(123, 30, 46, 0.25);
+}
+
+.skill-group-icon svg { width: 24px; height: 24px; fill: var(--color-accent); }
+
+.skill-group-num {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(123, 30, 46, 0.1);
+}
+
+.skill-group-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 6px;
+}
+
+.skill-group-blurb {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.skill-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+  background: #F8EFEF;
+  border: 1px solid rgba(123, 30, 46, 0.12);
+  color: var(--color-text-dark);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.skill-chip:hover {
+  border-color: rgba(123, 30, 46, 0.35);
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 992px) {
+  .skill-group { flex-basis: calc((100% - var(--space-md)) / 2); }
+}
+
+@media (max-width: 640px) {
+  .skill-group { flex-basis: 100%; min-width: 0; }
+}
+
+
+/* White footer (homepage, where the reviews section above is already merlot) */
+.footer--light { background: #fff; border-top: 1px solid rgba(123, 30, 46, 0.08); }
+.footer--light .brand-name,
+.footer--light .footer-nav a { color: var(--color-primary); }
+.footer--light .footer-social a { color: var(--color-primary); border-color: rgba(123, 30, 46, 0.35); }
+.footer--light .footer-social a:hover { border-color: var(--color-primary); background: rgba(123, 30, 46, 0.06); }

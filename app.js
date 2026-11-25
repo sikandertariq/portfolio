@@ -461,14 +461,41 @@ async function renderAboutPage() {
     }
   }
 
-  // Skills
+  // Skills: grouped cards (skillGroups), or the simple list (skills) as a fallback
   const skillsGrid = document.getElementById('skills-grid');
-  if (skillsGrid && config.skills) {
+  const groups = (config.skillGroups || []).filter(g => g && g.title);
+  const intro = document.getElementById('skills-intro');
+  if (skillsGrid && groups.length) {
+    const total = groups.reduce((n, g) => n + (g.highlights || []).length + (g.skills || []).length, 0);
+    if (intro) intro.textContent = `${total} skills across the full learning design cycle, from analysis to evaluation.`;
+    skillsGrid.innerHTML = groups.map((g, i) => `
+      <article class="skill-group fade-in-up" style="transition-delay:${i * 90}ms">
+        <header class="skill-group-head">
+          <span class="skill-group-icon" aria-hidden="true">${SKILL_GROUP_ICONS[g.icon] || STICKER_ICONS[g.icon] || SKILL_GROUP_ICONS.compass}</span>
+          <span class="skill-group-num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        </header>
+        <h3 class="skill-group-title">${escapeAttr(g.title)}</h3>
+        ${g.blurb ? `<p class="skill-group-blurb">${escapeAttr(g.blurb)}</p>` : ''}
+        <ul class="skill-chips">
+          ${(g.highlights || []).map(k => `<li class="skill-chip skill-chip--key">${escapeAttr(k)}</li>`).join('')}
+          ${(g.skills || []).map(k => `<li class="skill-chip">${escapeAttr(k)}</li>`).join('')}
+        </ul>
+      </article>`).join('');
+  } else if (skillsGrid && config.skills) {
+    if (intro) intro.remove();
+    skillsGrid.classList.add('skills-grid');
     skillsGrid.innerHTML = config.skills.map(skill => `
       <div class="skill-badge">${skill}</div>
     `).join('');
   }
 }
+
+const SKILL_GROUP_ICONS = {
+  compass: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm3.9 6.1-2.3 5.5-5.5 2.3 2.3-5.5 5.5-2.3zM12 10.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>',
+  layers: '<svg viewBox="0 0 24 24"><path d="M12 2 1.5 7.5 12 13l10.5-5.5L12 2zm-8.3 9.3L1.5 12.5 12 18l10.5-5.5-2.2-1.2L12 15.6l-8.3-4.3zm0 5L1.5 17.5 12 23l10.5-5.5-2.2-1.2L12 20.6l-8.3-4.3z"/></svg>',
+  wrench: '<svg viewBox="0 0 24 24"><path d="M21.7 6.3a6 6 0 0 1-7.9 7.3L6.2 21.2a2.5 2.5 0 0 1-3.5-3.5l7.6-7.6A6 6 0 0 1 17.7 2.3l-3.5 3.5.7 2.7 2.7.7 3.5-3.5.6.6z"/></svg>',
+  chart: '<svg viewBox="0 0 24 24"><path d="M3 3h2v16h16v2H3V3zm4 10h3v5H7v-5zm5-5h3v10h-3V8zm5-4h3v14h-3V4z"/></svg>',
+};
 
 
 // Little icons for the About page stickers (pick one per fact in the admin page)

@@ -48,5 +48,86 @@
       "text": "builds in Storyline & Rise",
       "icon": "play"
     }
+  ],
+  "skillGroups": [
+    {
+      "title": "Learning Design & Strategy",
+      "icon": "compass",
+      "blurb": "Starting from the performance problem and designing backwards.",
+      "highlights": [
+        "Action Mapping",
+        "ADDIE"
+      ],
+      "skills": [
+        "SAM",
+        "Bloom's Taxonomy",
+        "Adult Learning Theory",
+        "Needs & Learner Analysis",
+        "Measurable Learning Objectives",
+        "Curriculum Development",
+        "Cognitive Load Principles"
+      ]
+    },
+    {
+      "title": "Experience & Content Development",
+      "icon": "layers",
+      "blurb": "Turning complex content into practice people remember.",
+      "highlights": [
+        "Scenario-Based Learning",
+        "Storyboarding"
+      ],
+      "skills": [
+        "Microlearning",
+        "Assessment Design",
+        "Interactive eLearning",
+        "Script & Narration Writing",
+        "Job Aids & Facilitator Guides",
+        "Inclusive, Accessible Design"
+      ]
+    },
+    {
+      "title": "Authoring Tools & Tech",
+      "icon": "wrench",
+      "blurb": "Building, publishing and managing courses end to end.",
+      "highlights": [
+        "Articulate Storyline",
+        "Articulate Rise"
+      ],
+      "skills": [
+        "Camtasia",
+        "Canva",
+        "Microsoft PowerPoint",
+        "LMS Administration",
+        "SCORM",
+        "Google Workspace"
+      ]
+    },
+    {
+      "title": "Visual & Presentation Design",
+      "icon": "palette",
+      "blurb": "A graphic design eye for clarity, hierarchy and polish.",
+      "highlights": [
+        "Visual Design"
+      ],
+      "skills": [
+        "Presentation Design",
+        "Slide Templates & Style Guides",
+        "Information Hierarchy"
+      ]
+    },
+    {
+      "title": "Evaluation & Collaboration",
+      "icon": "chart",
+      "blurb": "Measuring what works and partnering with experts.",
+      "highlights": [
+        "SME Collaboration"
+      ],
+      "skills": [
+        "Kirkpatrick Evaluation",
+        "Learner Feedback Analysis",
+        "Project Management",
+        "Written & Verbal Communication"
+      ]
+    }
   ]
 }

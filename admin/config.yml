@@ -69,9 +69,30 @@ collections:
             field: { name: paragraph, label: "Paragraph", widget: text }
             hint: "Each item is one paragraph. Use <strong>word</strong> to make text bold."
           - name: skills
-            label: "Skills"
+            label: "Skills (simple list, used only if the groups below are empty)"
             widget: list
+            required: false
             field: { name: skill, label: "Skill", widget: string }
+          - name: skillGroups
+            label: "Skills — Groups (About page)"
+            label_singular: "Skill Group"
+            widget: list
+            required: false
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Group Title", widget: string }
+              - { name: icon, label: "Icon", widget: select, required: false, options: ["compass", "layers", "wrench", "palette", "chart", "sparkle", "star", "book_open"] }
+              - { name: blurb, label: "One-line Description", widget: string, required: false }
+              - name: highlights
+                label: "Key Skills (shown first)"
+                widget: list
+                required: false
+                field: { name: skill, label: "Skill", widget: string }
+              - name: skills
+                label: "Other Skills"
+                widget: list
+                required: false
+                field: { name: skill, label: "Skill", widget: string }
           - { name: email, label: "Contact Email", widget: string }
           - { name: linkedin, label: "LinkedIn URL", widget: string }
           - name: socialLinks
