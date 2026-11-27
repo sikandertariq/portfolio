@@ -51,3 +51,18 @@
   .hero-bigword { font-size: clamp(5rem, 26vw, 9rem); top: 32%; }
   .hero-illustrated .hero-image { max-width: 340px; }
 }
+
+/* face follows the mouse (intro.js) — pivot at the shoulders so the head moves most */
+.hero-illustrated .hero-image { transform-origin: 50% 100%; will-change: transform; }
+.hero-bigword { will-change: transform; }
+
+/* phones: a slow, gentle sway instead */
+@keyframes hero-sway {
+  0%, 100% { transform: perspective(900px) rotateY(-4deg) rotate(-1deg); }
+  50%      { transform: perspective(900px) rotateY(4deg) rotate(1deg); }
+}
+.hero-sway .hero-image { animation: hero-sway 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sway .hero-image { animation: none; }
+}
