@@ -1,0 +1,209 @@
+/* Art Adventurer's Journal section (Portfolio page) */
+.journals-section {
+  padding: var(--space-3xl) 0;
+  background:
+    radial-gradient(900px 420px at 90% 0%, rgba(217, 178, 95, 0.14), transparent 60%),
+    #F8F6F5;
+  border-top: 1px solid rgba(123, 30, 46, 0.08);
+}
+
+.jr-head { text-align: center; max-width: 760px; margin: 0 auto var(--space-xl); }
+
+.jr-eyebrow {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #A9823A;
+  margin-bottom: var(--space-xs);
+}
+
+.jr-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+.jr-subtitle { font-size: 1.1rem; line-height: 1.6; color: var(--color-text-body); }
+.jr-client { margin-top: var(--space-xs); font-size: 0.9rem; color: var(--color-text-muted); letter-spacing: 0.04em; }
+.jr-client strong { color: var(--color-text-dark); }
+
+.jr-hero {
+  margin: 0 auto var(--space-lg);
+  max-width: 1100px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(60, 20, 30, 0.22);
+  cursor: zoom-in;
+}
+.jr-hero img { display: block; width: 100%; height: auto; transition: transform 0.6s ease; }
+.jr-hero:hover img { transform: scale(1.015); }
+
+.jr-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto var(--space-xl);
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+.jr-stats li {
+  text-align: center;
+  padding: var(--space-md) var(--space-sm);
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 22px rgba(60, 20, 30, 0.06);
+  border-top: 3px solid var(--color-accent);
+}
+.jr-stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+.jr-stat-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.jr-intro { max-width: 760px; margin: 0 auto var(--space-2xl); }
+.jr-intro p { font-size: 1.05rem; line-height: 1.85; color: var(--color-text-body); margin-bottom: var(--space-sm); }
+
+.jr-subhead {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.jr-editions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.jr-edition {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(60, 20, 30, 0.08);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+.jr-edition:hover { transform: translateY(-6px); box-shadow: 0 22px 44px rgba(60, 20, 30, 0.14); }
+
+.jr-cover { display: block; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.jr-cover img { display: block; width: 100%; aspect-ratio: 440 / 533; object-fit: cover; }
+
+.jr-edition-body { padding: var(--space-md); border-top: 4px solid var(--ed); flex: 1; }
+.jr-edition-name { font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-text-dark); margin-bottom: 4px; }
+.jr-edition-tagline {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ed);
+  margin-bottom: var(--space-sm);
+}
+.jr-edition-desc { font-size: 0.9rem; line-height: 1.65; color: var(--color-text-body); }
+
+.jr-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+.jr-thumb {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(60, 20, 30, 0.12);
+  cursor: zoom-in;
+  transition: transform var(--transition-medium);
+}
+.jr-thumb:hover { transform: translateY(-4px); }
+.jr-thumb img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+
+/* viewer */
+.jr-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 64px;
+  background: rgba(20, 8, 12, 0.92);
+}
+.jr-lightbox[hidden] { display: none; }
+.jr-lightbox figure { margin: 0; max-width: 1200px; text-align: center; }
+.jr-lightbox img { max-width: 100%; max-height: 82vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+.jr-lightbox figcaption { margin-top: 12px; color: rgba(243, 236, 229, 0.85); font-size: 0.95rem; }
+.jr-lb-close, .jr-lb-nav {
+  position: absolute;
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+}
+.jr-lb-close { top: 18px; right: 18px; width: 44px; height: 44px; font-size: 1.8rem; }
+.jr-lb-nav { top: 50%; transform: translateY(-50%); width: 48px; height: 48px; font-size: 2rem; }
+.jr-lb-nav[hidden] { display: none; }
+.jr-lb-prev { left: 12px; }
+.jr-lb-next { right: 12px; }
+.jr-lb-close:hover, .jr-lb-nav:hover { background: rgba(255, 255, 255, 0.25); }
+
+@media (max-width: 992px) {
+  .jr-editions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .jr-stats { grid-template-columns: repeat(2, 1fr); }
+  .jr-editions { grid-template-columns: 1fr; }
+  .jr-lightbox { padding: 16px; }
+  .jr-lb-nav { top: auto; bottom: 18px; transform: none; }
+}
+
+/* journal.html (the full page) */
+.journals-page { margin-top: var(--nav-height); padding-top: var(--space-2xl); border-top: 0; }
+
+.jr-back {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.jr-cta {
+  margin-top: var(--space-2xl);
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #8A2335 0%, var(--color-primary) 60%, #5A1522 100%);
+  color: var(--color-text-light);
+}
+.jr-cta p { font-family: var(--font-heading); font-size: clamp(1.2rem, 2.4vw, 1.6rem); margin-bottom: var(--space-md); }
+
+/* the cover card on the Portfolio page is a link */
+.jr-card .project-card-image-wrapper { display: block; }

@@ -1,0 +1,80 @@
+{
+  "title": "Art Adventurer's Journal",
+  "eyebrow": "Editorial · Illustration · Print design",
+  "subtitle": "A Kid's Guide to Experiencing Art: four activity journals for young museum explorers",
+  "client": "Creative K",
+  "cover": "/assets/journals/cover.jpg",
+  "cardDescription": "Designed a four-part interactive museum activity journal series, transforming gallery visits into engaging experiences through observation, creative challenges, storytelling, and hands-on art exploration.",
+  "tools": [
+    "Canva",
+    "Adobe InDesign",
+    "Adobe Illustrator"
+  ],
+  "hero": "/assets/journals/slides/01-cover.jpg",
+  "stats": [
+    {
+      "value": "4",
+      "label": "Editions"
+    },
+    {
+      "value": "16",
+      "label": "Pages each"
+    },
+    {
+      "value": "7 × 8.5\"",
+      "label": "Print trim"
+    },
+    {
+      "value": "5",
+      "label": "Museum challenges"
+    }
+  ],
+  "intro": [
+    "The Art Adventurer's Journal turns a museum visit into a guided hunt. Visitors follow the same route through the galleries, completing five challenges and bonus finds along the way.",
+    "The series comes in four editions, each designed around a different kind of explorer: reflective adults, curious observers, kids who learn by moving, and young artists who want to draw. Every edition shares one system of layouts and challenges, but has its own colour, voice and set of activities."
+  ],
+  "editions": [
+    {
+      "name": "Adult Experience",
+      "tagline": "Explore. Reflect. Connect.",
+      "color": "#C2622D",
+      "cover": "/assets/journals/editions/adult.jpg",
+      "description": "A slower, more reflective read. Longer art-historical notes sit beside prompts that ask adults to look again, plus \"Exploring with Children\" panels so they can guide younger visitors through the same works."
+    },
+    {
+      "name": "Awareness Experience",
+      "tagline": "See. Think. Wonder.",
+      "color": "#2E6B78",
+      "cover": "/assets/journals/editions/awareness.jpg",
+      "description": "Built around noticing. Mad-libs, \"create an ancient god\" worksheets and a room-planning grid invite visitors to slow down, wonder and put what they see into words."
+    },
+    {
+      "name": "Adventure Experience",
+      "tagline": "Jump. Move. Discover.",
+      "color": "#3E6B4B",
+      "cover": "/assets/journals/editions/adventure.jpg",
+      "description": "Art you experience with your whole body. Staring contests with Sekhmet, racing to count roses and smelling the garden with your eyes closed: every prompt gets kids moving."
+    },
+    {
+      "name": "Artistic Experience",
+      "tagline": "Imagine. Create. Express.",
+      "color": "#6E4A8F",
+      "cover": "/assets/journals/editions/artistic.jpg",
+      "description": "A sketchbook in disguise. Generous drawing frames let young artists redecorate a Gothic library, complete Sekhmet and paint their own seascape right in the gallery."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/assets/journals/slides/01-cover.jpg",
+      "caption": "Art Adventurer's Journal: the series"
+    },
+    {
+      "image": "/assets/journals/slides/02-series.jpg",
+      "caption": "Four editions, one adventure"
+    },
+    {
+      "image": "/assets/journals/slides/03-collection.jpg",
+      "caption": "Four activity journals, editorial design"
+    }
+  ]
+}

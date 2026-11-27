@@ -210,3 +210,54 @@ collections:
               - { name: rating, label: "Star Rating (optional)", widget: number, value_type: float, min: 1, max: 5, step: 0.1, required: false }
               - { name: date, label: "Date (optional)", widget: string, required: false, hint: "e.g. Oct 2026" }
               - { name: source, label: "Where it's from (optional)", widget: string, required: false, hint: "e.g. Upwork — shown as a small badge." }
+
+  # ----------------------------------------------------------
+  # 4) ART ADVENTURER'S JOURNAL — section on the Portfolio page
+  # ----------------------------------------------------------
+  - name: journals
+    label: "Art Adventurer's Journal"
+    icon: menu_book
+    files:
+      - name: journals
+        label: "Journal Section (Portfolio page)"
+        file: "content/journals.json"
+        description: "The Art Adventurer's Journal section under your projects on the Portfolio page."
+        media_folder: "/assets/journals"
+        public_folder: "/assets/journals"
+        fields:
+          - { name: title, label: "Title", widget: string }
+          - { name: eyebrow, label: "Small Label Above the Title", widget: string, required: false }
+          - { name: subtitle, label: "Subtitle", widget: string, required: false }
+          - { name: client, label: "Client", widget: string, required: false }
+          - { name: hero, label: "Main Image", widget: image, required: false }
+          - name: stats
+            label: "Numbers (e.g. 4 Editions)"
+            widget: list
+            required: false
+            fields:
+              - { name: value, label: "Number", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - name: intro
+            label: "Intro Paragraphs"
+            widget: list
+            required: false
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - name: editions
+            label: "Editions"
+            label_singular: "Edition"
+            widget: list
+            required: false
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Name", widget: string }
+              - { name: tagline, label: "Tagline", widget: string, required: false }
+              - { name: color, label: "Accent Colour (e.g. #C2622D)", widget: string, required: false }
+              - { name: cover, label: "Cover Image", widget: image, required: false }
+              - { name: description, label: "Description", widget: text, required: false }
+          - name: gallery
+            label: "Look Inside (images)"
+            widget: list
+            required: false
+            fields:
+              - { name: image, label: "Image", widget: image }
+              - { name: caption, label: "Caption", widget: string, required: false }
