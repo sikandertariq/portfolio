@@ -66,3 +66,24 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-sway .hero-image { animation: none; }
 }
+
+/* role line sits under the illustration (the image is added by app.js, so order puts it first) */
+.hero-illustrated { flex-direction: column; align-items: center; justify-content: flex-end; }
+.hero-illustrated .hero-image { order: 1; }
+.hero-role--under {
+  order: 2;
+  position: relative;
+  z-index: 2;
+  margin: -28px 0 0;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: var(--color-primary);
+}
+.hero-role--under::before { display: none; }
+.hero-role--under .hero-role-text { justify-content: center; }
+@media (min-width: 993px) {
+  .hero-role--under { font-size: 0.8rem; letter-spacing: 0.1em; white-space: nowrap; }
+  .hero-role--under .hero-role-text { flex-wrap: nowrap; }
+}
