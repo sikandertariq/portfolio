@@ -1,0 +1,260 @@
+{
+  "id": "pitch-market-master",
+  "title": "P.I.T.C.H. Market Master",
+  "subtitle": "Designing a gamified, scenario-based learning experience",
+  "eyebrow": "Learning experience design · Gamification · Simulation design",
+  "cover": "/assets/pitch/cover.jpg",
+  "hero": "/assets/pitch/01-welcome.jpg",
+  "cardDescription": "A gamified business learning experience that immerses learners in a simulated marketplace, turning raw school-provided material into a structured, interactive multi-screen course with branching, challenges and scoring.",
+  "tools": [
+    "Canva"
+  ],
+  "facts": [
+    {
+      "label": "Category",
+      "value": "LXD · Instructional Design · eLearning · Simulation"
+    },
+    {
+      "label": "Type",
+      "value": "Interactive digital learning experience"
+    },
+    {
+      "label": "Tool",
+      "value": "Canva"
+    },
+    {
+      "label": "My role",
+      "value": "Learning experience design, content organisation, interactive simulation design, course development"
+    }
+  ],
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Project overview",
+      "paragraphs": [
+        "P.I.T.C.H. Market Master is a gamified business learning experience designed to immerse learners in a simulated marketplace environment.",
+        "The project involved transforming school-provided educational material into a structured, engaging and interactive digital learning experience. Rather than simply transferring existing content into presentation slides, I organised the material into lessons, designed the learner-facing content, developed the visual learning environment and built the interactive elements that guide learners through the experience.",
+        "The final product brings together visual storytelling, simulated business scenarios, interactive activities, decision-making exercises and game-inspired learning elements."
+      ]
+    },
+    {
+      "type": "list",
+      "heading": "The challenge",
+      "intro": "The initial material was provided in a raw format and needed further organisation and development before it could become an engaging digital learning experience. The challenge was to turn it into a cohesive learning environment that would:",
+      "items": [
+        "Organise educational content into a logical lesson structure.",
+        "Present information in an engaging and accessible format.",
+        "Maintain consistency across a large multi-screen learning experience.",
+        "Incorporate interactive navigation and learner-controlled interactions.",
+        "Create an immersive simulation environment using visual storytelling and gamification.",
+        "Feel cohesive rather than like a collection of disconnected slides."
+      ]
+    },
+    {
+      "type": "groups",
+      "heading": "My role & responsibilities",
+      "intro": "I was responsible for the design and development of the learner-facing experience, working from the educational material supplied by the school.",
+      "groups": [
+        {
+          "title": "Content organisation & learning structure",
+          "items": [
+            "Reviewed and organised the raw material into structured lessons.",
+            "Arranged content into logical learning sequences.",
+            "Structured learner-facing information to support progression."
+          ]
+        },
+        {
+          "title": "Learning experience design",
+          "items": [
+            "Designed the overall learner journey and screen-to-screen experience.",
+            "Established visual hierarchy and consistent content layouts.",
+            "Designed the course interface and navigation.",
+            "Used visual storytelling to create an immersive environment."
+          ]
+        },
+        {
+          "title": "Interactive simulation design",
+          "items": [
+            "Developed clickable navigation and interactive buttons.",
+            "Created branching pathways for learner-controlled progression.",
+            "Designed interactive activity screens and scenario-based sequences.",
+            "Added game elements: challenges, timers and scoring screens."
+          ]
+        },
+        {
+          "title": "Visual & interface design",
+          "items": [
+            "Developed a consistent visual identity throughout.",
+            "Designed screens, layouts, graphics and visual elements.",
+            "Used characters and simulated environments for continuity."
+          ]
+        },
+        {
+          "title": "eLearning development",
+          "items": [
+            "Built the complete learner-facing experience in Canva.",
+            "Built the interactive navigation and branching.",
+            "Integrated content, visuals and interactions into one cohesive product."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "features",
+      "heading": "Learning experience design approach",
+      "intro": "Instead of presenting the material as a conventional lesson, the course uses a sequence of themed environments, activities and challenges to guide learners through the experience.",
+      "items": [
+        {
+          "title": "Simulation-based environment",
+          "text": "A recurring marketplace setting that gives context to the learning."
+        },
+        {
+          "title": "Visual storytelling",
+          "text": "Characters and illustrated scenarios that create continuity across lessons."
+        },
+        {
+          "title": "Interactive navigation",
+          "text": "Clickable elements that let learners move through the experience."
+        },
+        {
+          "title": "Branching interactions",
+          "text": "Alternative pathways that support learner participation."
+        },
+        {
+          "title": "Gamification",
+          "text": "Timers, scoring displays, challenges and game-inspired visuals."
+        },
+        {
+          "title": "Activity-based learning",
+          "text": "Dedicated screens where learners apply the concepts."
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "heading": "Inside the experience",
+      "images": [
+        {
+          "image": "/assets/pitch/01-welcome.jpg",
+          "caption": "Welcome to P.I.T.C.H. Market Master"
+        },
+        {
+          "image": "/assets/pitch/02-the-firm.jpg",
+          "caption": "Advisory Floor: welcome to the firm"
+        },
+        {
+          "image": "/assets/pitch/03-meet-max.jpg",
+          "caption": "Meet MAX, the firm's AI analyst"
+        },
+        {
+          "image": "/assets/pitch/04-fix-the-box.jpg",
+          "caption": "Scenario: why \"sell more\" is a trap"
+        },
+        {
+          "image": "/assets/pitch/05-being-ready.jpg",
+          "caption": "Being ready beats being right"
+        },
+        {
+          "image": "/assets/pitch/06-max-says.jpg",
+          "caption": "Decision point: MAX says take it!"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "heading": "Selected learning experience components",
+      "columns": [
+        "Component",
+        "Learning experience"
+      ],
+      "rows": [
+        [
+          "Advisory Floor",
+          "Introduction to the simulated business environment"
+        ],
+        [
+          "Financial Literacy Activities",
+          "Exploring money-in and money-out concepts"
+        ],
+        [
+          "Market Challenges",
+          "Engaging with business-related scenarios"
+        ],
+        [
+          "Survey Wall",
+          "A themed information and activity environment"
+        ],
+        [
+          "Project Selection",
+          "Exploring project choices and selection guidelines"
+        ],
+        [
+          "Storm Board",
+          "A business challenge and strategy environment"
+        ],
+        [
+          "Emergency Pitch",
+          "A timed presentation challenge"
+        ],
+        [
+          "Final Showcase",
+          "A concluding showcase experience"
+        ]
+      ]
+    },
+    {
+      "type": "steps",
+      "heading": "Design & development process",
+      "items": [
+        {
+          "title": "Content review",
+          "text": "Reviewing the raw educational material provided by the school."
+        },
+        {
+          "title": "Content organisation",
+          "text": "Structuring the material into lessons and learner-facing sequences."
+        },
+        {
+          "title": "Experience design",
+          "text": "Setting the visual direction, screen layouts, navigation and interaction patterns."
+        },
+        {
+          "title": "Interactive development",
+          "text": "Building the clickable navigation, buttons and branching pathways in Canva."
+        },
+        {
+          "title": "Visual refinement",
+          "text": "Keeping the experience consistent and bringing the learning components together."
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Final deliverable",
+      "paragraphs": [
+        "A large, multi-screen gamified learning experience that transformed raw educational material into a visually cohesive and interactive digital simulation.",
+        "The project shows how I take existing educational content, organise it for digital delivery and turn it into a complete learner-facing experience through content design, visual storytelling, interaction design and eLearning development."
+      ]
+    },
+    {
+      "type": "chips",
+      "heading": "Skills demonstrated",
+      "items": [
+        "Learning Experience Design (LXD)",
+        "Instructional Design Implementation",
+        "Digital Learning Content Development",
+        "Content Structuring & Organisation",
+        "Scenario-Based Learning Design",
+        "Gamification & Simulation Design",
+        "Interactive eLearning Development",
+        "UI & Navigation Design",
+        "Visual Learning Design",
+        "Canva Interactive Presentations"
+      ]
+    },
+    {
+      "type": "note",
+      "text": "The original educational material was supplied by the school. My role focused on transforming that material into the structured, interactive learner-facing experience."
+    }
+  ]
+}

@@ -27,6 +27,7 @@
   function addCard(d) {
     const card = document.createElement('div');
     card.className = 'project-card jr-card';
+    card.dataset.order = '1';   // extra cards sit after the first project, in this order
     card.innerHTML = `
       <a class="project-card-image-wrapper" href="journal.html" aria-label="${esc(d.title)}: learn more">
         <img src="${esc(src(d.cover) || src(d.hero))}" alt="${esc(d.title)} cover" loading="lazy">
@@ -39,9 +40,13 @@
         <a href="journal.html" class="btn btn-primary">Learn More</a>
       </div>`;
     const place = () => {
-      const first = projects.querySelector('.project-card:not(.jr-card)');
+      const first = projects.querySelector('.project-card:not([data-order])');
       if (!first) return false;
-      first.after(card);
+      let anchor = first;
+      projects.querySelectorAll('.project-card[data-order]').forEach(el => {
+        if (+el.dataset.order < +card.dataset.order) anchor = el;
+      });
+      anchor.after(card);
       requestAnimationFrame(() => setTimeout(() => card.classList.add('visible'), 150));
       return true;
     };
