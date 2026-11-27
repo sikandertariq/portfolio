@@ -87,3 +87,11 @@
   .hero-role--under { font-size: 0.8rem; letter-spacing: 0.1em; white-space: nowrap; }
   .hero-role--under .hero-role-text { flex-wrap: nowrap; }
 }
+
+/* two buttons side by side under the intro text */
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.hero-actions .btn { margin: 0; }
+@media (max-width: 992px) {
+  .hero-actions { justify-content: center; }
+}
+.hero-actions .btn-large { padding: 18px 34px; }
